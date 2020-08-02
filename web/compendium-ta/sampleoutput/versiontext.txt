@@ -1,0 +1,525 @@
+==============================
+Version Tracking Report 0.1.22
+==============================
+this is a documentation/bug fix release
+
+There should be a new help file which documents most of the functionality and also the programmer's interface.
+
+Various defects have been fixed.
+
+
+
+-----
+Tasks
+-----
+
+(16/05/2002 15:45:41)   added a prompt when deleting an item on the generic list
+--------------------------------------------------------------------------------
+
+Duration: 0.5
+
+added a prompt when deleting an item on the generic list
+
+(23/05/2002 14:19:13)   added multiple properties
+-------------------------------------------------
+
+Duration: 2
+
+added:
+model.newScriptTemplateDefn
+model.returnScriptTemplateDefnNamed
+model.newLinkWeightingDefn
+model.returnLinkWeightingDefnNamed
+model.newNodeWeightingDefn
+model.returnNodeWeightingDefnNamed
+weightingDefinition.scriptTemplateDetails
+weightingDefinition.scriptTemplateName
+entityDefn.newWeightingDefn
+entityDefn.returnWeightingDefnNamed
+
+(15/05/2002 13:30:15)   added backup to the update process
+----------------------------------------------------------
+
+Duration: 0.5
+
+
+
+(05/06/2002 16:30:09)   added error handling code to dsp entities
+-----------------------------------------------------------------
+
+Duration: 0.5
+
+dsp entities count as form level objects but I did not wrap these in error handling code - which meant that the app could still crash and burn if an error occured - this should not happen now.
+
+(30/05/2002 15:00:56)   added the internal report to the reports drop down
+--------------------------------------------------------------------------
+
+Duration: 0.5
+
+added the internal report to the reports drop down
+
+(30/05/2002 16:00:35)   removed the dot diagram from the internal report
+------------------------------------------------------------------------
+
+Duration: 0.5
+
+removed the dot diagram from the internal report
+
+- sizing was way off - reinstate functionality in a future release
+
+(15/05/2002 12:05:45)   make not ask on create the default
+----------------------------------------------------------
+
+Duration: 0.5
+
+implemented requirement 174
+
+(16/05/2002 16:45:40)   allow delete key in generic list
+--------------------------------------------------------
+
+Duration: 0.5
+
+allow delete key in generic list to act as delete button
+
+(23/05/2002 09:18:20)   added scriptTemplateDefinitions property to model
+-------------------------------------------------------------------------
+
+Duration: 0.5
+
+added scriptTemplateDefinitions property to model
+
+(16/05/2002 16:15:58)   allow insert key in generic list
+--------------------------------------------------------
+
+Duration: 0.5
+
+insert key acts as the new button on the generic list
+
+(10/05/2002 11:45:11)   added a cross ref icon to generic edit
+--------------------------------------------------------------
+
+Duration: 1
+
+There is now an icon at the bottom right of the generic edit form. 
+
+This can be dragged to the requirement x-ref lists to allow a drag drop cross reference.
+
+(22/05/2002 11:14:10)   added weightingDefinitions property to entityDefn
+-------------------------------------------------------------------------
+
+Duration: 0.5
+
+added weightingDefinitions property to entityDefn
+
+(22/05/2002 14:17:39)   added linkWeightingDefintiions property to model
+------------------------------------------------------------------------
+
+Duration: 0.5
+
+added linkWeightingDefintiions property to model
+
+(16/05/2002 12:00:44)   added an icon for subgraph
+--------------------------------------------------
+
+Duration: 0.5
+
+added an icon for subgraph rather than an sg button
+
+(30/05/2002 15:00:30)   added the graphic path output to the internal report
+----------------------------------------------------------------------------
+
+Duration: 0.5
+
+added the graphic path output to the internal report
+
+(20/05/2002 14:30:56)   btnProperties removed from pathEdit
+-----------------------------------------------------------
+
+Duration: 1
+
+btnProperties removed from pathEdit
+
+(22/05/2002 13:16:53)   added nodeWeightingDefinitions property to model
+------------------------------------------------------------------------
+
+Duration: 0.5
+
+added nodeWeightingDefinitions property to model
+
+(20/05/2002 12:06:27)   changed dialog titles
+---------------------------------------------
+
+Duration: 1
+
+edit dialog for generic edit has the entity name and the M1: etc. details
+
+also added M1: etc. details to generic hierarchy and generic list
+
+(21/05/2002 10:00:23)   added DB Field length limits on GUI
+-----------------------------------------------------------
+
+Duration: 1
+
+add DB Field length limits on GUI 
+
+(04/06/2002 11:00:00)   added use check boxes on style dialog
+-------------------------------------------------------------
+
+Duration: 0.5
+
+Added the use check boxes on the graph node and link style dialog as I wanted a way to individually set the style items. 
+
+This seemed like the easiest way to do it.
+
+
+-------------
+Defects Fixed
+-------------
+
+(191)   creating a new entity in the generic hierarchy does not update generic list
+-----------------------------------------------------------------------------------
+
+Raised Date: 20/05/2002 11:33:55
+Closed Date: 05/06/2002 17:25:55
+
+creating a new entity in the generic hierarchy does not update generic list
+
+also does not update when a branch is transmuted into a new entity
+
+
+
+(179)   add new weighting to entity causes invalid property error
+-----------------------------------------------------------------
+
+Raised Date: 15/05/2002 18:05:24
+Closed Date: 16/05/2002 10:30:24
+
+adding a new weighting to entity causes error "invalid property value" and then an old on e is displayed for editing rather than a new one
+
+
+
+(206)   relationship matrix should not be listed for hierarchy
+--------------------------------------------------------------
+
+Raised Date: 23/05/2002 09:15:01
+Closed Date: 23/05/2002 10:10:01
+
+relationship matrix should not be listed for hierarchy
+
+
+
+(135)   drag to hierarchy causes parent rename
+----------------------------------------------
+
+Raised Date: 25/04/2002 18:01:44
+Closed Date: 30/05/2002
+
+dragging an unrepresented requirement into the generic hierarchy causes the parent's parent to be renamed to that of the parent:
+
+i.e
+requirement
+    cross ref
+          
+
+cross ref
+    cross ref
+         newly allocated item
+
+
+
+(184)   entityDefn key does not update in attributes list
+---------------------------------------------------------
+
+Raised Date: 16/05/2002 10:40:52
+Closed Date: 16/05/2002 11:10:52
+
+when entity definitions are being edited, the key does not get updated in the attributes list
+
+
+
+(183)   true/false default could not be defined
+-----------------------------------------------
+
+Raised Date: 16/05/2002 09:00:58
+Closed Date: 16/05/2002 10:00:58
+
+true/false default could not be defined
+
+
+
+(216)   create new graph does not updated tree browser
+------------------------------------------------------
+
+Raised Date: 05/06/2002 09:30:16
+Closed Date: 05/06/2002 10:00:00
+
+creation of a new graph from the embedded generic list, does not update the tree with the new graph or update the embedded edit dialog.
+
+
+
+(198)   property buttons don't show immediately
+-----------------------------------------------
+
+Raised Date: 21/05/2002 11:12:30
+Closed Date: 21/05/2002 11:30:30
+
+graph and path properties have buttons but don't show straight away
+
+
+
+(169)   Create Path does not update model browser
+-------------------------------------------------
+
+Raised Date: 13/05/2002 11:00:53
+Closed Date: 15/05/2002 10:30:53
+
+Create path does not update the model browser so it does not appear in the tree
+
+
+
+(217)   new model attributes display not updated on apply
+---------------------------------------------------------
+
+Raised Date: 05/06/2002 10:30:33
+Closed Date: 05/06/2002 13:00:00
+
+when a new attribute is added to node or link or script and apply is pressed then the display is not updated and it is possible to add the attributes more than once.
+
+
+
+(200)   hierarchy branch xref icon does not allow ole drag
+----------------------------------------------------------
+
+Raised Date: 21/05/2002 16:45:31
+Closed Date: 21/05/2002 17:15:31
+
+fixed problem where hierarchy branch xref icon did not allow ole drag (16:45)
+
+
+
+(142)   Entity List does not refresh on update or create
+--------------------------------------------------------
+
+Raised Date: 30/04/2002 11:10:31
+Closed Date: 30/05/2002
+
+When pressing "Apply" on an entity definition list, the list is not updated
+
+
+
+(205)   relationship matrix does not fill list
+----------------------------------------------
+
+Raised Date: 22/05/2002 09:15:32
+Closed Date: 22/05/2002 10:10:32
+
+relationship matrix does not fill list with Nodes, Links, Paths
+
+
+
+(172)   insitu edit field in graph edit does not keep up
+--------------------------------------------------------
+
+Raised Date: 13/05/2002 16:30:38
+Closed Date: 15/05/2002 13:10:38
+
+in graph edit form when create a node and change the name in the edit dialog, the insitu edit field does not change. This happens for both node and link.
+
+
+
+(181)   weighting not always set to correct display
+---------------------------------------------------
+
+Raised Date: 15/05/2002 18:00:28
+Closed Date: 16/05/2002 11:25:28
+
+weighting not always set to correct display i.e. the text box might be displayed rather than a date tab
+
+
+
+(182)   generic list sometimes displays a floating [
+----------------------------------------------------
+
+Raised Date: 15/05/2002 18:00:17
+Closed Date: 16/05/2002 15:30:17
+
+when no buttons are required, the generc list shows the outline of the edit button.
+
+
+
+(170)   when dirty clicking on model browser list does not prompt to save
+-------------------------------------------------------------------------
+
+Raised Date: 13/05/2002 11:05:26
+Closed Date: 15/05/2002 11:00:26
+
+clicking on the tree browser list after editing an entity in the edit pane does not prompt to save details
+
+also occurs on tree click
+
+
+
+(218)   Node attributes defaults not saved on defn
+--------------------------------------------------
+
+Raised Date: 05/06/2002 16:00:49
+Closed Date: 05/06/2002 17:35:49
+
+when a node attribute or link attribute were defined for the model, the set details or default were not saved on creation - this meant that sets were empty and no defaults were available.
+
+
+
+(192)   add new script template wrong edit
+------------------------------------------
+
+Raised Date: 17/05/2002 15:05:43
+Closed Date: 17/05/2002 16:50:43
+
+adding a new script template, creates the script template but opens the wrong one for editing
+
+
+
+(171)   edit model properties in main model edit does not commit
+----------------------------------------------------------------
+
+Raised Date: 13/05/2002 11:10:17
+Closed Date: 15/05/2002 11:30:17
+
+Editing the model properties in the main model  model edit dialog does not commit properly.
+
+Name is converted to ,,
+
+
+
+(180)   almost maximize does not account for toolbar
+----------------------------------------------------
+
+Raised Date: 15/05/2002 16:10:56
+Closed Date: 16/05/2002 11:15:56
+
+almost maximize does not account for toolbar this option should really be removed as it is buggy behind the scenes
+
+
+
+(178)   Auto Gen Dot icon corrupts
+----------------------------------
+
+Raised Date: 15/05/2002 12:45:02
+Closed Date: 15/05/2002 13:00:02
+
+The auto generate dot icon corrupts when on the form
+
+This is because the picture is too large
+
+
+
+(214)   Graphical properties on graph edit did not display selected
+-------------------------------------------------------------------
+
+Raised Date: 04/06/2002 12:25:30
+Closed Date: 04/06/2002 12:50:30
+
+when the graphical properties edit was displayed from the graph edit, it did not pick up the details of the selected node or link.
+
+
+
+
+------------
+Open Defects
+------------
+
+(208)   entity create needs saved twice
+---------------------------------------
+
+Raised Date: 30/05/2002 16:24:02
+Status: OPEN
+Criticality: MEDIUM
+
+when creating an entity, and saving it. 
+
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save
+
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?
+
+(62)   icons on buttons are not transparent
+-------------------------------------------
+
+Raised Date: 17/04/2002
+Status: OPEN
+Criticality: LOW
+
+need to turn the .ico into .bmp and setup the mask property
+
+(133)   The hierarchy browser tree refreshes too much on drag
+-------------------------------------------------------------
+
+Raised Date: 25/04/2002 17:54:37
+Status: OPEN
+Criticality: LOW
+
+this can be disconcerting when dragging,
+
+perhaps the timer is not long enough?
+
+(49)   popup menus use mouse co-ords
+------------------------------------
+
+Raised Date: 19/04/2002 14:31:35
+Status: OPEN
+Criticality: LOW
+
+this isn't particularly good when we are using the insert keys
+
+
+(134)   the hierarchy browser hierarchy should maintain expansion
+-----------------------------------------------------------------
+
+Raised Date: 25/04/2002 17:55:54
+Status: OPEN
+Criticality: LOW
+
+during restructuring, the hierarchy should leave expanded the items which are expanded
+
+(114)   creating a new item in the generic grid causes flashing
+---------------------------------------------------------------
+
+Raised Date: 23/04/2002 17:09:05
+Status: CLOSED
+Criticality: LOW
+
+the window should be locked when updating the grid
+
+
+------------------------
+Requirements Implemented
+------------------------
+
+(193)   Edit Entity Instance form should tell you the entity type
+-----------------------------------------------------------------
+
+Raised Date: 20/05/2002 11:38:54
+Status: IMPLEMENTED
+Raised By: Alan Richardson
+
+rather than having the title Edit EntityInstance the title should be Edit Defect 1  i.e it should list the entity name and the id
+
+(176)   Add a backup to the update process
+------------------------------------------
+
+Raised Date: 13/05/2002 16:30:35
+Status: IMPLEMENTED
+Raised By: Alan Richardson
+
+the update database process does not back up the database before doing the upgrade.
+
+Add a backup first
+
+(174)   make not ask on create the default
+------------------------------------------
+
+Raised Date: 13/05/2002 16:30:07
+Status: IMPLEMENTED
+Raised By: Alan Richardson
+
+In the graph edit for node and link creation I am getting sick of the system prompting me to edit the details so make "not ask on create" the default.
+

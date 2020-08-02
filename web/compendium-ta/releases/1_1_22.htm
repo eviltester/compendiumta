@@ -1,0 +1,248 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.1.22</h1>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>28/10/2003 11:12:33</td>
+<td>delete entity defn implemented</td>
+<td>for some reason I thought I had implemented this when in fact all I had done was implement the delete entity defn attribute defn.<br>
+<br>
+Now I have implemented entitydefn delete&nbsp</td>
+<td>3&nbsp</td>
+</tr>
+<tr>
+<td>15/10/2003 14:16:07</td>
+<td>Changed Persistence Mechanism save</td>
+<td>Changed the save part of the persistence mechanism, this will be transparent to the user but will lead to future benefits in terms of adding more persistence mechanisms faster.&nbsp</td>
+<td>12&nbsp</td>
+</tr>
+<tr>
+<td>28/10/2003 09:20:34</td>
+<td>changed naming of new entity defn</td>
+<td>new entityDefn were all called default, changed this so the id is used as part of the name&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>09/11/2003 17:37:18</td>
+<td>added dynamic population of tree browser</td>
+<td>the tree browser now displays dynamically so it should be alittle faster and less prone to any possible latency errors.&nbsp</td>
+<td>4&nbsp</td>
+</tr>
+<tr>
+<td>10/11/2003 10:38:46</td>
+<td>changed observer code for tree browser delete</td>
+<td>The tree browser now no longer refreshes the whole tree when deleting an item in the tree - partly due to the dynamic population. and the tree maintains a level of expansion when an item is deleted - this feels faster, cleaner and more user friendly.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>10/11/2003 13:57:30</td>
+<td>made hierarchy browser dynamic display</td>
+<td>The hierarchy browser now loads the tree as required. This really increases the speed of loading the hierarchy when it is large.<br>
+<br>
+I also changed the refresh code on the tree so it should maintain its shape a bit better.&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>485</td>
+<td>inline report does not work for entity defn</td>
+<td>29/10/2003 11:09:45</td>
+<td>29/10/2003 12:00:00</td>
+<td>inline report does not work for entity defn&nbsp</td>
+<td>code was looking for "Entity" rather than "entityDefn"&nbsp</td>
+</tr>
+<tr>
+<td>488</td>
+<td>create new entity twice causes display error in model browser</td>
+<td>27/10/2003 11:17:28</td>
+<td>28/10/2003 15:17:28</td>
+<td>When a new entity defn is created from the insitu list then an entity defn is created and all is well.<br>
+<br>
+When a second one is created using the list, all is created properly, but the list displays the last entity defn with the new entity defn as an instance.<br>
+<br>
+Changed the display code.<br>
+<br>
+The observer functionality could do with being updated.&nbsp</td>
+<td>changed the list display code order&nbsp</td>
+</tr>
+<tr>
+<td>490</td>
+<td>error displayed on new instance</td>
+<td>18/10/2003 11:21:47</td>
+<td>28/10/2003 16:21:47</td>
+<td>for the first entity instance created an error would occasionally be displayed.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>491</td>
+<td>for each in templates was not working</td>
+<td>14/10/2003 14:23:40</td>
+<td>29/10/2003 09:00:00</td>
+<td>I accidentaly left some debug code in the template functionality that caused the loops in the templates not to work.&nbsp</td>
+<td>removed debug code&nbsp</td>
+</tr>
+<tr>
+<td>492</td>
+<td>delete graph does not close child windows</td>
+<td>27/10/2003 11:25:57</td>
+<td>28/10/2003 17:41:57</td>
+<td>if an edit window is open with a node or a link and a graph is deleted, the edit window is left open.<br>
+<br>
+this also happens with path edit, lists of nodes, list of links, list of paths<br>
+<br>
+list of instances when the entity defn is deleted&nbsp</td>
+<td>added unload to observer informer code&nbsp</td>
+</tr>
+<tr>
+<td>493</td>
+<td>delete entity instance does not close listview or instance edits</td>
+<td>10/11/2003 11:35:41</td>
+<td>10/11/2003 12:35:41</td>
+<td>If I delete an entity definition and a listview with the entity's instances is open or an edit with an entity instance is open then these are not closed.&nbsp</td>
+<td>much the same fix as the delete graph one&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>485</td>
+<td>inline report does not work for entity defn</td>
+<td>29/10/2003 11:09:45</td>
+<td>CLOSED</td>
+<td>MEDIUM</td>
+<td>inline report does not work for entity defn&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>445</td>
+<td>rename model and db interaction</td>
+<td>24/06/2003 18:15:00</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>rename model, not saveed to db<br>
+quick pick list click on model - should say that model is loaded, but reloads from database (Becuase it has a different name)<br>
+should be working off the GUID&nbsp</td>
+</tr>
+<tr>
+<td>432</td>
+<td>path list title not changed on graph rename</td>
+<td>24/06/2003 13:28:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the graph was in free edit mode, tree was in list mode for paths and the title on the list of paths did not change when the graph name was edited and the change committed&nbsp</td>
+</tr>
+<tr>
+<td>426</td>
+<td>entity instance not renamed after creation in hierarchy</td>
+<td>24/06/2003 13:17:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>sometimes, when creating an entity instance directly in the hierarchy and then saving it, it is not renamed in the hierarchy but it has been renamed in memory.<br>
+<br>
+noticed when creating entity directly alt+insert&nbsp</td>
+</tr>
+<tr>
+<td>381</td>
+<td>filter text is editable</td>
+<td>16/08/2002 09:46:20</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>user can edit the text in the filter, this has no functional effect, but the user may expect that the filter can be controlled this way when it can't&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>424</td>
+<td>report button on the inline edit pane</td>
+<td>24/06/2003 13:15:12</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the inline edit pane should have a report button to act in the same way that a right click on the entity in the model browser would work&nbsp</td>
+</tr>
+</table>
+</body></html>

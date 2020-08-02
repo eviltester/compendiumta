@@ -1,0 +1,92 @@
+Summary
+=======
+The GUI has been tidied up.
+
+Defaults mechanism has been added to the weightings.
+
+a "Not Represented" button has been added to the generic hierarchy edit
+
+added "compact database" option to main menu bar
+
+the text box templates can now be defined using the tbtmplt.dat file in
+the application directory
+
+added the functionality to delete most items
+
+many defects fixed.
+
+
+Details:
+version 0.1.20
+===============
+
+	19/04/02
+		fixed defect where clicking on a set value did not set the form to dirty
+
+		added a default mechanism to set values # for a default
+		\# if you want a # as the first char 
+		and \\ if you want a \ as the first char
+
+		default extended to date (# for now) 
+		and other fields use the absolute entry in the default field
+
+		the default lable tooltip explains the default options
+
+	22/04/02
+		added delete path from model tree
+		added delete graph from model tree
+		added delete entity instance from model tree
+		added delete entity instance from generic list
+		added delete path from generic list
+		added delete graph from generic list
+		added code to select item in tree in insitu list view
+		fixed defect with generic buttons selection 
+			could not transmute or deref
+		fixed defect where graphs were not deleted from the database
+
+	23/4/02
+		fixed defect where tree browser was not resized
+		fixed defect where generic browser linked list was not maintained on delete
+		fixed defect where weightings were not set to default
+		fixed defect where relationships were not being saved to the database!
+		added delete hierarchy from model tree
+		fixed access violation when user did not click on popup template menu
+		added a button to generic hierarchy to show "not represented" items
+			this provides a drop down of entities
+			choosing an entity will show all entity instances not		
+				represented by a branch in the tree (very handy)
+
+		fixed defect with dragging items from the generic col list (picked up wrong item)
+		started restructuring the tree browser menu code to get rid of the
+			side toolbar and tidy up the form
+
+		
+		
+	24/4/02
+		added "Delete" "newentitydefn" to model browser menu
+		removed side toolbar button from model browser
+		changed the toolbar system on the model browser form
+		added hierarchy list and hierarchy root node edit to model browser form
+		added generate report to the menu
+		fixed defect with grid export
+		added save progressbar to the statusbar (single panel)
+
+	25/4/02
+		changed grid on weightings tab to list view - doubleclick to edit
+		xref matrix form buttons changed, 
+			title added, 
+			progress bar on save and undo
+		added compact database option to the main menu
+		fixed the sortableDate routine to handle times
+		fixed a display defect with the tree browser
+			when maximised then the splitters were not visible (Even though they were)
+		added weightings template to string fields in weightings
+
+	26/4/02
+		added tbtmplt.dat file to the application directory which control the
+			text box template definitions
+		added caption to export as site map form
+		made export to sitemap form mdi child
+		made export to sitemap button a graphical button
+		changed graph edit toolbar to have only graphical buttons
+		

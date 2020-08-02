@@ -1,0 +1,16 @@
+changed  application properties dialog so that it no longer
+                       has a OK/Cancel button, all changes are a result of
+                       the actions of the modal dialogs off this.
+
+changed application properties dialog so that it allows editing
+                      of the grid templates
+
+grid templates are persisted as part of the app.ini on close of app
+
+added code to select a grid template or link template in graphedit
+added code to select a grid template in path edit
+- click on frame name or title to get pop up
+
+Strictly speaking the grid flexibility functionality is not being used to its fullest yet and is really for future functionality with entity maintenance but I wanted to prototype it just now to see how it works.
+
+centered some forms on display

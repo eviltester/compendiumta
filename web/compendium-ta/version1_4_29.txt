@@ -1,0 +1,10 @@
+#VERSION
+000100040029
+#RELEASED
+08 July 2004
+#DETAILSSTART
+You can now create user defined icons for entities, case sensitive searching.
+Fixed: No use of clipboard for temporary graphics, Node/Link graphical properties list.
+A patch is available in the upgrade section for existing users on the download page.
+#DETAILSEND
+

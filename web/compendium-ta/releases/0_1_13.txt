@@ -1,0 +1,15 @@
+version 0.1.13 Release Notes
+============================
+
+updated help to version 0.1.11 status
+
+added option to make graph edit form just a graphical edit
+                    i.e. no lists or text displayes
+                    (right click on tabs for pop up option)
+
+fixed bug where windows menu was not being re-enabled after mdimodalise.
+
+added some minimal constraints on node and link edit window sizes
+
+added default sizes on node and link edit forms
+

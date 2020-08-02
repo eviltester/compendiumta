@@ -1,0 +1,261 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.25</h1>
+fixes based on unit testing the API<br>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>18/06/2002 15:35:32</td>
+<td>changed fulfil script template in help file</td>
+<td>changed fulfil script template in help file&nbsp</td>
+<td>0.1&nbsp</td>
+</tr>
+<tr>
+<td>18/06/2002 11:00:54</td>
+<td>model report</td>
+<td>added a simple model summary report&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>18/06/2002 17:30:37</td>
+<td>setWeightingValue added</td>
+<td>added a function to setWeightingValue for node, links and entity instances&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>18/06/2002 14:30:49</td>
+<td>added refreshBrowser to treebrowser</td>
+<td>added a function (refreshBrowser) to treeBrowser form&nbsp</td>
+<td>0.25&nbsp</td>
+</tr>
+<tr>
+<td>18/06/2002 17:30:40</td>
+<td>project details completed</td>
+<td>the app.copyright, comments and exename did not have details in them&nbsp</td>
+<td>0.25&nbsp</td>
+</tr>
+<tr>
+<td>18/06/2002 12:00:00</td>
+<td>file open dialog</td>
+<td>added fileOpenDialog on the cdiface&nbsp</td>
+<td>0.25&nbsp</td>
+</tr>
+<tr>
+<td>19/06/2002 17:39:50</td>
+<td>added help to help menu</td>
+<td>added calls to the help file from the help menu&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>19/06/2002 17:40:20</td>
+<td>added compendium-ta link to menu</td>
+<td>added link to compendium-ta on the help menu<br>
+<br>
+this will change once the compendium-ta section is on compendium dev&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>238</td>
+<td>short name on link and node</td>
+<td>07/06/2002 13:04:56</td>
+<td>18/06/2002 16:00:00</td>
+<td>the short name on the nodes and links is only used for deconstructed graphs and this has not been enabled in the beta therefore this should not be displayed on the generic list, or mentioned in the help file&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>261</td>
+<td>file save dialog does not use filter</td>
+<td>18/06/2002 11:45:04</td>
+<td>16/06/2002 12:30:00</td>
+<td>file save dialog does not use filter paramaters&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>276</td>
+<td>alt+insert on hierarchy browser</td>
+<td>19/06/2002 11:47:18</td>
+<td>19/06/2002 12:06:00</td>
+<td>when a new entity on hierarchy using alt+insert does not set icon in the hierarchy browser<br>
+<br>
+changing the name on the entity instance in the edti pane does not updatd the hierarchy name&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>271</td>
+<td>getNewInstance does not add created instances to model</td>
+<td>18/06/2002 15:25:30</td>
+<td>18/06/2002 15:35:30</td>
+<td>getNewInstance does not add created instances to model instances collection&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>270</td>
+<td>default weighting values on create</td>
+<td>18/06/2002 17:00:43</td>
+<td>19/06/2002 09:50:43</td>
+<td>create instances of node, link and entity instance should use the default weighting values &nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>260</td>
+<td>model not passed as theObject</td>
+<td>18/06/2002 11:15:22</td>
+<td>18/06/2002 11:45:22</td>
+<td>when a model was selected in the treebrowser the model was not passed to the cdiface when a model was selected<br>
+<br>
+workaround is to use the cdiface.theModel&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>267</td>
+<td>auto create graph does not have link and node name</td>
+<td>18/06/2002 14:30:28</td>
+<td>18/06/2002 14:45:28</td>
+<td>when auto creating a graph diagram, the node and link names are not displayed&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>114</td>
+<td>creating a new item in the generic grid causes flashing</td>
+<td>23/04/2002 17:09:05</td>
+<td>19/06/2002 13:15:00</td>
+<td>the window should be locked when updating the grid&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>264</td>
+<td>duplicate weightings on node|link|script</td>
+<td>18/06/2002 13:00:29</td>
+<td>19/06/2002 11:05:00</td>
+<td>we should not be able to create duplicate named weighitngs on nodes, links, scripts via the api&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>274</td>
+<td>new weighting should add to existing</td>
+<td>19/06/2002 11:44:35</td>
+<td>19/06/2002 13:15:00</td>
+<td>when a new weighting definition to node, link and entity then the weighting default should be added to the existing node, link and entity instances&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>275</td>
+<td>time not always shown on date weighting</td>
+<td>19/06/2002 11:45:59</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>date is not always shown when a date weighting is selected<br>
+<br>
+- workaround -<br>
+click the other tabs a few times&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>208</td>
+<td>entity create needs saved twice</td>
+<td>30/05/2002 16:24:02</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>when creating an entity, and saving it. <br>
+<br>
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save<br>
+<br>
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>49</td>
+<td>popup menus use mouse co-ords</td>
+<td>19/04/2002 14:31:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this isn't particularly good when we are using the insert keys<br>
+&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>10</td>
+<td>use listview instead of grid</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>when no insitu editing is required, use a listview to display items in a list<br>
+<br>
+<br>
+<br>
+&nbsp</td>
+</tr>
+<tr>
+<td>28</td>
+<td>icons</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>show icons on the tree&nbsp</td>
+</tr>
+</table>
+</body></html>

@@ -1,0 +1,250 @@
+Version 0.1.19
+==============
+
+Lot of changes since the last release - many of them are internal but
+as a user you should notice that there are no docked forms anymore
+they were getting on my nerves. And that the properties should be
+available from the edit screen rather than a separate form.
+
+The treeBrowser now has a list and edit pane on it
+
+there are new types of attributes:
+			Numeric (Not enforced yet), 
+			url (no value yet)
+			Set (a user defined list, each item in the list on a different line)
+			Date (enforced)
+		
+check the compdev database to see how I have started using these on 
+defects and requirements
+
+saving of the list screen to excel so you can do all your defect analysis in there
+
+general GUI tidying up.
+
+by the way, I am using the old VB package builder as a quick fix- I do plan
+to use a proper installer at some point but it does mean that the download
+is a rather large file now.
+
+also the loose files in the install package (dbdefns.txt, etc.) should be
+placed in your application directory.
+
+Enjoy,
+
+
+
+
+
+
+		allowed editing of entity instance names when on the generic hierarchy
+
+		allowed instant creation of entities from the generic hierarchy
+			- done by using the alt key to pop up an entity name popup
+			- i.e. alt+insert
+	
+		the file dialogs now use the explorer interface rather than the win 3.x one
+
+		internal gif creation now creates real gifs - albeit slowly 
+		this is only available in the beta as there would be licensing issues if
+		I released this. Will use jpgs or pngs in the release version, or external
+		convertors
+		
+		added progress bar for the internal gif generation
+		
+		gif export on report no longer zooms small graphs
+		
+		prototype export client side image map done
+		
+		changed in situ graph name editing to prompt on lose focus for change
+		
+		removed link styles from addflow pop up menu
+		
+		added select all to addflow graph
+		
+		changed the open database gui and datastructure model
+			databases now stored on model rather than globally
+			allows more than one db to be opened
+			
+		stopped saving directory paths on model to DB
+		
+		made a saveAs button on the tree *no Icon yet*
+			can save to file or DB (will need to rewrite the wizard but it
+			works at the moment)
+			
+		database changes
+		
+		made save to disk/save to DB the only button visible depending on how it was loaded
+		
+		fixed bug in file load where link set from grid was using the wrong templates
+		
+		fixed defect in model load from file where name was overwritten by the description
+		
+		removed connectDB button from main form
+		
+		removed disconnectDB button from main form
+		
+		New Model functionality changed to have 2 menu options, one for file, one for db
+		
+		removed frmModelFromDB form from project
+		
+		added check so that no duplicate model names could be saved to the same database
+		
+		fixed defect where a model wasn't removed from the loaded models list 
+			prevented user from opening model, closing model, re-opening model
+			
+		added the ini field to model
+		
+		ini files are saved or loaded for database models to the new ini field on model		
+		
+		changed the generic col list edit form to:
+			stop using templates 
+			use a listview instead of a grid
+			use the hardcoded template generation algorithm to show the details
+
+		added generic list view on double click of Nodes on tree
+
+		added generic list view on double click of Links on tree
+
+		added generic list view on double click of graphs on tree
+
+		added generic list view on double click of paths on tree
+
+		replaced grids on graph edit with list views
+			for nodes, and links
+			*still to do - decon graph, edit entity defn, load entity defn from db
+
+		centered open model from db dialog in mdi form
+			automatically open the file dialog rather than have user click "..."
+
+		updated the about box
+
+		removed frmGridTemplate from project and all code using it
+
+		*DEFECT when editing an entity defn properties (name) the
+			entity defn fields screen is not updated
+			the generic entity list is not updated
+
+		the generic col list edit/new/delete is now a dynamic control
+			-light weight control scrollbars on text are bad
+
+		removed ability to create new nodes or links without drawing them on the diagram
+
+		generic list now does not display the buttons if you are only able to edit
+
+		changed nested dot view form into a class
+			deconstructedGraph (not tested), path edit, graph edit
+
+		removed frmDotGraphDisplay from the project
+
+		added windowless controls
+
+		edit form is now classed up 
+		
+		change node and link creation so that they are created and then opened for editing
+			-i.e. no cancelling of creation allowed anymore - simpler user model
+
+		added generic list display to tree browser
+
+		added generic edit display to tree browser
+
+		added double click on hierarchy opens the hierarchy for edit 
+			- relied on docked forms before
+
+		- implemented the generic hierarchy browser node edit functionality into the	
+		  dynamic generic edit control
+
+		- added the dynamic generic edit control to the generic hierarchy browser
+
+		- made the xref form dynamic - this functionality will then all be
+		  made part of the dspLstRelationship dynamic control instead of a separate form
+
+		integrated the relationship xref wizard into the normal generic edit control
+				clicking on the relationship tab will reveal more of the wizard
+
+		changed the entityInstance display on the relationship list to say what type of instance it is
+
+		removed xrefform from graph edit as it is now part of the properties dialog
+
+		removed xrefform from path edit as it is now part of the properties dialog
+
+		removed xrefform from project
+
+		fixed defect where we could not create transmuted nodes in the generic hierarchy
+
+		fixed defect where children in the generic hierarchy were being created with the parent's name
+
+		setfocus to insitu text edit on graph after creating a node or a link
+
+		shuffle buttons to condense space on generic edit
+
+		moved ID beside the GUID on the attribute display
+
+		fixed defect with treeBrowser node not always being selected
+
+		changed text edit boxes so that they only have a vertical scroll bar
+
+		made description the first tab on the generic edit
+
+		allowed drag from generic list for nodes, links, paths, entity instances, graphs
+
+		added sorting to the relationship display
+
+		added sorting to the generic list display
+
+		fixed defect where entityInstance descriptions were not being loaded from database
+
+		removed |||| (newlines) from text display in the generic list
+
+		truncated long fields in the generic list
+
+		added an export to csv from any generic list on cntrl+s
+
+		added gridlines to the generic list view and the generic relationship list
+
+		system will now	refresh a list view when the generic edit is updated
+
+		changed the insitu list to display the new button when required
+
+		added the generic edit properties to the graph edit form on a properties tab
+
+		added generic edit properties to the path edit on a properties tab
+
+		restructured the graph edit form a bit:
+			moved autogen to the bottom, 
+			hide insitu edit when not on addflow
+
+		added a lockWindowUpdate to the tree browser which seems to have stopped the display flicker
+
+		added url to the modelobj
+			graphnode, link, entitydefn, entityinstance, model, graph, genericHierarchyNode
+			only enabled for node and entityInstancegraphpath,
+
+		added the generic edit control to the model properties dialog
+
+		added the properties to the editEntityDefn form - changed it from OK/Cancel to Apply/Close
+
+		added generic error handling code to 
+			frmAddFlowStyle
+			frmEditAsRTF
+
+		added correct sorting of ID (NUMERIC) and DATE (where a weighting is defined as DATE)
+
+		added date and numeric type to definitions drop down
+
+		changed weightings generic edit to handle dates
+
+		trapped text edit for dates to send the user to the tab
+
+		changed tabs to multi line
+
+		double click on a non-file weighting will send user to the tab
+
+		added boolean, url, set to the weighting type drop down
+
+		changed buttons to reflect more accurately the state of the entity being edited
+
+		added setvalues (memo) to table weightingDefn also added to entityDefnWeightingDefns
+
+		added setValues List to the weighting tab
+			a set is defined by putting each value in the set on a different line
+		
+			

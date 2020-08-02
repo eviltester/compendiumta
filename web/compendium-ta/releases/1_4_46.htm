@@ -1,0 +1,217 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.4.45</h1>
+Bug fix mark as dirty when editing string values. <br>
+Popup menu in list view. Close App Dialog. 'Represents' field in list.<br>
+API additions for Xref and attachments. Xref from tree view popup.<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>29/10/2004 21:15:12</td>
+<td>Added popup menu to lists</td>
+<td>Added the reports and edit/delete actions to the popup menu on lists.<br>
+<br>
+This was done by abstracting the context menu code to a higher level and making it accessible throughout the application&nbsp</td>
+<td>20&nbsp</td>
+</tr>
+<tr>
+<td>05/10/2004 21:16:56</td>
+<td>added new context menu to edit forms</td>
+<td>In the edit forms, instead of just the report menu, the edit form has a context menu, which has the report menu as a sub menu.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>05/10/2004 21:18:02</td>
+<td>added prompt on close application property</td>
+<td>Added 'Confirm Exit Application' group to the application properties with<br>
+[] Never Ask<br>
+[] Always Ask<br>
+[] Ask when models open&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>05/10/2004 21:19:15</td>
+<td>App property for 'represents' in list</td>
+<td>The 'Represents' field in the list can be configured via an application property to display:<br>
+<br>
+List View 'Represents' Column<br>
+[] 'entityInstance'<br>
+[] the entity name<br>
+[] entityInstance.{entity name}&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>06/10/2004 21:40:42</td>
+<td>Added Xref and Unxref to popup menus</td>
+<td>On the pop up menus on the tree, list and edit screen, for hierarchy nodes, there are now options to 'Remove Xref' if the item is xref'd and to 'Become A' if the item is not xref'd.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>07/10/2004 21:02:47</td>
+<td>added APIs for xref and unxref</td>
+<td>Added 2 functions to the test model for xref:<br>
+Function transmuteThisHierarchyNodeToEntityNamed(thisNode As genericHierarchyNode, anEntity As String) As Boolean<br>
+Function transmuteThisHierarchyNodeToThatEntity(thisNode As genericHierarchyNode, thatEntity As entityDefn) As Boolean<br>
+<br>
+a function to unxref:<br>
+Function deReferenceObject(anObject As Object) As Boolean<br>
+<br>
+you can also call these from the GUI object<br>
+Function deReferenceObject(parentTestModel As TestModel, anObject As Object) As Boolean<br>
+this gives an &quot;Are you sure?&quot; prompt<br>
+&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>12/10/2004 17:59:03</td>
+<td>added API for attachments</td>
+<td>there is a method (getAttachmentManager) on the model class which will return a CAttachmentManager for a given object.<br>
+<br>
+the CAttachmentManager class has a whole set of methods for manipulating the attachments for an object:<br>
+<br>
+<br>
+count<br>
+   the number of attachments<br>
+<br>
+forObject<br>
+   return the object that the attachment manager is for<br>
+<br>
+addAttachment<br>
+  add a path to the attachments which are being   managed<br>
+<br>
+addAttachment(thePath As String) As Boolean<br>
+<br>
+amendAttachment<br>
+ convert an attachment from one path to another<br>
+<br>
+amendAttachment(oldPath As String, newPath As String) As Boolean<br>
+<br>
+deleteAttachment<br>
+ remove an attachment from the object<br>
+ deleteAttachment(aPath As String) As Boolean					<br>
+item<br>
+ return the attachment path for item X<br>
+<br>
+item(anItemID as long) as string<br>
+ anItemID can be 1 to count<br>
+<br>
+Example<br>
+-------------<br>
+set anAttachmentManager= cdiface.theModel.getAttachmentManager(cdiface.theobject)<br>
+<br>
+msgbox &quot;Now Adding some attachments&quot;<br>
+anattachmentmanager.addattachment(&quot;C:\temp.txt&quot;)<br>
+<br>
+msgbox &quot;Now Amending some attachments&quot;<br>
+call anattachmentmanager.amendattachment(&quot;C:\temp.txt&quot;,&quot;C:\temp2.txt&quot;)<br>
+<br>
+msgbox &quot;Now Delete some attachments&quot;<br>
+call anattachmentmanager.deleteattachment(&quot;C:\temp2.txt&quot;)<br>
+&nbsp</td>
+<td>5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>677</td>
+<td>not marked as dirty when editing string val in sit</td>
+<td>05/10/2004 21:10:40</td>
+<td>16/09/2004</td>
+<td>when editing a string value in the properties list, the item is not marked as dirty during the edit. Only when the field is exited&nbsp</td>
+<td>added code to keypress event&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>619</td>
+<td>entity date drop down does not have calender btn</td>
+<td>26/05/2004 19:05:26</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The date, date_time and time fields on an entity attribute have the [v] drop down instead of the calendar button or clock button.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>272</td>
+<td>transmute a hierarchy node programmatically</td>
+<td>19/06/2002 11:43:08</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>we should be able to transmute a hierarchy node programmatically&nbsp</td>
+</tr>
+<tr>
+<td>464</td>
+<td>Hierarchy Browser pop up should have a transmute entry</td>
+<td>25/07/2003 16:39:30</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>right clicking on a normal branch in the hierarchy browser should have a <br>
+<br>
+transmute &gt;<br>
+   entity 1<br>
+   enttity 2<br>
+   ...<br>
+<br>
+type menu&nbsp</td>
+</tr>
+</table>
+</body></html>

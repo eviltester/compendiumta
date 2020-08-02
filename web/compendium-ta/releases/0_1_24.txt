@@ -1,0 +1,283 @@
+==============================
+Version Tracking Report 0.1.24
+==============================
+Bug Fixes
+
+-----
+Tasks
+-----
+
+(13/06/2002 10:06:41)   save uses entire status bar
+---------------------------------------------------
+
+Duration: 1
+
+the model save now uses the entire status bar for the progress bar
+
+(12/06/2002 10:58:00)   added icons to trees
+--------------------------------------------
+
+Duration: 2
+
+
+
+(10/06/2002 13:30:03)   changed purge during save
+-------------------------------------------------
+
+Duration: 2
+
+a save to the db was purging all entities.
+
+Have changed this now to only purge the deleted items - all others are updated - this should reduce database fragmentation and sets up for last updated functionality in the future.
+
+(07/06/2002 09:00:05)   added graph list on tree browser
+--------------------------------------------------------
+
+Duration: 0.5
+
+on the tree browser I had coded it so that the graph list did not appear when a graph was selected - I thought that this looked a bit bad on reflection so changed it so that the list of graphs appears when a graph is selected
+
+(14/06/2002 14:00:31)   change display code of hierarchy browser to refresh less
+--------------------------------------------------------------------------------
+
+Duration: 1
+
+the tree was refreshing too much. Limited the refreshing
+
+(13/06/2002 14:01:52)   added error handling code
+-------------------------------------------------
+
+Duration: 6
+
+Added error handling code to the rest of the application
+
+(10/06/2002 11:10:38)   urls can now be opened by double clicking
+-----------------------------------------------------------------
+
+Duration: 1
+
+added the open? prompt when double clicking on a url field
+
+(12/06/2002 12:00:02)   added caption to tree browser
+-----------------------------------------------------
+
+Duration: 1
+
+changed the caption on the tree browser dialog to reflect the model number and name
+
+(07/06/2002 10:00:35)   changed properties icon on generic edit
+---------------------------------------------------------------
+
+Duration: 0.5
+
+changed the properties icon on the generic edit buttons to be the open for editing icon if it is a graph etc. and the graphical styles icon if it is a node or a link
+
+also added the properties button to model, entity and hierarchy to open all of them for external edit
+
+(11/06/2002 16:30:48)   observer code changed
+---------------------------------------------
+
+Duration: 3
+
+there were numerous events not picked up by the observer, deletes not represented, updates not occurring etc.
+
+rewrote the observer from a central observer and used the center to trigger local observations
+
+(06/06/2002 23:00:50)   updated help file for hierarchyNode.EntityName
+----------------------------------------------------------------------
+
+Duration: 0.5
+
+I had forgotten to document that hierarchyNode can have a . extension to specify the type of represents that the hierarchyNode must have to be valid
+
+this is used in the version tracking report and in the version tracking macro to create the structure of the report branches
+
+
+-------------
+Defects Fixed
+-------------
+
+(241)   description not avail in script template macros
+-------------------------------------------------------
+
+Raised Date: 07/06/2002 13:34:33
+Closed Date: 14/06/2002
+
+the list of items for a script template does not include the description field, but it should
+
+
+
+(252)   double clicking on items caused duplicate generic lists
+---------------------------------------------------------------
+
+Raised Date: 11/06/2002 18:25:06
+Closed Date: 11/06/2002 19:25:06
+
+double clicking on nodes, graphs, links, entites, instances causes duplicate lists to be displayed
+
+
+
+(235)   paths with duplicate links have problems
+------------------------------------------------
+
+Raised Date: 07/06/2002 09:30:29
+Closed Date: 07/06/2002 12:00:29
+
+if a path has a link in it twice, i.e. 85, 87, 89, 87, 90
+
+then 87 is only saved once and when the path is loaded in then the path is seen as invalid as it has the missing link
+
+
+
+(237)   click and drag on dot can cause a stack overflow
+--------------------------------------------------------
+
+Raised Date: 07/06/2002 13:03:16
+Closed Date: 14/06/2002
+
+the dot code needs error trapping, and I'm not sure if the click and drag is a good idea, it seems to flicker too much and is too fast on a small diagram - stick to the scrollbars and remove this code
+
+
+
+(246)   save on model exit does not display progress bar
+--------------------------------------------------------
+
+Raised Date: 10/06/2002 12:00:34
+Closed Date: 10/06/2002 12:30:34
+
+a progress bar is displayed when saving the model normally, but when exiting the model and it is not saved and responding yes to the prompt to save, the progress bar is not saved during the save
+
+
+
+(242)   Generic Grid is not updated when an entity is updated
+-------------------------------------------------------------
+
+Raised Date: 10/06/2002 10:00:31
+Closed Date: 10/06/2002 10:35:31
+
+when an entity is updated, the generic grid is not updated
+
+
+
+(244)   boolean weightings do not set consistently
+--------------------------------------------------
+
+Raised Date: 10/06/2002 11:10:41
+Closed Date: 10/06/2002 11:20:41
+
+when clicking and unclicking the boolean values, the state is not always retained.
+
+
+
+(236)   node and link display templates do not work on editable graph
+---------------------------------------------------------------------
+
+Raised Date: 07/06/2002 12:29:59
+Closed Date: 07/06/2002 13:40:00
+
+all other graph displays, dot and path show the node templates, but the editable graph display seems to ignore these, either remove the option to select them or fix it so that they work
+
+
+
+(250)   addflow style dialog not filled with style
+--------------------------------------------------
+
+Raised Date: 11/06/2002 16:30:11
+Closed Date: 14/06/2002 17:20:41
+
+when called from a node or link is not filled with the details of the node or link
+
+
+
+(255)   hierarchy report goes into an infinite loop
+---------------------------------------------------
+
+Raised Date: 13/06/2002 13:00:42
+Closed Date: 13/06/2002 13:30:42
+
+when a last child is selected to report on the hierarchy report then the hierarchy report goes into an infinite loop
+
+
+
+(245)   new database cannot save entityDefnWeightingsDefns
+----------------------------------------------------------
+
+Raised Date: 10/06/2002 11:20:36
+Closed Date: 10/06/2002 11:30:36
+
+there is an error on saving entityDefnWeightingsDefns
+
+
+
+(251)   create path dialog is too small on create
+-------------------------------------------------
+
+Raised Date: 11/06/2002 16:58:37
+Closed Date: 14/06/2002 17:20:41
+
+the panes on the create path dialog are not sized for the size of the dialog when it first opens
+
+
+
+(239)   node and link should have no default weightings
+-------------------------------------------------------
+
+Raised Date: 07/06/2002 13:05:50
+Closed Date: 14/06/2002
+
+at the moment the node has default weightings of weight and step
+the link has defaults of weight, step and desc 
+
+there should be no default weightings on the nodes and links and the default script template should use the description field rather than a default weighting
+
+
+
+(231)   key control of hierarchy - alt + ctrl does not work
+-----------------------------------------------------------
+
+Raised Date: 06/06/2002 22:15:41
+Closed Date: 06/06/2002 22:30:41
+
+using the keyboard controls of the hierarchy amendment, ctrl and alt, and shift and ctrl and alt should enter an entity instance as a child, but they are only entered as siblings
+
+
+
+(240)   when on a node for a link, nodes list should be shown
+-------------------------------------------------------------
+
+Raised Date: 07/06/2002 13:07:15
+Closed Date: 14/06/2002
+
+we should see the list of nodes for the link when clicked on a node on a link
+
+
+
+(243)   open a file weighting changes name in grid
+--------------------------------------------------
+
+Raised Date: 10/06/2002 10:30:13
+Closed Date: 14/06/2002 17:00:00
+
+when a file weighting with a file path in it is edited, the list grid which has the attributes lists the file as "Opened File" rather than the path
+
+
+
+
+------------
+Open Defects
+------------
+
+(238)   short name on link and node
+-----------------------------------
+
+Raised Date: 07/06/2002 13:04:56
+Status: OPEN
+Criticality: LOW
+
+the short name on the nodes and links is only used for deconstructed graphs and this has not been enabled in the beta therefore this should not be displayed on the generic list, or mentioned in the help file
+
+
+------------------------
+Requirements Implemented
+------------------------
+

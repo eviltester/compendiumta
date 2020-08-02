@@ -1,0 +1,143 @@
+
+version 0.1.18
+==============
+
+		added xreference matrix generation to 
+			graphs, nodes, links, node, link, paths, 
+			path, entities, instance, graph
+			from treebrowser node right click
+		
+		added desc to node, link, entity defn, entity instance, graph, model 
+
+		added update database button on main form
+
+		fixed xref button on node and link edit did not work 
+
+		changed the edit form
+			used for new and edited nodes
+			used for new and edited links
+			used for edit path property
+			used for new and edited entity instance
+			used for edit graph property
+			used for edit model property
+
+		made deconstructed node button on treebrowser toolbar not visible
+
+		model attribs form no longer allows editing of name
+
+		entity defn field form no longer allows editing of name
+
+		added property button to model attribs form
+
+		added property button to entity defn field form
+
+		fixed defect where node was not displayed as docked form
+
+		database changes - 
+		rename graphPath fields: 
+			pathGUID -> GUID, 
+			description -> desc
+		added graphPath field:
+			parentTestModelGUID
+		removed parentTestModelGUID from entityInstanceWeighting
+		
+		changed dbupdate code to create fields of allow null where required
+
+		removed localID from testModel and changed to the standard ID
+
+		updated databaseid to 2
+
+		added code to update database on load( if required)
+
+		removed updateDatabase button from main form
+
+		replaced relationship grid on the generic edit with a list view
+
+		why doesn't my control do that? 
+			- updated all the controls to vb 6 ones using a handy MS utility
+			- they are not all backwardly compatible as I expected so 
+			- I will have to convert it a bit
+			- http://msdn.microsoft.com/vbasic/downloads/addins.asp
+
+		removed commondialog control from treeBrowser
+
+		fixed defect where youngest child was added with incorrect sibling key
+			- caused add youngest child to fail
+
+		removed button to control insert mode - now done by keyboard
+
+		re-added the save button on generic hierarchy edit frame
+
+		description tab made default tab on generic edit
+
+		fixed defect where nextHierarchyID was not being save to a hierarchy
+
+		made the user view the default on graph edit (without the node/link edit)
+
+		updated database 
+			added node.subgraphGUID
+			added hierarchy.nextHierarchyID
+
+		fixed defect where subgraph reference was not actually saved
+
+		added transmute button on generic hierarchy branch edit view
+			this will turn a branch into an entity instance
+			it will create the instance and automatically cross reference it
+
+		changed the generic hierarchy dialog so that it doesn't use the grid
+
+		text box templates
+			ctrl+insert in generic hierarchy text edit
+			information is put into clipboard
+
+		added scrollbars to generic hierarchy edit box
+
+		removed dos box on dot execution
+
+		basic report complete
+
+		added insert button functionality to tree browser
+			on graphs, hierarchies, entity, paths
+
+		added progress bars on generate report
+
+		added internal gif generation on the report
+			gifs have grey background and are not compressed
+			sadly they seem to bomb out htmldoc :[
+
+		added option (Internal gif generation to generate report)
+			external generation requires "irfanview 3.51" to be installed
+			in the same directory as the tool in a subdir called
+			"irfanview 3.51" - this needs to be user defined eventually 
+
+		added auto scroll to generic hierarchy tree on drag
+
+		changed ctrl+insert in generic hierarchy text edit to go straight 
+			into the text box rather than the clipboard
+
+		added progress bar to save model functionality on tree browser
+
+		added a dirty flag to the model so it will prompt for 
+			"lose changes Y/N/C" - needs to be tested for all events 
+			(does most)
+
+		Simplification Mode (save for future version):
+			removed functionality from model properties dialog 
+			add new link display templates
+			add new node display templates
+			view as grid
+			view as text
+			paths
+
+		changed default node and link display template defaults
+
+		no longer persists node and link display templates - use the defaults
+
+		no longer allow the user to define grid templates
+
+		added in situ editing of node and link name on graph edit 
+			- removed docking functionality on this screen
+
+		added shapes to addflow diagram style form
+
+		clicking on a node or link fills the style edit form with those details

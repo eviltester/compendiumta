@@ -1,0 +1,155 @@
+<html><head></head><body>
+<h1>Version Tracking Report 0.1.37</h1>
+ A simple update to extend the timeout and fix a couple of defects.<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>409</td>
+<td>even though a tips file is present in the application directory it does not get loaded</td>
+<td>15/04/2003 12:22:02</td>
+<td>15/04/2003</td>
+<td>I created a tips file called tips.txt and put it in the application directory (with 1 tips in it) and the tips file was not loaded I still got the &quot;did you know the tips file was not found&quot; message&nbsp</td>
+<td>User error, the file was named tips.txt.txt&nbsp</td>
+</tr>
+<tr>
+<td>410</td>
+<td>tips are not displayed in tips window</td>
+<td>15/04/2003 13:05:03</td>
+<td>22/04/2003 22:35:00</td>
+<td>the tips.txt file has information in it, but the tips window displays text1 instead of the tip&nbsp</td>
+<td>I was calling a function on the class of the form rather than the instance so a new instance was being created that wiped out all the loaded in tip text !&nbsp</td>
+</tr>
+<tr>
+<td>411</td>
+<td>changing the name of an entity attribute does not flag the entity as dirty</td>
+<td>15/04/2003 18:48:18</td>
+<td>22/04/2003 20:48:18</td>
+<td>On entity edit pane<br>
+changing the name of an entity attribute does not flag the entity as dirty so we <br>
+do not get the opportunity to save the entity and so the attribute change does<br>
+not happen<br>
+<br>
+WORKAROUND - edit the text in the description&nbsp</td>
+<td>The edit code didn't check the return values so didn't recognise a change, now it does&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>378</td>
+<td>delete on treebrowser does not maintain expansion</td>
+<td>16/08/2002 09:30:03</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>delete in the treebrowser should try to maintain expansion at the moment it just contracts. It should just remove the deleted item from the tree, rather than updating the whole tree.<br>
+<br>
+This is a problem with both treeviews as the updating algorithms are simple and tend to redraw most of the tree, they certainly don't maintain expansion.&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>412</td>
+<td>hierarchy sibling created with elder sibling name</td>
+<td>15/04/2003 18:49:20</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>In the hierarchy I created a sibling for an entity and in the tree it was named <br>
+the same as the sibling but in the edit pane it was named Default9. This was the <br>
+last branch in the tree. It was created by using the &quot;New Sibling Under&quot; button.<br>
+This doesn't always happen so there is some complexity in the scenario that I am <br>
+unaware of.<br>
+- t<br>
+  -  b<br>
+     d<br>
+     f<br>
+     g<br>
+  -  dfdd<br>
+     sibling<br>
+     newone (named sibling)&nbsp</td>
+</tr>
+<tr>
+<td>408</td>
+<td>mdi form close button does not shut down the system</td>
+<td>15/04/2003 12:20:42</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>The menu exit command works, but sometimes clicking on the x button has no effect&nbsp</td>
+</tr>
+<tr>
+<td>381</td>
+<td>filter text is editable</td>
+<td>16/08/2002 09:46:20</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>user can edit the text in the filter, this has no functional effect, but the user may expect that the filter can be controlled this way when it can't&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

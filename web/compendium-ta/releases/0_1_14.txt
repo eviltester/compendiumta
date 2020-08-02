@@ -1,0 +1,63 @@
+The main changes this time are the addition of entities. These have been floating
+about since the tool began but this is the first time that they have been made
+public.
+
+The intent is that these represent objects outside the current tool, like test cases
+test conditions, use cases, specification docs etc.
+
+You can define as many custom fields on these as required.
+
+Eventually these will link to other tools but at the moment these are internal.
+
+Entities can be xref'd to nodes, links, paths and other entity instances.
+This is done by opening the entity to be xref'd too i.e. node properties
+opening the relationships tab and dragging the desired entity from the *tree*
+
+only entity instances can be dragged from the tree.
+
+The xref matrix for the xreferences can be viewed by right clicking on the entity
+instance branch (*) and choosing the "References Matrix" option.
+
+These can be exported to csv or tab delimited file.
+
+This provides an alternative to using spreadsheets to maintain xrefs but not
+having the ability to store any other information about the entity.
+
+The xref matrix can also be edited to delete or create cross references.
+
+The changes in detail are:
+--------------------------
+
+added a generic entitiesDefn and entitiesInstance object
+added entityDefnEdit form
+added entityInstanceEdit form
+
+added doubleclick code to the tree for node, link, graph, path, deconstructed graph
+added toolbar to edit graph form for editing properties
+and show/hide text details
+
+changed deconstruct so that flatten has to be the first action
+     this prevents a deconstruct serialising the parallels
+
+added a toolbar show/hide button on graph edit
+
+centered edit weighting dialog in mdi form
+
+added import entity definition from text file
+added export entity definition to text file
+
+added short names to nodes and links to help the deconstructed graphs
+
+added the basic relationship cross referencing on to nodes
+              added the relationships to link as well
+              limited xreferencing to links, nodes and entityInstances
+
+double click on reference in the grid will open that thing for editing
+allow xreferencing with entity instances too
+
+allow editing/adding of instances by clicking on an entity in the tree
+added user defined entity templates
+added double clicking on a link adds link to the path
+added relationships to Paths
+added matrix functionality - currently only on entities (rightclick Relationship Matrix)
+export matrix to csv or tab (rightclick on 0,0 choose export)

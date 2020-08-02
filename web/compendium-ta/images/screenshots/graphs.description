@@ -1,0 +1,4 @@
+<p>Compendium-<i>TA</i> allows you to draw graphs to represent your information, using a flexible inbuilt editor. And links to <a href="http://www.graphviz.org" target="_blank">GraphViz</a> to generate automatically drawn graph diagrams to make drawing graphs even faster.</p>
+<p>And because graphs aren't just diagrams, you can use them to describe paths through the graphs and generate scripts from those paths using a flexible templating mechanism.</p>
+<p>Because each graph node can have a URL associated with them, you can generate client side image maps.</p>
+<p>Graphs can be viewed in a hierarchical form in the browser by choosing a root node and view the NodeTree of all outlinks from that Node.</p>

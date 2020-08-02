@@ -1,0 +1,474 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.22</h1>
+this is a documentation/bug fix release<br>
+<br>
+There should be a new help file which documents most of the functionality and also the programmer's interface.<br>
+<br>
+Various defects have been fixed.<br>
+<br>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>16/05/2002 15:45:41</td>
+<td>added a prompt when deleting an item on the generic list</td>
+<td>added a prompt when deleting an item on the generic list&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>23/05/2002 14:19:13</td>
+<td>added multiple properties</td>
+<td>added:<br>
+model.newScriptTemplateDefn<br>
+model.returnScriptTemplateDefnNamed<br>
+model.newLinkWeightingDefn<br>
+model.returnLinkWeightingDefnNamed<br>
+model.newNodeWeightingDefn<br>
+model.returnNodeWeightingDefnNamed<br>
+weightingDefinition.scriptTemplateDetails<br>
+weightingDefinition.scriptTemplateName<br>
+entityDefn.newWeightingDefn<br>
+entityDefn.returnWeightingDefnNamed&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>15/05/2002 13:30:15</td>
+<td>added backup to the update process</td>
+<td>&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>05/06/2002 16:30:09</td>
+<td>added error handling code to dsp entities</td>
+<td>dsp entities count as form level objects but I did not wrap these in error handling code - which meant that the app could still crash and burn if an error occured - this should not happen now.&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>30/05/2002 15:00:56</td>
+<td>added the internal report to the reports drop down</td>
+<td>added the internal report to the reports drop down&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>30/05/2002 16:00:35</td>
+<td>removed the dot diagram from the internal report</td>
+<td>removed the dot diagram from the internal report<br>
+<br>
+- sizing was way off - reinstate functionality in a future release&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>15/05/2002 12:05:45</td>
+<td>make not ask on create the default</td>
+<td>implemented requirement 174&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>16/05/2002 16:45:40</td>
+<td>allow delete key in generic list</td>
+<td>allow delete key in generic list to act as delete button&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>23/05/2002 09:18:20</td>
+<td>added scriptTemplateDefinitions property to model</td>
+<td>added scriptTemplateDefinitions property to model&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>16/05/2002 16:15:58</td>
+<td>allow insert key in generic list</td>
+<td>insert key acts as the new button on the generic list&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>10/05/2002 11:45:11</td>
+<td>added a cross ref icon to generic edit</td>
+<td>There is now an icon at the bottom right of the generic edit form. <br>
+<br>
+This can be dragged to the requirement x-ref lists to allow a drag drop cross reference.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>22/05/2002 11:14:10</td>
+<td>added weightingDefinitions property to entityDefn</td>
+<td>added weightingDefinitions property to entityDefn&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>22/05/2002 14:17:39</td>
+<td>added linkWeightingDefintiions property to model</td>
+<td>added linkWeightingDefintiions property to model&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>16/05/2002 12:00:44</td>
+<td>added an icon for subgraph</td>
+<td>added an icon for subgraph rather than an sg button&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>30/05/2002 15:00:30</td>
+<td>added the graphic path output to the internal report</td>
+<td>added the graphic path output to the internal report&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>20/05/2002 14:30:56</td>
+<td>btnProperties removed from pathEdit</td>
+<td>btnProperties removed from pathEdit&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>22/05/2002 13:16:53</td>
+<td>added nodeWeightingDefinitions property to model</td>
+<td>added nodeWeightingDefinitions property to model&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>20/05/2002 12:06:27</td>
+<td>changed dialog titles</td>
+<td>edit dialog for generic edit has the entity name and the M1: etc. details<br>
+<br>
+also added M1: etc. details to generic hierarchy and generic list&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>21/05/2002 10:00:23</td>
+<td>added DB Field length limits on GUI</td>
+<td>add DB Field length limits on GUI &nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>04/06/2002 11:00:00</td>
+<td>added use check boxes on style dialog</td>
+<td>Added the use check boxes on the graph node and link style dialog as I wanted a way to individually set the style items. <br>
+<br>
+This seemed like the easiest way to do it.&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>191</td>
+<td>creating a new entity in the generic hierarchy does not update generic list</td>
+<td>20/05/2002 11:33:55</td>
+<td>05/06/2002 17:25:55</td>
+<td>creating a new entity in the generic hierarchy does not update generic list<br>
+<br>
+also does not update when a branch is transmuted into a new entity&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>179</td>
+<td>add new weighting to entity causes invalid property error</td>
+<td>15/05/2002 18:05:24</td>
+<td>16/05/2002 10:30:24</td>
+<td>adding a new weighting to entity causes error &quot;invalid property value&quot; and then an old on e is displayed for editing rather than a new one&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>206</td>
+<td>relationship matrix should not be listed for hierarchy</td>
+<td>23/05/2002 09:15:01</td>
+<td>23/05/2002 10:10:01</td>
+<td>relationship matrix should not be listed for hierarchy&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>135</td>
+<td>drag to hierarchy causes parent rename</td>
+<td>25/04/2002 18:01:44</td>
+<td>30/05/2002</td>
+<td>dragging an unrepresented requirement into the generic hierarchy causes the parent's parent to be renamed to that of the parent:<br>
+<br>
+i.e<br>
+requirement<br>
+    cross ref<br>
+          <br>
+<br>
+cross ref<br>
+    cross ref<br>
+         newly allocated item&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>184</td>
+<td>entityDefn key does not update in attributes list</td>
+<td>16/05/2002 10:40:52</td>
+<td>16/05/2002 11:10:52</td>
+<td>when entity definitions are being edited, the key does not get updated in the attributes list&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>183</td>
+<td>true/false default could not be defined</td>
+<td>16/05/2002 09:00:58</td>
+<td>16/05/2002 10:00:58</td>
+<td>true/false default could not be defined&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>216</td>
+<td>create new graph does not updated tree browser</td>
+<td>05/06/2002 09:30:16</td>
+<td>05/06/2002 10:00:00</td>
+<td>creation of a new graph from the embedded generic list, does not update the tree with the new graph or update the embedded edit dialog.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>198</td>
+<td>property buttons don't show immediately</td>
+<td>21/05/2002 11:12:30</td>
+<td>21/05/2002 11:30:30</td>
+<td>graph and path properties have buttons but don't show straight away&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>169</td>
+<td>Create Path does not update model browser</td>
+<td>13/05/2002 11:00:53</td>
+<td>15/05/2002 10:30:53</td>
+<td>Create path does not update the model browser so it does not appear in the tree&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>217</td>
+<td>new model attributes display not updated on apply</td>
+<td>05/06/2002 10:30:33</td>
+<td></td>
+<td>when a new attribute is added to node or link or script and apply is pressed then the display is not updated and it is possible to add the attributes more than once.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>200</td>
+<td>hierarchy branch xref icon does not allow ole drag</td>
+<td>21/05/2002 16:45:31</td>
+<td>21/05/2002 17:15:31</td>
+<td>fixed problem where hierarchy branch xref icon did not allow ole drag (16:45)&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>142</td>
+<td>Entity List does not refresh on update or create</td>
+<td>30/04/2002 11:10:31</td>
+<td>30/05/2002</td>
+<td>When pressing &quot;Apply&quot; on an entity definition list, the list is not updated&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>205</td>
+<td>relationship matrix does not fill list</td>
+<td>22/05/2002 09:15:32</td>
+<td>22/05/2002 10:10:32</td>
+<td>relationship matrix does not fill list with Nodes, Links, Paths&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>172</td>
+<td>insitu edit field in graph edit does not keep up</td>
+<td>13/05/2002 16:30:38</td>
+<td>15/05/2002 13:10:38</td>
+<td>in graph edit form when create a node and change the name in the edit dialog, the insitu edit field does not change. This happens for both node and link.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>181</td>
+<td>weighting not always set to correct display</td>
+<td>15/05/2002 18:00:28</td>
+<td>16/05/2002 11:25:28</td>
+<td>weighting not always set to correct display i.e. the text box might be displayed rather than a date tab&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>182</td>
+<td>generic list sometimes displays a floating [</td>
+<td>15/05/2002 18:00:17</td>
+<td>16/05/2002 15:30:17</td>
+<td>when no buttons are required, the generc list shows the outline of the edit button.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>170</td>
+<td>when dirty clicking on model browser list does not prompt to save</td>
+<td>13/05/2002 11:05:26</td>
+<td>15/05/2002 11:00:26</td>
+<td>clicking on the tree browser list after editing an entity in the edit pane does not prompt to save details<br>
+<br>
+also occurs on tree click&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>218</td>
+<td>Node attributes defaults not saved on defn</td>
+<td>05/06/2002 16:00:49</td>
+<td>05/06/2002 17:35:49</td>
+<td>when a node attribute or link attribute were defined for the model, the set details or default were not saved on creation - this meant that sets were empty and no defaults were available.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>192</td>
+<td>add new script template wrong edit</td>
+<td>17/05/2002 15:05:43</td>
+<td>17/05/2002 16:50:43</td>
+<td>adding a new script template, creates the script template but opens the wrong one for editing&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>171</td>
+<td>edit model properties in main model edit does not commit</td>
+<td>13/05/2002 11:10:17</td>
+<td>15/05/2002 11:30:17</td>
+<td>Editing the model properties in the main model  model edit dialog does not commit properly.<br>
+<br>
+Name is converted to ,,&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>180</td>
+<td>almost maximize does not account for toolbar</td>
+<td>15/05/2002 16:10:56</td>
+<td>16/05/2002 11:15:56</td>
+<td>almost maximize does not account for toolbar this option should really be removed as it is buggy behind the scenes&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>178</td>
+<td>Auto Gen Dot icon corrupts</td>
+<td>15/05/2002 12:45:02</td>
+<td>15/05/2002 13:00:02</td>
+<td>The auto generate dot icon corrupts when on the form<br>
+<br>
+This is because the picture is too large&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>214</td>
+<td>Graphical properties on graph edit did not display selected</td>
+<td>04/06/2002 12:25:30</td>
+<td>04/06/2002 12:50:30</td>
+<td>when the graphical properties edit was displayed from the graph edit, it did not pick up the details of the selected node or link.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>208</td>
+<td>entity create needs saved twice</td>
+<td>30/05/2002 16:24:02</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>when creating an entity, and saving it. <br>
+<br>
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save<br>
+<br>
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>49</td>
+<td>popup menus use mouse co-ords</td>
+<td>19/04/2002 14:31:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this isn't particularly good when we are using the insert keys<br>
+&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>114</td>
+<td>creating a new item in the generic grid causes flashing</td>
+<td>23/04/2002 17:09:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the window should be locked when updating the grid&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>193</td>
+<td>Edit Entity Instance form should tell you the entity type</td>
+<td>20/05/2002 11:38:54</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>rather than having the title Edit EntityInstance the title should be Edit Defect 1  i.e it should list the entity name and the id&nbsp</td>
+</tr>
+<tr>
+<td>176</td>
+<td>Add a backup to the update process</td>
+<td>13/05/2002 16:30:35</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the update database process does not back up the database before doing the upgrade.<br>
+<br>
+Add a backup first&nbsp</td>
+</tr>
+<tr>
+<td>174</td>
+<td>make not ask on create the default</td>
+<td>13/05/2002 16:30:07</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>In the graph edit for node and link creation I am getting sick of the system prompting me to edit the details so make &quot;not ask on create&quot; the default.&nbsp</td>
+</tr>
+</table>
+</body></html>

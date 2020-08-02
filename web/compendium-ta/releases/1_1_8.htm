@@ -1,0 +1,244 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.1.8</h1>
+This is a quick tidy up version and has all the same basic version 1.1 functionality.<br>
+<br>
+I went through my requirements list and picked off those that I had already implemented.<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>12/08/2003 18:09:12</td>
+<td>Changed the default naming conventions</td>
+<td>Changed the default naming conventions to:<br>
+<br>
+Misc:  &quot;Default#&quot;<br>
+Attribute Definition: &quot;Attr#&quot;<br>
+Template Name: &quot;Tmplt#&quot;<br>
+Grid Template Name: &quot;GTmplt#&quot;<br>
+Test Model Name: &quot;Model#&quot;<br>
+Graph Name: &quot;Graph#&quot;<br>
+Hierarchy Name: &quot;Hierarchy#&quot;<br>
+Hierarchy Node Name: &quot;Branch#&quot;<br>
+Graph Node Name: &quot;Node#&quot;<br>
+Graph Path Name: &quot;Path#&quot;<br>
+Graph Link Name: &quot;Link#&quot;<br>
+Entity Name: &quot;Entity#&quot;<br>
+Entity Instance Name: &quot;&lt;entityName&gt;.#&quot;<br>
+<br>
+on some future release these will be user configurable&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>11/08/2003 16:05:55</td>
+<td>can now delete entity weighting defns</td>
+<td>It was the case that entity weighting defns could only be deleted when they were new. Changed the system so that we can now delete entity weightings.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>12/08/2003 09:32:24</td>
+<td>Changed the progress bar reporting for saving models</td>
+<td>this means that the progress bar will always be seen when the model is saving. When the treebrowser form is not visible then the mdi form status bar will be used.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>06/08/2003 12:09:50</td>
+<td>changed the jet and mdac warning</td>
+<td>Changed the jet and mdac warnings to have config variables controlling their display and to use the tips form.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>04/08/2003 15:02:02</td>
+<td>Added Show Dot Warning as a config var</td>
+<td>The system would always display the dot warning at start up if it could not find the dot.exe path.<br>
+<br>
+Added a config variable in the .ini file to control the display of this warning.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>05/08/2003 15:03:37</td>
+<td>made the dot not found msgbox a dialog box</td>
+<td>Changed the warning messages to use the tips technology so that they all have the same look and feel.<br>
+<br>
+Added the free link label control from http://www.epsilon-software.com which is the EPSFLA.OCX file.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>481</td>
+<td>Model not marked as dirty when weighting defn deleted</td>
+<td>11/08/2003 17:36:02</td>
+<td>12/08/2003 11:36:02</td>
+<td>When a node weighting defn or a link weighting defn is deleted, the model is not marked as dirty so the changes can't be saved without making another change to the model.&nbsp</td>
+<td>changed now so that it is&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>445</td>
+<td>rename model and db interaction</td>
+<td>24/06/2003 18:15:00</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>rename model, not saveed to db<br>
+quick pick list click on model - should say that model is loaded, but reloads from database (Becuase it has a different name)<br>
+should be working off the GUID&nbsp</td>
+</tr>
+<tr>
+<td>432</td>
+<td>path list title not changed on graph rename</td>
+<td>24/06/2003 13:28:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the graph was in free edit mode, tree was in list mode for paths and the title on the list of paths did not change when the graph name was edited and the change committed&nbsp</td>
+</tr>
+<tr>
+<td>426</td>
+<td>entity instance not renamed after creation in hierarchy</td>
+<td>24/06/2003 13:17:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>sometimes, when creating an entity instance directly in the hierarchy and then saving it, it is not renamed in the hierarchy but it has been renamed in memory.<br>
+<br>
+noticed when creating entity directly alt+insert&nbsp</td>
+</tr>
+<tr>
+<td>381</td>
+<td>filter text is editable</td>
+<td>16/08/2002 09:46:20</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>user can edit the text in the filter, this has no functional effect, but the user may expect that the filter can be controlled this way when it can't&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>413</td>
+<td>open list in new window</td>
+<td>23/04/2003 21:26:42</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>on an item which can be shown as a list e.g. an entity, when right clicked, have an [open list] option&nbsp</td>
+</tr>
+<tr>
+<td>437</td>
+<td>File\Save Model should be activated after model created</td>
+<td>24/06/2003 13:37:47</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the File\Save Model is only activated after opening a model but should be activated after model is created<br>
+<br>
+and when there are no models loaded, the menu item should be greyed out&nbsp</td>
+</tr>
+<tr>
+<td>452</td>
+<td>Delete Entity Defns</td>
+<td>29/06/2003 14:16:07</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>It should be possible for the user to delete entity definitions.&nbsp</td>
+</tr>
+<tr>
+<td>433</td>
+<td>config &quot;can not find dot path&quot; message</td>
+<td>24/06/2003 13:29:38</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the &quot;can not find dot path&quot; message on startup should be a config option and the message should have a &quot;show at startup []&quot; check box&nbsp</td>
+</tr>
+<tr>
+<td>131</td>
+<td>change mouse pointer to hourglass on save</td>
+<td>25/04/2002 17:47:49</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>when busy, use the busy mouse icon<br>
+<br>
+rather than just have the progress bar (the app is not threaded)&nbsp</td>
+</tr>
+</table>
+</body></html>

@@ -1,0 +1,332 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.27</h1>
+Summary<br>
+========<br>
+<br>
+o FAQ Template Changes<br>
+o OUTPUT_HTML OUTPUT_NORMAL template directives<br>
+o fixes to node style dialog<br>
+o improved dot visualisation<br>
+o export to .dot option on dot visualisation screen<br>
+o more status bars<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>05/07/2002 17:30:32</td>
+<td>Added an export to dot menu option</td>
+<td>added an export to dot file option on the dot display of a graph&nbsp</td>
+<td>0.1&nbsp</td>
+</tr>
+<tr>
+<td>05/07/2002 18:31:31</td>
+<td>expanded dot output to use line styles</td>
+<td>the dot output now mirrors the line styles of links and nodes, also the node shapes<br>
+<br>
+colours are not supported as I simply could not get dot to use the colours I wanted.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>05/07/2002 11:20:18</td>
+<td>Added statusbar to various forms</td>
+<td>Added to:<br>
+Generic Hierarchy<br>
+Edit Entity Defn<br>
+Export Graph as Site Map<br>
+Generic Col List<br>
+Generic Edit<br>
+Main Form<br>
+&nbsp</td>
+<td>0.25&nbsp</td>
+</tr>
+<tr>
+<td>05/07/2002 11:10:27</td>
+<td>Added close button to app properties form</td>
+<td>Added close button to app properties form&nbsp</td>
+<td>0.1&nbsp</td>
+</tr>
+<tr>
+<td>02/07/2002 15:03:27</td>
+<td>added OUTPUT_HTML  and OUTPUT_NORMAL template directives</td>
+<td>added OUTPUT_HTML  and OUTPUT_NORMAL template directives<br>
+<br>
+OUTPUT_HTML  <br>
+caused every item output to the template from then to be htmlified<br>
+<br>
+OUTPUT_NORMAL <br>
+caused every item output to the template from then to have no translations done on them<br>
+<br>
+This is a quick fix before I implement a regex parser for the template output&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>335</td>
+<td>version tracking report did not print the resolution</td>
+<td>06/07/2002 13:20:57</td>
+<td>06/07/2002 13:30:57</td>
+<td>I only just noticed that the version tracking report did not print the resolution details of the fixed defects.<br>
+<br>
+I guess I just assumed that I wasn't entering any!&nbsp</td>
+<td>changed template code to refer to Resolution Details rather than Resolution&nbsp</td>
+</tr>
+<tr>
+<td>333</td>
+<td>root node not saved on first save</td>
+<td>06/07/2002 12:00:36</td>
+<td>06/07/2002 13:15:36</td>
+<td>The first time a hierarchy was added to the model, the root node was not saved to the database!<br>
+<br>
+This was only a problem when that root node was also an entity instance. Then the model did not work correctly on re-load.&nbsp</td>
+<td>added code to save it!&nbsp</td>
+</tr>
+<tr>
+<td>334</td>
+<td>node.children  are in wrong order</td>
+<td>06/07/2002 12:15:25</td>
+<td>06/07/2002 12:45:25</td>
+<td>the .children function returned the children in the wrong order.<br>
+<br>
+Added code to order the list before returning it!<br>
+<br>
+I only noticed this when checklist items were in the wrong order on my checklist entity/macro report&nbsp</td>
+<td>added sort code to the return function&nbsp</td>
+</tr>
+<tr>
+<td>329</td>
+<td>client side image map does not close when model closes</td>
+<td>05/07/2002 11:36:40</td>
+<td>05/07/2002 11:38:40</td>
+<td>Export client side image map does not close when model closes&nbsp</td>
+<td>added parentTestModel to the form&nbsp</td>
+</tr>
+<tr>
+<td>326</td>
+<td>dialog titles do not reflect name of entity</td>
+<td>05/07/2002 09:10:12</td>
+<td>05/07/2002 11:10:12</td>
+<td>when editing an instance and the name changes then the dialog title needs to change too.<br>
+<br>
+needs to happen for graph, path, instance, entity defn, node, link, hierarchy&nbsp</td>
+<td>added refresh code&nbsp</td>
+</tr>
+<tr>
+<td>325</td>
+<td>Dragging an entity defn to hierarchy creates a branch when it shouldn't</td>
+<td>05/07/2002 09:00:59</td>
+<td>05/07/2002 09:10:59</td>
+<td>Dragging an entity defn to hierarchy creates a branch when it shouldn't<br>
+<br>
+This also happens with any item which is not allowed in the hierarchy (Graphs, Paths, etc.)<br>
+&nbsp</td>
+<td>changed tempcrossref to a function and check boolean return&nbsp</td>
+</tr>
+<tr>
+<td>324</td>
+<td>delete entity instance on tree browser does not update hierarchy browser display</td>
+<td>04/07/2002 12:00:54</td>
+<td>04/07/2002</td>
+<td>delete entity instance on tree browser does not update hierarchy browser display<br>
+<br>
+the display still shows the item as being an instance. It isn't of course and the system has removed the references to it but the display is not updated.&nbsp</td>
+<td>added the code to handle this situation&nbsp</td>
+</tr>
+<tr>
+<td>321</td>
+<td>transmute a branch to entity does not update treebrowser</td>
+<td>03/07/2002 15:00:07</td>
+<td>03/07/2002 16:55:00</td>
+<td>the tree is not updated and neither is the list if the list is displayed&nbsp</td>
+<td>tree fixed, list still outstanding 15:20
+list fixed 16:55&nbsp</td>
+</tr>
+<tr>
+<td>319</td>
+<td>Uncross ref on hierarchy does not update icon</td>
+<td>03/07/2002 13:40:48</td>
+<td>03/07/2002 14:45:48</td>
+<td>the uncross ref button on the hierarchy browser does not update the icon in the tree view&nbsp</td>
+<td>10 mins&nbsp</td>
+</tr>
+<tr>
+<td>320</td>
+<td>xref button does not refresh icon in tree</td>
+<td>03/07/2002 13:40:45</td>
+<td>03/07/2002 14:45:45</td>
+<td>xref button does not refresh icon in tree<br>
+&nbsp</td>
+<td>10 mins&nbsp</td>
+</tr>
+<tr>
+<td>299</td>
+<td>New Entity does not update the entity list</td>
+<td>28/06/2002 10:30:58</td>
+<td>03/07/2002 16:40:58</td>
+<td>in the tree browser when an entity is selected and the user creates a new entity then the entity is shown in the tree but not in the list&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>288</td>
+<td>Updating a hierarchy branch name does not reflect in tree browser</td>
+<td>21/06/2002 12:56:16</td>
+<td>03/07/2002 16:30:00</td>
+<td>Updating the name of an entity when it is a hierarchy branch (from the hierarchy browser) does not update the model browser tree pane.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>275</td>
+<td>time not always shown on date weighting</td>
+<td>19/06/2002 11:45:59</td>
+<td>02/07/2002 15:20:00</td>
+<td>date is not always shown when a date weighting is selected<br>
+<br>
+- workaround -<br>
+click the other tabs a few times&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>307</td>
+<td>client side image map uses old graph rep</td>
+<td>02/07/2002 13:20:04</td>
+<td>02/07/2002 13:25:04</td>
+<td>The user amendable version of the graph is saved when the form is exited, therefore when the client side image map button is used to ouput the graph and the graph has changed, then the old version (unsaved version) of the graph is used in the client side image map dialog.&nbsp</td>
+<td>added memory persist code&nbsp</td>
+</tr>
+<tr>
+<td>303</td>
+<td>create new node should use style on the node style dialog</td>
+<td>01/07/2002 10:30:02</td>
+<td>02/07/2002 12:30:00</td>
+<td>create new node should use style on the node style dialog&nbsp</td>
+<td>when the node style dialog is available then the node style (or link style) shown will be used on the new node/link&nbsp</td>
+</tr>
+<tr>
+<td>302</td>
+<td>node style font change does not apply on its own</td>
+<td>28/07/2002 10:30:21</td>
+<td>02/07/2002 11:55:00</td>
+<td>in order to effect a font change, the colour has to be changed as well, just changing the node style does not affect a change&nbsp</td>
+<td>added a refresh to the code&nbsp</td>
+</tr>
+<tr>
+<td>301</td>
+<td>node style dialog buttons should have tooltips</td>
+<td>28/06/2002 10:30:46</td>
+<td>02/07/2002 11:50:00</td>
+<td>&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>300</td>
+<td>node style caption does not reflect selected item</td>
+<td>28/06/2002 10:30:00</td>
+<td>02/07/2002 12:45:27</td>
+<td>node style caption does not reflect selected item<br>
+<br>
+the caption on the dialog should say link style if selected a link and node/link style if on both&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>208</td>
+<td>entity create needs saved twice</td>
+<td>30/05/2002 16:24:02</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>when creating an entity, and saving it. <br>
+<br>
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save<br>
+<br>
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>49</td>
+<td>popup menus use mouse co-ords</td>
+<td>19/04/2002 14:31:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this isn't particularly good when we are using the insert keys<br>
+&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>17</td>
+<td>dot format export</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the dot output should reflect the formatting options applied to the addflow diagram as well as possible&nbsp</td>
+</tr>
+<tr>
+<td>322</td>
+<td>generic hierarchy should have a refresh menu option</td>
+<td>03/07/2002 16:53:29</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>just in case things go do-lally, which they shouldn't but could be useful after a macro has run etc.&nbsp</td>
+</tr>
+</table>
+</body></html>

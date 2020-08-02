@@ -1,0 +1,135 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.4.8</h1>
+Version increased to 1.4 because of the addition of the Application Control Panel.<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>04/06/2004 16:28:32</td>
+<td>Application Control Panel</td>
+<td>The Application Control Panel is shown on the left of the MDI form and shows information about all the models loaded into Compendium-TA.<br>
+<br>
+Each Model has a hierarchy under the Models branch.<br>
+<br>
+The Windows branch lists all the active and open windows for the model. The window can be shown by double clicking on the branch. <br>
+Right clicking with the mouse on an active window branch creates a window Short Cut.<br>
+<br>
+Window Shortcuts  are links to model windows. The windows do not have to be opened, double clicking on a window short cut  will open and show the window. Window shortcuts are very useful if you find yourself using the same list time and again in a model e.g. a list of entities. You can rename a short cut to a window by pressing [space]<br>
+<br>
+You can create  folders under the ShortCuts branch to organise your window short cuts. Organise them by dragging and dropping the branches.<br>
+<br>
+The  Scratchpad branches are useful storage points for references to model data. If you find that there is a particular model element that you use a lot, you can drag it from the model to the scratch pad. This is also useful when cross referencing as you can store the link in the scratchpad until you are ready to use it.<br>
+<br>
+Items in the model level Scratchpad are saved to the database. Items at the top level ScratchPad are temporary and are not saved between sessions. Folders can be created under the scratchpad folders to organise your links.<br>
+<br>
+The refresh button will refresh the Application Control Panel display or active windows and model object links.<br>
+<br>
+The Application Control Panel can be resized by using the splitter bar. And closed with the [x] button.<br>
+<br>
+You can Hide/Show the Application Control Panel by using the option on the Edit Menu. Or pressing  (currently shown)  (currently hidden).<br>
+<br>
+Pressing [Delete] will close an active window, delete a link or folder in a ScratchPad, delete a window shortcut or folder in the ShortCuts folder. Also close a model if you press delete when the model branch s selected.<br>
+<br>
+Pressing [Insert] will create a folder in the ScratchPad branch or the ShortCuts branch.<br>
+<br>
+Tips<br>
+Using the Application Control Panel is an easy way to navigate your model windows when the windows are maximised in the mdi form.<br>
+<br>
+Use the Window ShortCuts to build a custom interface to your model. e.g. if you have a Model for Job Hunting, you could have a shortcut to your list of Job entities (called Jobs), a shortcut to your list of Job Agencies. This makes it very easy to start using the system quickly.<br>
+<br>
+Use the Application Control Panel when you are working with multiple models, this makes it easy to see which windows belong to which models and dragging entity instances between models is made much easier by using the ScratchPads<br>
+&nbsp</td>
+<td>30&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>646</td>
+<td>auto update not performed in incremental mode</td>
+<td>01/06/2004 18:19:52</td>
+<td>01/06/2004 18:20:45</td>
+<td>Database auto backups are not performed on databases when in incremental update mode.&nbsp</td>
+<td>The count was being incremented but not being saved to the database because the persistence mechanism is not supposed to update during a read.
+
+Updated the model browser load to check for this condition and persist the increment to the database.&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>619</td>
+<td>entity date drop down does not have calender btn</td>
+<td>26/05/2004 19:05:26</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The date, date_time and time fields on an entity attribute have the [v] drop down instead of the calendar button or clock button.&nbsp</td>
+</tr>
+<tr>
+<td>646</td>
+<td>auto update not performed in incremental mode</td>
+<td>01/06/2004 18:19:52</td>
+<td>CLOSED</td>
+<td>HIGH</td>
+<td>Database auto backups are not performed on databases when in incremental update mode.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

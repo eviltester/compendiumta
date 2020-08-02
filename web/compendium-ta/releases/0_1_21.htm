@@ -1,0 +1,452 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.21</h1>
+The main purpose of this release is to:<br>
+o add reporting, via scripting<br>
+o custom reports for defect reporting and version tracking<br>
+o to change the load entity defn from database mechanism and interface<br>
+o remove the window less controls and rtf control from the project<br>
+<br>
+This has been added and will form the basis of the baselined project for version 1.<br>
+<br>
+I will now be entering the document/test/debug phase. This will obviously entail a few extra functional additions but they will be minor.<br>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>29/04/2002 13:19:07</td>
+<td>prototype script execution code</td>
+<td>added tab delimited report definition file to \scriptDefns<br>
+Type | appliesTo | Display Name | Script File Name | Procedure | Language<br>
+added reports to \scripts<br>
+added generic prototype script execution code&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>30/04/2002 15:19:15</td>
+<td>implement default file extension to export entity</td>
+<td>default extention is .txt&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>01/05/2002 09:33:11</td>
+<td>changed grids on testmodelproperties to listview</td>
+<td>changed grid on testmodelproperties to listview&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>26/04/2002 15:12:41</td>
+<td>added prototype script execution code</td>
+<td>added prototype script execution code - <br>
+<br>
+this will be used to add the reports to the system rather than creating a template system, just use vbscript:<br>
+<br>
+*find a way of using any script language*<br>
+*easy for text stuff, need to work out a mechanism for graphs*<br>
+*and path displays*&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>30/04/2002 10:20:03</td>
+<td>entity defn to use a listview instead of a grid</td>
+<td>change entity defn to use a listview instead of a grid&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>01/05/2002 11:00:42</td>
+<td>changed frmPathEdit to use list views</td>
+<td>changed frmPathEdit to use list views &nbsp</td>
+<td>1.51&nbsp</td>
+</tr>
+<tr>
+<td>29/04/2002 10:17:03</td>
+<td>removed prototype and unfinished code</td>
+<td>removed code which was only at prototype stage and had not been maintained or finished:<br>
+* remove save to file, load from file, <br>
+* removed frmSaveModel<br>
+* removed export to visio<br>
+* removed set addflow from dot<br>
+* removed frmDeconGraph until the functionality is reinstated&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>29/04/2002 12:18:25</td>
+<td>internal weighting date functionality changed</td>
+<td>changed internal weighting date functionality to use system date formats&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>30/04/2002 18:46:11</td>
+<td>change load entity defn from database</td>
+<td>used the open model from database form<br>
+<br>
+removed the frmLoadEntityFromDatabase form<br>
+<br>
+it took longer than I expected because there was stupid code in getWeightings that had to be debugged and rewritten.&nbsp</td>
+<td>3&nbsp</td>
+</tr>
+<tr>
+<td>01/05/2002 10:30:11</td>
+<td>removed unused frmUndisplayedNodes</td>
+<td>removed unused frmUndisplayedNodes from the project&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>30/04/2002 15:29:12</td>
+<td>expand the entity type export entity</td>
+<td>expand the entity type export entity to include the type and set details&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>01/05/2002 12:09:45</td>
+<td>fixed defect 156</td>
+<td>fixed a defect (156) with path display templates where only weightings were searched for values so {name} as not recognised, this was a direct result of my changing the getWeighting code&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>01/05/2002 13:12:03</td>
+<td>API changes</td>
+<td>documenting the APi has made me realise that I need to create a <br>
+function called <br>
+	model.returnObjectForID<br>
+		<br>
+added hierarchy to the returnObjectGivenGUID list (untested)<br>
+<br>
+allowed entityDefn to getInstances<br>
+<br>
+it all shows how inconsistent my object model is! :[&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>01/05/2002 15:13:52</td>
+<td>added an &quot;Entity List Report&quot;</td>
+<td>added an &quot;Entity List Report&quot;&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>01/05/2002 16:14:58</td>
+<td>added a library list to the report definition</td>
+<td>added a library list to the report definition - these should be saved in the scripts folder - allows common routines to be used by the scripts<br>
+<br>
+this is a tab separated list of libraries&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>02/05/2002 08:00:07</td>
+<td>API Changes</td>
+<td>added a detailed entity report<br>
+<br>
+added mechanism to report on Individual instances from the tree browser<br>
+<br>
+added a const file to the scripts<br>
+<br>
+added mechanism to report on all other entities from the treebrowser<br>
+   Node, Link, Graph, Path, Hierarchy, Model<br>
+   *Node, *Link, *Graph, *Path, *Hierarchy<br>
+   Entity, Entity.entityName<br>
+   Instance, Instance.entityName<br>
+<br>
+added a &quot;refresh reports&quot; menu item to main menu list - will refresh the report definitions<br>
+<br>
+added getWeightingValue to node, link and graph<br>
+<br>
+wrote the node reports<br>
+<br>
+wrote the link reports&nbsp</td>
+<td>8&nbsp</td>
+</tr>
+<tr>
+<td>03/05/2002 09:00:00</td>
+<td>API Changes</td>
+<td>added the freeImage dll and am now generating jpgs (1)<br>
+<br>
+allowed macros to use it too (need to add a maxWidth, maxHeight value) (2)<br>
+<br>
+wrote the graph reports (2)<br>
+<br>
+*need flexible dot control, and output<br>
+<br>
+wrote path reports (1)<br>
+<br>
+fixed defect - edit button on tree browser did not open hierarchy (0.5)<br>
+<br>
+changed genericHierarchyNode slightly to <br>
+allow us to traverse a hierarchy from a node's point of view (1)<br>
+- all functions were previously on the hierarchy<br>
+- genericHierarchyNode.parent<br>
+   .children<br>
+   .nextSibling<br>
+   .elderSibling<br>
+   .hierarchy<br>
+   .eldestChild <br>
+   .youngestChild<br>
+<br>
+added a HierarchyNode reporting entity also *HieararchyNode<br>
+-will only be used in generic hierarchy browser<br>
+			-HierarchyNode.Entity Name will only work for hierarchy nodes which represent entity name but will pass the hierarchy node<br>
+&nbsp</td>
+<td>8&nbsp</td>
+</tr>
+<tr>
+<td>07/05/2002 09:20:26</td>
+<td>API Changes</td>
+<td>added the generic hierarchy report (1)<br>
+<br>
+removed the nodes and links word processor for the moment (0.5)<br>
+<br>
+removed the wsless controls as only the buttons were being used (2)<br>
+<br>
+added a report button to the hierarchy browser (0.5)<br>
+<br>
+added a version tracking report (1.5)&nbsp</td>
+<td>5.5&nbsp</td>
+</tr>
+<tr>
+<td>08/05/2002 09:00:00</td>
+<td>API Changes</td>
+<td>added report button to edit screens:<br>
+<br>
+graph (graph edit), model (model properties), generic edit  (2)<br>
+<br>
+added pop up menu to generic hierarchy screen (0.5)<br>
+<br>
+expanded export graph as options (jpg) etc (1)<br>
+<br>
+fixed defect where edit properties on path edit created a new edit path screen each time - didn't check for existing path form (0.5)<br>
+<br>
+changed autodot check box into a graphical check button (0.5)<br>
+<br>
+removed visio export form from project (0.5)<br>
+<br>
+added acknowledgements list to the about box (0.5)&nbsp</td>
+<td>5.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>144</td>
+<td>numeric weightings are shown as dates in the list</td>
+<td>30/04/2002 11:16:02</td>
+<td>30/04/2002 16:35:00</td>
+<td>numeric weightings are shown as dates in the list&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>156</td>
+<td>defect with path display templates not parsed correctly</td>
+<td>01/05/2002 12:00:24</td>
+<td>01/05/2002 12:30:24</td>
+<td>fixed a defect with path display templates where only weightings were searched for values so {name} as not recognised, this was a direct result of my changing the getWeighting code&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>49</td>
+<td>popup menus use mouse co-ords</td>
+<td>19/04/2002 14:31:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this isn't particularly good when we are using the insert keys<br>
+&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>114</td>
+<td>creating a new item in the generic grid causes flashing</td>
+<td>23/04/2002 17:09:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the window should be locked when updating the grid&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>135</td>
+<td>drag to hierarchy causes parent rename</td>
+<td>25/04/2002 18:01:44</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>dragging an unrepresented requirement into the generic hierarchy causes the parent's parent to be renamed to that of the parent:<br>
+<br>
+i.e<br>
+requirement<br>
+    cross ref<br>
+          <br>
+<br>
+cross ref<br>
+    cross ref<br>
+         newly allocated item&nbsp</td>
+</tr>
+<tr>
+<td>142</td>
+<td>Entity List does not refresh on update or create</td>
+<td>30/04/2002 11:10:31</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>When pressing &quot;Apply&quot; on an entity definition list, the list is not updated&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>137</td>
+<td>add a default file type to the export entity dialog</td>
+<td>30/04/2002 08:31:05</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the export entity dialog does not have any file filters, .txt should be added as a file filter, as should *.*&nbsp</td>
+</tr>
+<tr>
+<td>138</td>
+<td>add entity types to entity export</td>
+<td>30/04/2002 08:34:17</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>at the moment the entity export looks like this<br>
+#Defect<br>
+#Raised Date<br>
+#Status<br>
+#Criticality<br>
+#Severity<br>
+#Closed Date<br>
+#Resolution Details<br>
+<br>
+because it hasn't been updated to include the entity types (this was in the days when all types were string)<br>
+now we have to output the type too.<br>
+<br>
+make it tab delimited as follows<br>
+#Defect<br>
+#Raised Date	Date<br>
+#Status	Set	tab delimited	set of 	values<br>
+#Criticality	Set	{}<br>
+#Severity	Set	{}<br>
+#Closed Date	Date<br>
+#Resolution Details	String<br>
+<br>
+when exporting, replace any tabs in the set or default values to be \t and if there are any \t's in the text already then make them \\t<br>
+<br>
+so replace \t with \\t<br>
+replace tab with \t&nbsp</td>
+</tr>
+<tr>
+<td>139</td>
+<td>change load entity defn from database</td>
+<td>30/04/2002 08:49:15</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>need to change load entity defn from database mechanism and interface<br>
+<br>
+uses a grid, looks ugly and I'm not sure it even works anymore.<br>
+<br>
+It should prompt for the database file, prompt for the model, then prompt for the entity.&nbsp</td>
+</tr>
+<tr>
+<td>20</td>
+<td>export hierarchy as a report on its own</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>could use the basic report functionality<br>
+- just allow it to start and stop in one place&nbsp</td>
+</tr>
+<tr>
+<td>22</td>
+<td>export addlow at the correct size - do not scale up</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>23</td>
+<td>export addlfow at different sizes</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>primarily for sitemap generation&nbsp</td>
+</tr>
+<tr>
+<td>39</td>
+<td>export as client side image maps</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>export the graphs as client side image maps&nbsp</td>
+</tr>
+<tr>
+<td>46</td>
+<td>pop up menu</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>on generic hierarchy&nbsp</td>
+</tr>
+<tr>
+<td>74</td>
+<td>entity summary reports</td>
+<td>23/04/2002 13:48:58</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>there should be a facility for user defined summary reports for entities<br>
+<br>
+i.e. #status.CLOSED, #status.OPEN etc&nbsp</td>
+</tr>
+</table>
+</body></html>

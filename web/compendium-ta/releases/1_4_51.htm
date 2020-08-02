@@ -1,0 +1,145 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.4.51</h1>
+GUI property changes for flexibility, changes to the description box for more effective keypress handling (Ctrl+AXCV), defect fixes on graphviz.dll and popup menu<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>09/11/2004 22:35:14</td>
+<td>App Property Dialog has tabs</td>
+<td>Added Tabs to the App Property dialog to categorise the options and make configuration easier.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>09/11/2004 22:37:48</td>
+<td>Tree Layout App Properties</td>
+<td>Added App Properties for Tree Layout under [Tree\Hierarchy Display Options]<br>
+To control line display and indentation&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>09/11/2004 22:39:25</td>
+<td>Side Bar Property</td>
+<td>Added an App Property to control if a new window is set to automatically display in the Open Windows branch. It will expand the branch if the branch is closed when a new window is created. under [GUI\Side Bar Display Options]&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>09/11/2004 22:41:12</td>
+<td>Added more categories to App Properties Edit View Options</td>
+<td>Added more sub categories to the Edit Options option in the App Properties, this is more easily viewed under the [Edit] tab in App Properties.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>03/02/2005 14:26:16</td>
+<td>open after save client side image map app property</td>
+<td>Added an application property to control if the client side image map is opened in the browser after the map is exported.&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>649</td>
+<td>Client Side Image Maps templates</td>
+<td>09/06/2004 14:31:35</td>
+<td>03/02/2005 16:21:47</td>
+<td>The client side image map export uses a template with the ids, it should use the template associated with the graph at the time the export is displayed.&nbsp</td>
+<td>This is now set in the form loading code&nbsp</td>
+</tr>
+<tr>
+<td>689</td>
+<td>Ctrl+A in desc field does not select all text</td>
+<td>01/02/2005 11:10:34</td>
+<td>01/02/2005 17:31:41</td>
+<td>Pressing Ctrl+A does not select all text&nbsp</td>
+<td>fixed key handler to pass thru ctrl+a events&nbsp</td>
+</tr>
+<tr>
+<td>658</td>
+<td>popup menu displayed in wrong place</td>
+<td>17/06/2004 17:40:16</td>
+<td></td>
+<td>popup menu for tree items e.g. ctrl+insert is over the application control panel instead of the tree.&nbsp</td>
+<td>Added extra code to calculate the side bar length
+
+Also happened on xref grid.&nbsp</td>
+</tr>
+<tr>
+<td>690</td>
+<td>dot graph display zoom wrong with dll</td>
+<td>01/02/2005 11:11:13</td>
+<td>01/02/2005 17:33:22</td>
+<td>when the dll version of dot is used and a dot graph is zoomed, the scroll bars are not resized correctly.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>619</td>
+<td>entity date drop down does not have calender btn</td>
+<td>26/05/2004 19:05:26</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The date, date_time and time fields on an entity attribute have the [v] drop down instead of the calendar button or clock button.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

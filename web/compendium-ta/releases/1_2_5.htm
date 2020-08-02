@@ -1,0 +1,483 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.2.5</h1>
+Because the internals have been so radically altered and the front end is now much more streamlined with new persistence options. I have upped the version to 1.2<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>07/01/2004 11:43:09</td>
+<td>Delete Entity Defn from right click</td>
+<td>A right click on the tree and the context menu now allows delete option for entity defn&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:45:04</td>
+<td>Application Properties Dialog rewritten</td>
+<td>The application properties dialog has been rewritten and has many more options available.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:45:51</td>
+<td>Instant Update Persistence</td>
+<td>The application has an option for 'Incremental Update' where model items are saved to the database as soon as a change happens.<br>
+<br>
+When using this mode, it is important to save the model to the database before turning this option on, otherwise changes made to the model before incremental update was switched on may not be saved&nbsp</td>
+<td>3 weeks&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:47:52</td>
+<td>Observer code rewritten</td>
+<td>The observer code has be rewritten so that it is no longer a change, broadcast notify.<br>
+<br>
+It is now a full subscribe/notify mechanism which makes the whole interface more reliable in terms of its updating.&nbsp</td>
+<td>2 weeks&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:49:26</td>
+<td>Tree Browser and Hierarchy Browser Merged</td>
+<td>Both hierarchies are still available but now use exactly the same code base, this makes the interface more standard, and has allowed us to open model branches in a hierarchy as well as just the model and hierarchy. We can also explore Graphs.&nbsp</td>
+<td>1 week&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:52:40</td>
+<td>Delete Script Templates</td>
+<td>We can now delete script templates&nbsp</td>
+<td>5&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:54:21</td>
+<td>Open List Icon</td>
+<td>A new icon has been added ( a grid) this is displayed when a branch folder is clicked in the tree, and when clicked displays the list of things. i.e. if a Nodes branch is selected in the tree then clicking the icon will open a list window displaying the nodes.<br>
+<br>
+This icon has also been added to the edit view for objects with a list i.e. entityDefn will show instances.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:56:37</td>
+<td>Consistent use of icons</td>
+<td>The edit view in situ always had the edit properties icon, but when this was clicked for a graph, the graph would be edited in full edit mode rather than properties.<br>
+<br>
+Consistency has been applied so that the properties icon always opens the object properties, and when it is a graph or path the [edit graph] icon is available as well.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 11:58:45</td>
+<td>Wizard Added for New Model</td>
+<td>Added a wizard interface for creation of a new model, this has the option to create a new database at the same time and makes the whole process of creating a new model much simpler to understand.&nbsp</td>
+<td>8&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 12:01:34</td>
+<td>User Defined List Button positions</td>
+<td>The position buttons on the list view are now definable by the user through the app properties.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>05/02/2004 12:02:39</td>
+<td>Added Find Function</td>
+<td>A binoculars icon is now available from the tree browser toolbar, this allows the user to find items in the model. The find can be controlled as to which attributes are searched and the search is based on the same regular expressions as the filter command&nbsp</td>
+<td>5&nbsp</td>
+</tr>
+<tr>
+<td>06/02/2004 12:03:59</td>
+<td>View Nodes as trees</td>
+<td>rather than adding functionality to convert graphs to hierarchies, which is somewhat problematical. I have added Node Trees functionality.<br>
+<br>
+This allows nodes to be viewed in the hierarchy under a new branch 'Node Trees'. Nodes can be expanded here as though they were hierarchies and the from links out of the node traversed.<br>
+<br>
+This can be controlled via the app properties in a number of ways.<br>
+<br>
+All nodes can be viewed as node trees. Or just those nodes which have been marked as node trees (using the button in the edit properties).<br>
+<br>
+App Properties controls wether the links are displayed in the node tree hierarchy, and also if the node tree stops when the first duplicate node is found or if it is recursively displayed.<br>
+<br>
+<br>
+i.e for this kind of set up 1 -&gt; 2 -&gt; 3 -&gt; 2 would be displayed as<br>
+1 -&gt; 2 -&gt; 3 when recursion is off<br>
+and as 1 -&gt; 2 -&gt; 3 -&gt; 2 -&gt; 3 if recursion is on.<br>
+<br>
+This is why the expand tree button only expands down a single level rather than expanding the whole tree&nbsp</td>
+<td>8&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 12:10:56</td>
+<td>edit pane tabs view configurable</td>
+<td>the view properties of the edit pane tabs is now configurable to look like tabs, buttons or flat<br>
+<br>
+we can also choose to show them as multirow or scrollable&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 12:13:27</td>
+<td>Edit in situ on graph edit</td>
+<td>The graph edit has been changed to have an insitu edit pane for selected nodes and links. visible when the nodes and links list is visible.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>24/02/2004 12:15:37</td>
+<td>Hierarchies are expandable in model browser</td>
+<td>The hierarchies are now expandable within the main model browser instead of having to open the hierarch in a new window all the time.<br>
+<br>
+This is configurable with the TreeBrowserDisplay: DisplayInstancesInModelBrowser option.&nbsp</td>
+<td>6&nbsp</td>
+</tr>
+<tr>
+<td>19/02/2004 12:19:17</td>
+<td>In situ Graphical Node Link Properties Edit</td>
+<td>The graphical properties dialog has been removed and the properties added in situ in the graph edit. Visible using the same icon as before.<br>
+<br>
+This was done to improve the usability and to fix a defect where the system would shutdown under some circumstances when the old graphical properties dialog was open and focus moved to a different application.&nbsp</td>
+<td>8&nbsp</td>
+</tr>
+<tr>
+<td>12/03/2004 12:22:49</td>
+<td>Save as CSV added to list popup menu</td>
+<td>The save as csv option has been added to the list popup menu for the Test Analyst Edition&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>12/03/2004 12:23:43</td>
+<td>Check For Updates....</td>
+<td>Added a new function to allow Compendium-TA to check for updates to itself.<br>
+<br>
+This can be configured to check when the application starts up or can be initiated manually from the help menu.<br>
+<br>
+All this function does is check fo a file on the CompendiumDev web site and read the application version number contained in it.<br>
+<br>
+The are a variety of configurable options for this function in the app properties 'Automatic Check For Updates' section.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 17:08:38</td>
+<td>optionally use winGraphviz instead of dot.exe</td>
+<td>There is an applicaction properties option to switch between the external dot.exe or the WinGraphviz.dll as the method of generating dot.<br>
+<br>
+WinGraphViz is available from http://home.so-net.net.tw/oodtsen/wingraphviz/ <br>
+<br>
+Use of the dll results in slightly different output but the generation is faster as no temporary files are created.<br>
+<br>
+Use of the external dot.exe is easier to install.<br>
+<br>
+&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>17/03/2004 17:53:17</td>
+<td>added URL field to other model objects</td>
+<td>Added url field to:<br>
+graph<br>
+entityDefn<br>
+link<br>
+path<br>
+test model<br>
+hierarchy branch&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>18/03/2004 09:10:26</td>
+<td>Added Internal editor for the tools list</td>
+<td>At some point I think I will change the mechanism for storing external tools listed in the tools menu. So I have written an internal editor for the list. This means that I can remove the dependency on editing the tools.txt file and later when I remove the tools.txt file, no-one will notice.<br>
+<br>
+The Edit Tools List option is on the edit menu should provide a more user friendly way of editing the tools list and hopefully you will get more out of it.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>18/03/2004 17:11:14</td>
+<td>Moved refresh tools list to edit menu</td>
+<td>I have moved the refresh tools list to the edit menu instead of being on the tools menu&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>18/03/2004 17:07:01</td>
+<td>Added Internal Editor for the text box templates</td>
+<td>Text box templates are those things that pop up when you type ctrl+Ins in a text box.<br>
+<br>
+I thought I'd make it easier to customise that and bring that functionality more to the fold so I have added an internal editor for the text box templates, this is on the edit menu.<br>
+<br>
+I will at some point change the storage of these templates and this internal editor now allows me to change the backend without most users noticing.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>19/03/2004 11:54:56</td>
+<td>Copy\move branches from one hierarchy to another</td>
+<td>You can now copy and move (copy and delete) branches from one hierarchy to another.<br>
+<br>
+When this type of drag action is carried out, a popup menu will be displayed allowing you to<br>
+<br>
+Copy with children<br>
+    the branch and all children will be copied<br>
+<br>
+Copy no children <br>
+    the branch will be copied<br>
+<br>
+Copy with children and delete<br>
+    the branch and all children will be copied to the <br>
+    new hierarchy and deleted from the old<br>
+    hierarchy<br>
+<br>
+copy with no children and delete<br>
+    only the branch  will be copied to the <br>
+    new hierarchy and deleted from the old<br>
+    hierarchy<br>
+&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>19/03/2004 12:00:06</td>
+<td>Relationship Matrix test analyst edition only</td>
+<td>Relationship Matrix are now in the test analyst edition only&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>19/03/2004 13:57:17</td>
+<td>Implemented the crude export to Visio</td>
+<td>there is now a new item on the editable graph popup menu for 'export to visio'<br>
+<br>
+This is a fairly crude export to visio using the com interface. It has been tested using Visio 2000&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>19/03/2004 16:36:11</td>
+<td>expanded dot options</td>
+<td>I have expanded the dot options in Application Properties  to have separate paths for dot, neato and twopi<br>
+<br>
+The graphviz framework is changing all the time so I have 3 paths<br>
+dot.exe<br>
+neato.exe<br>
+twopi.exe<br>
+<br>
+and 3 mutually exclusive options:<br>
+use directed     -&gt; dotPath   or wingraphviz.dot<br>
+use undirected -&gt; neatoPath   or wingraphviz.neato <br>
+use  circular)  -&gt; twopiPath   or wingraphviz.twopi<br>
+<br>
+This allows you to use more experimental dot tools e.g. circo.exe by pointing one of the paths to it.<br>
+<br>
+At the moment none of the additional properties suported by the dot programs are used so it is simple default layouts only.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>21/03/2004 13:11:10</td>
+<td>Access to all graphviz export formats</td>
+<td>In previous versions, the graphviz output was limited to .gif <br>
+<br>
+I have added support for all the graphviz output formats listed at http://www.research.att.com/~erg/graphviz/info/output.html<br>
+<br>
+And if the winGraphViz dll is being used, this is set to the subset  listed at http://home.so-net.net.tw/oodtsen/wingraphviz/index_en.htm<br>
+<br>
+This is all from the submenu in the right click context menu on the dot view as Graphviz Export&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>21/03/2004 13:13:22</td>
+<td>toolbar seperators hidden as required</td>
+<td>although the toolbar buttons were set according to the selected item in the tree, the seperators were not set accordingly which meant that extra spaces in the toolbar were shown.<br>
+<br>
+I have added code to tidy this up.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>21/03/2004 13:14:34</td>
+<td>flat buttons</td>
+<td>An option to display the buttons in the dialog as flat has been added&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>21/03/2004 13:15:39</td>
+<td>flat toolbars</td>
+<td>option added to display the toolbars as flat or 3d button style&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>21/03/2004 13:15:56</td>
+<td>dot auto refresh only when visible</td>
+<td>The dot view now only refreshes when the dot view is visible.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>432</td>
+<td>path list title not changed on graph rename</td>
+<td>24/06/2003 13:28:37</td>
+<td>17/03/2004</td>
+<td>the graph was in free edit mode, tree was in list mode for paths and the title on the list of paths did not change when the graph name was edited and the change committed&nbsp</td>
+<td>17/03/2004 11:33:52
+
+Now that the observer has been rewritten, this defect was easy to fix, as it no longer happened.
+
+**********
+there is too much to change here, the relationship between the list and browser needs to be changed to make this an easy fix (refactoring required)&nbsp</td>
+</tr>
+<tr>
+<td>426</td>
+<td>entity instance not renamed after creation in hierarchy</td>
+<td>24/06/2003 13:17:35</td>
+<td>17/03/2004</td>
+<td>sometimes, when creating an entity instance directly in the hierarchy and then saving it, it is not renamed in the hierarchy but it has been renamed in memory.<br>
+<br>
+noticed when creating entity directly alt+insert&nbsp</td>
+<td>17/03/2004 11:32:10
+Now that the whole hierarchy and observer code has been rewritten this should not be an issue.
+----------
+after the fix to the hierarchy edit code, I'm not sure this happens any more, but keep an eye on it&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>17/03/2004</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+<td>Now that the styles dialog has been removed there is no revert functionality
+----------
+The styles dialog was designed as a single modal dialog and only worked on one entity at a time. it now handles many but the inital status code only stores the first item - this requires a mild code redesign.
+----------&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>17/03/2004</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+<td>Problem not relevant now that the hierarchy code has been changed&nbsp</td>
+</tr>
+<tr>
+<td>536</td>
+<td>hourglass remains on openDB cancel</td>
+<td>17/02/2004 12:09:40</td>
+<td>19/02/2004 12:09:40</td>
+<td>When an open model option is cancelled at the model list. the mouse is set to an hourglass.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>543</td>
+<td>Infinite loop when adding a link to a path</td>
+<td>17/03/2004 15:00:27</td>
+<td>17/03/2004 15:22:27</td>
+<td>When adding a link with followseq set with a loop in the graph when there is only ever one path through the graph, the system will loop.&nbsp</td>
+<td>Added a check for the link already being in the path.&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>515</td>
+<td>remove node subgraph link</td>
+<td>27/11/2003 17:22:32</td>
+<td>Not Implemented</td>
+<td>Alan Richardson</td>
+<td>when a node has a subgraph allocated then we should be able to remove the link so that the node is no longer associated with the sub graph.<br>
+<br>
+**********<br>
+17/03/2004 11:41:42<br>
+<br>
+Right click on the subgraph icon and you can do exactly this now. &nbsp</td>
+</tr>
+<tr>
+<td>41</td>
+<td>easier access to zoom</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td><br>
+**********<br>
+<br>
+17/03/2004 11:39:49<br>
+<br>
+The zoom options on the graph do this now&nbsp</td>
+</tr>
+<tr>
+<td>375</td>
+<td>open hierarchy branches in own hierarchy window</td>
+<td>16/08/2002 16:35:03</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>it might be useful to be able to open a branch in its own hierarchy browser as the root. All changes should be made to the hierarhcy and the hierarhcy browser if open.<br>
+<br>
+**********<br>
+17/03/2004 11:38:42<br>
+<br>
+The explore option in the tree context menu allows you to do this.&nbsp</td>
+</tr>
+<tr>
+<td>132</td>
+<td>have drag option where it does not auto expand tree</td>
+<td>25/04/2002 17:53:49</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>perhaps if cntrl is held down?<br>
+<br>
+17/03/2004 11:36:40<br>
+Implemented with shift, i.e. drag with shift key pressed and the items are not expanded&nbsp</td>
+</tr>
+</table>
+</body></html>

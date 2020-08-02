@@ -1,0 +1,192 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.4.29</h1>
+A variety of usability enhancements and backend system decoupling into DLLs<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>09/06/2004 16:45:40</td>
+<td>added user defined icons</td>
+<td>If an icon (.ico) file with the same name as the entity is placed in the icons directory then it will be displayed instead of the generic entityInstance Symbol.<br>
+<br>
+Then icons directory is:<br>
+{appPath}\entities\icons<br>
+<br>
+so an icon for defect entities would be in<br>
+{appPath}\entities\icons\defect.ico<br>
+<br>
+the icons should be 16x16 with 16 colour.<br>
+<br>
+This is the same format used for favicon on web sites so you might want to have a look at http://www.1stsitefree.com/howcani/favicon.htm which lists tools and sources of icons.&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>15/06/2004 18:15:01</td>
+<td>use of temp file instead of clipboard</td>
+<td>The clipboard was used as a temporary storage point for graphics for graphs when doing the sitemap export and when saving as bmp and jpg etc.<br>
+<br>
+This has been fixed to use temporary files instead.<br>
+<br>
+I have also moved some of the code to do this out to a dll as part of the general CTA refactoring.&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>16/06/2004 15:03:06</td>
+<td>added case sensitivity to find</td>
+<td>The find code has been refactored and introduced a split between GUI and model.<br>
+<br>
+In the process I have added a case sensitivity checkbox to the searching so you can check it to enforce case checking in the search. <br>
+<br>
+The default is case insensitive.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>16/06/2004 15:23:23</td>
+<td>removed tooltips from insitu text edit</td>
+<td>When the description field is being edited. or a string weighting. The tooltips for the edit field were set to the name of the field.<br>
+<br>
+This was redundant since the label tell s you what field it is, and actually got in the way.<br>
+<br>
+So I removed this code.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>20/06/2004 12:40:46</td>
+<td>investigate time drop down</td>
+<td>the time drop down on weightings, when the user types in a time value quickly and presses return, is not saved.<br>
+<br>
+I did some investigation into this and it turns out that the microsoft date time control has a pause before triggering the change event when the values are changed by using the numeric buttons, as opposed to the up down buttons (which trigger a change instantly) this is because there has to be a gap before verifying the data that is typed in, i.e if the change was triggered immediately then when I type 4, it would be registerd as a 4 then if I typed 5 it would be registered as a 5 instead of the 45 that was desired.<br>
+<br>
+I have added functionality to underline the ok in the ok button when the change event is triggered, this means that when you type 4, the underline on ok will not be shown, but when the change event is triggered so that the value is now part of the data, the underline will be shown and changes will be made to the date value.<br>
+<br>
+sounds complicated but when you see it in action it will make sense.&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>20/06/2004 12:52:31</td>
+<td>splitting system in to dlls</td>
+<td>work is underway to move the system from a single .exe into a main .exe with dlls, this will ease the transition to a pluggable addin architecture.<br>
+<br>
+This is a long term plan and may take some time before it is complete.<br>
+<br>
+currently split into dlls for filehandling, online update, tool management, string handling.<br>
+<br>
+This will also ease the creation of unit test harnesses.&nbsp</td>
+<td>20&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>652</td>
+<td>client side image map node names</td>
+<td>09/06/2004 15:56:56</td>
+<td>09/06/2004 18:58:12</td>
+<td>The node and link names on the client side image map use the default template and can not be changed. This means that you cannot export a site map without having the ID in the image.&nbsp</td>
+<td>Added a right click to display a cut down menu of the normal right click graph menu.&nbsp</td>
+</tr>
+<tr>
+<td>653</td>
+<td>Node Styles does not set some values</td>
+<td>15/06/2004 15:13:04</td>
+<td>15/06/2004 18:14:27</td>
+<td>Clicking on a node in the graph edit view when the graphical styles pane is open does not select some of the values in the style - the fill colour, the shape and the font.<br>
+<br>
+&nbsp</td>
+<td>This was a mismatch between the key and the coded search index - fixed.&nbsp</td>
+</tr>
+<tr>
+<td>657</td>
+<td>marked as dirty when not dirty</td>
+<td>17/06/2004 14:36:46</td>
+<td>17/06/2004 17:37:32</td>
+<td>When moving between string descriptions, the record would be marked as dirty even if nothing changed.&nbsp</td>
+<td>Some conditional compilation code had been changed during unit testing and not changed back.&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>619</td>
+<td>entity date drop down does not have calender btn</td>
+<td>26/05/2004 19:05:26</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The date, date_time and time fields on an entity attribute have the [v] drop down instead of the calendar button or clock button.&nbsp</td>
+</tr>
+<tr>
+<td>658</td>
+<td>popup menu displayed in wrong place</td>
+<td>17/06/2004 17:40:16</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>popup menu for tree items e.g. ctrl+insert is over the application control panel instead of the tree.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>136</td>
+<td>user defined icons</td>
+<td>25/04/2002 18:05:53</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>allow the user to define icons for the various entities&nbsp</td>
+</tr>
+</table>
+</body></html>

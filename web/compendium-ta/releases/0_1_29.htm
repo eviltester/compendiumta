@@ -1,0 +1,148 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.29</h1>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>19/07/2002 18:21:30</td>
+<td>added email support option</td>
+<td>added a menu item to email support which calls the default email program with a subject and body related to the registered status of the app.<br>
+<br>
+if registered then it includes the users name and key&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>word spelling checker</td>
+<td>I have knocked up some quick code to integrate with MS Word's spelling checker<br>
+<br>
+cntrl+F7 <br>
+<br>
+in the description or text weighting edits.&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>19/07/2002 14:47:58</td>
+<td>added more FILE options</td>
+<td>added options to <br>
+Explore @ - open explorer at the file path<br>
+Print File - launch the defined app in print mode&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>19/07/2002 13:17:28</td>
+<td>changed looknfeel of graphical properties dialog</td>
+<td>changed looknfeel of graphical properties dialog<br>
+<br>
+it now looks a little more like a properties tab (I think :])&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>19/07/2002 12:06:51</td>
+<td>relative paths</td>
+<td>added the ability to turn file references from absolute paths to relative paths (relative to the model)<br>
+<br>
+accessed by double clicking on the item in the list and choosing Make Path Reference&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>344</td>
+<td>system crashes when changing node colours</td>
+<td>18/07/2002 20:21:33</td>
+<td>18/07/2002 13:10:33</td>
+<td>an access violation occurs when closing the graphical node properties dialog (sometimes).<br>
+<br>
+&nbsp</td>
+<td>I have removed the form ex attribute code and it seems stable now, this means that the form is outside the main mdi form and is not always on top. This is not as user friendly but it doesn't crash the system so is much more user friendly.
+
+This will be like this until I implement a proper properties list on the graph edit form itself.&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>321</td>
+<td>transmute a branch to entity does not update treebrowser</td>
+<td>03/07/2002 15:00:07</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the tree is not updated and neither is the list if the list is displayed&nbsp</td>
+</tr>
+<tr>
+<td>208</td>
+<td>entity create needs saved twice</td>
+<td>30/05/2002 16:24:02</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>when creating an entity, and saving it. <br>
+<br>
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save<br>
+<br>
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

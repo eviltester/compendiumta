@@ -1,0 +1,303 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.3.34</h1>
+Intended as a GUI enhancement release, changing the attributes/description/weightings to be a property view and adding easier xref drag and drop.<br>
+<br>
+Also contains a critical bug fix.<br>
+<br>
+was version 1.3.32 - moved up to version 1.3.34 with the addition of a fix to the Set weightings display (the properties dialog displayed an error message when a value was present in a set instance field that wasn't part of the set). [2E2F85F7-B009-4DDF-9674-9C812822B9D3]<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>28/04/2004 14:58:13</td>
+<td>Changed the Edit Pane</td>
+<td>The edit pane has been changed to use the properties list control.<br>
+<br>
+This allows all the attributes, the description, the weightings, attachments, relationships and gotos to be maintained from a single tab instead of switching tabs.<br>
+<br>
+Also the weightings can be edited in situ in the list instead of having to jump to a separate tab.<br>
+<br>
+This should make the GUI run faster and be easier to use.<br>
+&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>28/04/2004 15:23:37</td>
+<td>Allow drag drop to create gotos</td>
+<td>With the new properties list, it is possible to drag objects on to the gotos section of the list and create a goto (a goto is a relationship from the dragged object to the edited object). <br>
+<br>
+Previously gotos could only created by editing the from object.<br>
+&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>28/04/2004 13:26:08</td>
+<td>allow drag and drop of urls</td>
+<td>URLs can be dragged from explorer on to the properties list pane as attachments, or URL weightings, or the url field of the object.&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>28/04/2004 15:27:21</td>
+<td>copy values to clipboard with right click</td>
+<td>All items in the properties list on the edit pane have a right click menu. At the minimum this allows you to copy the value of the field to the clipboard.<br>
+<br>
+URLs allow you to &quot;open in browser&quot;<br>
+<br>
+FILE weightings have a subset of the attachment menu to open and amend the path.<br>
+<br>
+Attachments allow you to open or delete (if a url) or the full set of attachment items.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>28/04/2004 15:38:13</td>
+<td>configurable text edit field</td>
+<td>The old edit pane had a fixed position for the edit field since it was on a tab.<br>
+<br>
+The new edit pane allows you to globally configure the position and attributes for the edit pane under &quot;edit  view&quot;.<br>
+<br>
+The text pane can be configured to only show when a string item is selected (the description or a String weighting) or be displayed all the time 'Constantly Display Descriptions Memo Field'<br>
+<br>
+The global position of the edit field can be controlled by the 3 options <br>
+<br>
+insitu position<br>
+graph node/link<br>
+generic position<br>
+<br>
+these refer to the contexts in which the edit pane is shown.<br>
+<br>
+insitu position is when the edit pane is nested in a form, e.g. the tree browser or the main edit properties in the graph or path edit.<br>
+<br>
+'graph node/link' refers to the graph node, and link insitu editor in the graph edit form.<br>
+<br>
+generic position is when the object is being edited in a form on its own.<br>
+<br>
+These defaults can be manually overridden in the edit form itself with the two icons on the properties list 'show/hide editor' which is a toggle button and controls the display of the text editor.<br>
+<br>
+and the editor position button which displays a drop down menu allowing you to choose the position to display the editor (either on the top, left, right or bottom) relative to the properties list.<br>
+<br>
+The editor can also be sized by using the splitter between the editor and the properties list.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>25/04/2004 15:39:07</td>
+<td>icons of attachments</td>
+<td>attachments in the properties list will display an icon of the application associated with opening the type of file.<br>
+<br>
+urls display the icon of the associated browser.&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>27/04/2004 15:40:29</td>
+<td>busy mouse when click on tree item</td>
+<td>clicking on a tree branch causes the mouse pointer to change to the busy bee, just in case the list has a lot of information to display.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>20/04/2004 15:42:09</td>
+<td>various GUI optimisations</td>
+<td>A variety of GUI speed optimisations have been written.&nbsp</td>
+<td>4&nbsp</td>
+</tr>
+<tr>
+<td>28/04/2004 12:04:01</td>
+<td>allow drag drop of files</td>
+<td>Files can be dragged on to the property list in the attachments section or on weightings which are defined as files.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>29/04/2004 12:37:12</td>
+<td>Allow Edit from Not Represented List</td>
+<td>The list of 'not represented' instances should allow double click to edit the item. So removed this restriction.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>07/05/2004 14:32:56</td>
+<td>less db access on node and link creation</td>
+<td>Change the DB access on incremental update so that less DB access occurs when creating and amending nodes and links on a graph&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>08/05/2004 17:35:00</td>
+<td>Change install routine</td>
+<td>Comments from evaluators suggested that installing the software was too hard due to the perceived number of external dependencies.<br>
+<br>
+Have bundled wingraphviz.dll into the main install. And created a version of the install which will download the necessary files from the internet during the install.<br>
+<br>
+Have also created full install versions for win95 and 98NT, XP2000.<br>
+<br>
+Have also created a version with the app and the VBruntimes (same as XP2000 actually)<br>
+<br>
+The online one is recommended as it is only a little larger than the minimal install but will act as a full install for the user operating system&nbsp</td>
+<td>18&nbsp</td>
+</tr>
+<tr>
+<td>08/05/2004 17:39:48</td>
+<td>Added a drop down menu on text edit tools button</td>
+<td>next to the show/hide editor button, added a drop down to show/hide/dynamic/set to app defaults&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>09/05/2004 15:41:21</td>
+<td>investigate system freeze</td>
+<td>Investigate User Reported error: &quot;System freezes when amending graphs on win2000&quot; &nbsp</td>
+<td>10&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td></td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>575</td>
+<td>entity instance name not amended in hierarchy</td>
+<td>25/04/2004 12:13:19</td>
+<td>28/04/2004 14:12:00</td>
+<td>When editing a name of a branch in the hierarchy, if the branch is an entity instance then the entity instance name is not changed.&nbsp</td>
+<td>added push forward code in the branch name property&nbsp</td>
+</tr>
+<tr>
+<td>606</td>
+<td>Hscroll bar on dot view of graph is reversed</td>
+<td>08/05/2004 22:28:17</td>
+<td>09/05/2004 12:00:00</td>
+<td>The horizonal scroll bar on the dot view of the graph is in reverse.<br>
+Moving the scroll bar to the right, scrolls the picture to the right instead of showing the hidden view to the right.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>608</td>
+<td>system freeze creating nodes</td>
+<td>06/05/2004 15:58:51</td>
+<td>10/05/2004 11:00:00</td>
+<td>User Reported error, system freezes when drawing graphs.<br>
+<br>
+---<br>
+<br>
+Investigation (fri 07/05/04) cannot replicate<br>
+<br>
+Investigation (sat 08/05/04) replicate but cannot consistently replicate<br>
+<br>
+Investigation (mon 10/05/04) replication steps:<br>
+- create new model in new database<br>
+- create a graph<br>
+- add 2 nodes to the graph, link the two nodes<br>
+- close graph edit<br>
+- select node in hierarchy<br>
+- convert node to be a node tree<br>
+- 50% of the time the system will freeze<br>
+<br>
+This defect can not be replicated in the IDE and is only present in the compiled version.<br>
+<br>
+&nbsp</td>
+<td>Added tracing code throughout observer loop.
+
+Error occured in a function to loop through a list refreshing the items.
+
+It was not an infinite loop, the system appeared to crash on the first statement of a for each looping through the list view.
+
+Have no idea at all why this should prove problematic as no error was raised, the system freezes.
+
+Have rewritten the code to defensively check for error states and changed from a for each to a for next using an index.
+
+Replication steps no longer cause system to freeze
+&nbsp</td>
+</tr>
+<tr>
+<td>614</td>
+<td>Set with incorrect value displays error dialog</td>
+<td>10/05/2004 09:32:20</td>
+<td>11/05/2004 23:30:00</td>
+<td>User reported error:<br>
+<br>
+When selecting an instance the error message  &quot;The Value does not match an item in the list&quot; is displayed.<br>
+<br>
+This occurs when the instance has a Set weighting with a value that is not currently in the Set definition.<br>
+<br>
+&nbsp</td>
+<td>Have removed the warning message.&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>12</td>
+<td>file type</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>allow drag and drop of file from explorer on to the weighting tab&nbsp</td>
+</tr>
+<tr>
+<td>430</td>
+<td>buttons for edit/delete weightings and templates</td>
+<td>24/06/2003 13:26:14</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>we should have buttons to edit, delete node/link weightings and script templates&nbsp</td>
+</tr>
+</table>
+</body></html>

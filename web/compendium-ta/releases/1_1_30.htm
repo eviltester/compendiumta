@@ -1,0 +1,338 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.1.30</h1>
+Bug fixes and minor requirements implemented. <br>
+<br>
+The big feature of this release is filtering of the grids which is a major boon when there are many records.<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>25/11/2003 18:21:36</td>
+<td>removed status bar from edit\app properties</td>
+<td>removed status bar from edit\app properties&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>26/11/2003 09:23:55</td>
+<td>added the [filterTotal/baseTotal] to frame caption</td>
+<td>when a filter is on a list the frame caption will show <br>
+<br>
+[filterTotal/baseTotal] on the caption <br>
+<br>
+where<br>
+<br>
+filterTotal is the number of records in the filter list<br>
+and baseTotal is the number of records filtered&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>24/11/2003 09:00:21</td>
+<td>Added filters</td>
+<td>Any grid now, if the mouse is right clicked on it will display the Filter popup menu.<br>
+<br>
+from here it is possible to create a filter [define filter], stop the current display from being filtered [clear filter], delete a definition of a filter, apply a filter, or edit the current filter [edit filter]<br>
+<br>
+Filters are persisted to the database when saving the model.<br>
+<br>
+The text filters use regular expressions, as defined by the VBscript regex command.<br>
+<br>
+This will be explained in the help file at some point, if this is released without the help file being updated then more information can be found at http://www.microsoft.com/scripting under the vbscript documentation links<br>
+<br>
+or more specifically here where the pattern property is defined<br>
+<br>
+http://msdn.microsoft.com/library/default.asp?url=/library/en-us/script56/html/vspropattern.asp<br>
+<br>
+This functionality requires VBScript to be installed at version 5 or greater. The system checks for this at start up and prompts the user with download links if it is not found. (most people already have it installed)&nbsp</td>
+<td>20&nbsp</td>
+</tr>
+<tr>
+<td>27/11/2003 17:18:58</td>
+<td>added delete popup menu item for entity defn</td>
+<td>added delete popup menu item for entity defn. This was missing from the list even though it is possible to delete them from the grid.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>27/11/2003 17:43:33</td>
+<td>option to turn of instance display in model tree browser</td>
+<td>In Edit\App properties there is now an option to Display Instances In Model Browser<br>
+<br>
+When selected, the instances will be displayed under the entity definition in the Model Browser.<br>
+When not selected the instances are not displayed.<br>
+<br>
+I have found that when the instances are many, the browser then becomes unweildy and I end up using the lists to display the instances and working from there.<br>
+<br>
+I have added this as a configurable item in case some people do like working with the instances in the model browser.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>521</td>
+<td>When Filter edit attribute is first opened on set duplicates appear</td>
+<td>19/12/2003 19:37:28</td>
+<td>19/12/2003 19:55:05</td>
+<td>When editing a filter.<br>
+<br>
+If the attribute is a set e.g status open|closed and a filter is set up to match open then when the filter is first edited after loading the database then both open and closed appear as options on the left even though it should just be &quot;closed&quot;, on subsequent edits, just closed is available on the right.&nbsp</td>
+<td>key was not set so duplicates arose&nbsp</td>
+</tr>
+<tr>
+<td>516</td>
+<td>creating a new item for a filtered list removes filter</td>
+<td>27/11/2003 17:24:05</td>
+<td>15/12/2003 15:40:29</td>
+<td>when a list is filtered and a new item is added then the list is refreshed without the filter in place.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>27/11/2003 17:17:24</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+<td>now that the dynamic population of the hierarchy is enabled, this defect no longer occurs&nbsp</td>
+</tr>
+<tr>
+<td>381</td>
+<td>filter text is editable</td>
+<td>16/08/2002 09:46:20</td>
+<td>26/11/2003 18:03:43</td>
+<td>user can edit the text in the filter, this has no functional effect, but the user may expect that the filter can be controlled this way when it can't&nbsp</td>
+<td>I actually have no idea what this refers to. It is an example of a particularly bad defect report.
+
+filter text? what filter text. 
+editable in what context?
+
+&nbsp</td>
+</tr>
+<tr>
+<td>510</td>
+<td>double clicking on hierarchies in hte model browser does not open list view</td>
+<td>26/11/2003 14:59:15</td>
+<td>26/11/2003 18:00:24</td>
+<td>double clicking on hierarchies in the model browser does not open list view.<br>
+<br>
+Which it should as Graphs does and Entities does.&nbsp</td>
+<td>All the main code was there, but for some reason I hadn't added the call on a double click of the hierarchies branch. Fixed now.&nbsp</td>
+</tr>
+<tr>
+<td>511</td>
+<td>create single graph, delete graph, create graph leaves expand now visible in tree browser</td>
+<td>27/11/2003 14:19:12</td>
+<td>27/11/2003 16:20:26</td>
+<td>Creating a graph. (the only graph)<br>
+<br>
+Then deleting the graph, then adding a new graph, displays the 'expand now' in the tree browser.<br>
+<br>
+&nbsp</td>
+<td>Added a check for expansion with 0 children.&nbsp</td>
+</tr>
+<tr>
+<td>512</td>
+<td>model browser and form showing grid, delete item refresh not done</td>
+<td>27/11/2003 15:11:12</td>
+<td>27/11/2003 17:12:41</td>
+<td>If the model browser is showing a grid e.g. hierarchy gird<br>
+<br>
+and  a seperate form is displaying the grid<br>
+<br>
+and an item is deleted from the grid then the model browser list is not refreshed.<br>
+<br>
+&nbsp</td>
+<td>change observer&nbsp</td>
+</tr>
+<tr>
+<td>513</td>
+<td>various observer problems with model browser</td>
+<td>27/11/2003 16:30:58</td>
+<td>27/11/2003 17:14:41</td>
+<td>the create delete cycle affects the hierarchy branches too<br>
+<br>
+the edit pane is left open even if the item is deleted from a list<br>
+<br>
+&nbsp</td>
+<td>amended observer&nbsp</td>
+</tr>
+<tr>
+<td>520</td>
+<td>DCOM check not performed properly on windows 98</td>
+<td>08/12/2003 14:15:57</td>
+<td>19/12/2003 19:17:54</td>
+<td>Compendium-TA is supposed to check for all dependencies before running. On Windows98SE, the DCOM dependency check is not performed properly and the absence of DCOM is not identified.&nbsp</td>
+<td>Registry was not accessed properly.
+
+Check is now performed correctly.&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>432</td>
+<td>path list title not changed on graph rename</td>
+<td>24/06/2003 13:28:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the graph was in free edit mode, tree was in list mode for paths and the title on the list of paths did not change when the graph name was edited and the change committed&nbsp</td>
+</tr>
+<tr>
+<td>426</td>
+<td>entity instance not renamed after creation in hierarchy</td>
+<td>24/06/2003 13:17:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>sometimes, when creating an entity instance directly in the hierarchy and then saving it, it is not renamed in the hierarchy but it has been renamed in memory.<br>
+<br>
+noticed when creating entity directly alt+insert&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>441</td>
+<td>focus on delete should be parent or sibling</td>
+<td>24/06/2003 13:45:02</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>when deleting an entity instance the focus in the model browser is the model rather than the parent, or the sibling - this would make more sense and be more user friendly.<br>
+<br>
+27/11/2003 17:50:56<br>
+Now that the instances can be turned off from the model browser, I no longer use this method of working with instances. While siblings would be better, the parent entity defn is used so the problem is not as bad as it was.<br>
+<br>
+i recommend the lists for maintaining the instances as it is much more convenient. Particularly with filters.&nbsp</td>
+</tr>
+<tr>
+<td>54</td>
+<td>remove lower level entities?</td>
+<td>01/04/2002</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>I'm not sure if we need to fill the tree with the nodes and links and paths and entity Instances now that we have the main list screen.<br>
+<br>
+Try it without it&nbsp</td>
+</tr>
+<tr>
+<td>447</td>
+<td>leave date blank uncheck should set to current</td>
+<td>26/06/2003 11:39:25</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the date weightings when unchecking the leave date blank checkbox, should set the date to the current date&nbsp</td>
+</tr>
+<tr>
+<td>431</td>
+<td>make report changes on model edit a config option</td>
+<td>24/06/2003 13:27:21</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>the dialog that comes up after editing a model weightings should be configurable to appear or not, and default to not&nbsp</td>
+</tr>
+<tr>
+<td>442</td>
+<td>node graphic properties dialog buttons</td>
+<td>24/06/2003 18:03:53</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>change the apply button to [tick] and the revert to [undo] change close to [closeicon]&nbsp</td>
+</tr>
+<tr>
+<td>438</td>
+<td>URL label should be clickable to open url</td>
+<td>24/06/2003 13:39:12</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>in the entity (or other edit) pane, the URL label should be blue and underlined if there is text in the url and when clicked should open the url in the browser.&nbsp</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Grid Filters</td>
+<td>23/04/2002 13:30:22</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>have filters for the generic col list<br>
+<br>
+i.e. only show defects with closed status&nbsp</td>
+</tr>
+</table>
+</body></html>

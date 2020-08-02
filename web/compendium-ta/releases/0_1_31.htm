@@ -1,0 +1,261 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.31</h1>
+the after the holiday release.<br>
+<br>
+Main Changes:<br>
+o extends the timeout period to 15/9/02<br>
+o reinstates the topmost node/link styles form using a different mechanism<br>
+o extend goto tab to show structural references<br>
+   i.e what hierarchy is it in, what path, what graph, inlinks, outlinks, fromnode, tonode, entity <br>
+o standardised tree browser popup menu new &gt; functionality<br>
+o bug fixes<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>15/08/2002 15:35:59</td>
+<td>extend goto tab to show structural relationships</td>
+<td>The goto tab now shows structural relationships. <br>
+<br>
+These are internal model relationships which are used for navigating around the model. These can be identified in the list as the Type name starts with [].<br>
+<br>
+If the item is in:<br>
+ a hierarchy then []Hierarchy refers to a hierarchy that it is in. <br>
+ a graph then []Graph refers to the graph<br>
+ a path then []Path refers to the path<br>
+<br>
+if the item is a:<br>
+ node then the outlinks and inlinks are displayed<br>
+ link then the from node and to node are displayed<br>
+ entity instance then the entity is displayed<br>
+<br>
+Double clicking on the item will open the edit dialog for the structurally related item. If it is a hierarchy then the hierarchy will be positioned at the item branch.<br>
+&nbsp</td>
+<td>0.75&nbsp</td>
+</tr>
+<tr>
+<td>12/08/2002 17:40:13</td>
+<td>allow delete of node, link weightings</td>
+<td>we can now delete node and link weightings&nbsp</td>
+<td>3&nbsp</td>
+</tr>
+<tr>
+<td>12/08/2002 15:45:37</td>
+<td>added code to graph edit to select item when clicked</td>
+<td>added code to graph edit to select item in addflow diagram when clicked on in the list&nbsp</td>
+<td>0.25&nbsp</td>
+</tr>
+<tr>
+<td>12/08/2002 11:00:12</td>
+<td>topmost node/link styles dialog</td>
+<td>used a different method to keep the node/link styles dialog on top and it seems to work&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>373</td>
+<td>create database when dbdefn file missing</td>
+<td>15/08/2002 16:20:08</td>
+<td>15/08/2002 16:30:08</td>
+<td>the system goes into an infinite loop at this point&nbsp</td>
+<td>changed code&nbsp</td>
+</tr>
+<tr>
+<td>371</td>
+<td>treebrowser insitu list names are not updated on amendment</td>
+<td>15/08/2002 14:25:17</td>
+<td>15/08/2002 14:50:17</td>
+<td>when an item is displayed in the in situ edit and list screen and is edited off situ then all displays are updated except the insitu list.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>370</td>
+<td>entityDefn screen does not close when close clicked</td>
+<td>15/08/2002 14:04:08</td>
+<td>15/08/2002 14:10:08</td>
+<td>the close button on the entityDefn edit screen does not close the dialog&nbsp</td>
+<td>this was a result of a code tidy and was only present in this release, the same thing happened on model properties edit too.&nbsp</td>
+</tr>
+<tr>
+<td>369</td>
+<td>create new graph or hierarchy and they do not open</td>
+<td>14/08/2002 18:40:30</td>
+<td>14/08/2002 19:30:30</td>
+<td>in the tree browser, creating a new graph or hierarchy does not open them for editing. everything else - path, entity, instance do open.&nbsp</td>
+<td>refactored code&nbsp</td>
+</tr>
+<tr>
+<td>368</td>
+<td>tree browser popup create new should select item</td>
+<td>14/08/2002 18:31:56</td>
+<td>14/08/2002 18:40:56</td>
+<td>when an item is created via the tree browser pop up menu then that item should be selected in the tree browser&nbsp</td>
+<td>tweaked code a little&nbsp</td>
+</tr>
+<tr>
+<td>367</td>
+<td>can only add 1 new weighting at a time</td>
+<td>13/08/2002 09:45:33</td>
+<td>13/08/2002 10:55:33</td>
+<td>when trying to add more than 1 new weighting we are told that weightings cannot be named the same, even if they have different names&nbsp</td>
+<td>the wrong field was being compared - fixed&nbsp</td>
+</tr>
+<tr>
+<td>365</td>
+<td>entity descriptions are not loaded from the DB</td>
+<td>12/08/2002 17:15:48</td>
+<td>12/08/2002 17:20:48</td>
+<td>another object where the description is saved but not loaded from the DB&nbsp</td>
+<td>added the code&nbsp</td>
+</tr>
+<tr>
+<td>364</td>
+<td>in situ edit of item in tree allows blank name</td>
+<td>12/08/2002 16:55:24</td>
+<td>12/08/2002 17:03:24</td>
+<td>the name is not made blank in the entity but it is shown as blank in the tree.<br>
+<br>
+This applies to graph, node and in the hierarchy browser&nbsp</td>
+<td>added special case check&nbsp</td>
+</tr>
+<tr>
+<td>363</td>
+<td>graph description not loaded back from DB</td>
+<td>12/08/2002 16:00:39</td>
+<td>12/08/2002 16:05:39</td>
+<td>the graph description is saved to the database but is not loaded back in&nbsp</td>
+<td>line of code added&nbsp</td>
+</tr>
+<tr>
+<td>361</td>
+<td>new links not appear in graph edit links list</td>
+<td>12/08/2002 15:05:45</td>
+<td>12/08/2002 15:15:45</td>
+<td>the links list on the left of the graph edit dialog does not get updated when new links are added to the graph&nbsp</td>
+<td>just needed to add the code to do it&nbsp</td>
+</tr>
+<tr>
+<td>357</td>
+<td>node style revert always sets to ellipse</td>
+<td>12/08/2002 11:35:50</td>
+<td>12/08/2002 11:55:50</td>
+<td>when the node style dialog is used and revert is pressed, the node shape is always set to ellipse, no matter what shape it was before&nbsp</td>
+<td>the shape status wasn't being saved initially so couldn't be restored - amended code&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>208</td>
+<td>entity create needs saved twice</td>
+<td>30/05/2002 16:24:02</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>when creating an entity, and saving it. <br>
+<br>
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save<br>
+<br>
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?&nbsp</td>
+</tr>
+<tr>
+<td>321</td>
+<td>transmute a branch to entity does not update treebrowser</td>
+<td>03/07/2002 15:00:07</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the tree is not updated and neither is the list if the list is displayed&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>359</td>
+<td>node/link styles dialog title</td>
+<td>12/08/2002 14:45:13</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the title should have the M1:G1 code of the relevant graph to make it easier to identify&nbsp</td>
+</tr>
+<tr>
+<td>360</td>
+<td>graph edit popup needs more items</td>
+<td>12/08/2002 14:55:29</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>there should be functionality from the right click menu to:<br>
+<br>
+show the node/link styles dialog<br>
+export client side image map<br>
+show nodes/links<br>
+<br>
+i.e. the toolbar functions&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

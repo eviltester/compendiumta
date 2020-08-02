@@ -1,0 +1,27 @@
+internal data structure changes
+
+changed some grid display details
+
+fixed bug in weightings edit dialog
+
+added icons to the graph edit for node/link Create, edit, delete
+
+made modelproperties modelname expand on resize
+
+added addflow representation to generate path
+
+added icon buttons to generate path form
+
+added selectAll to addflow pop up menu
+
+added delete key [Delete, Backspace] on graph edit editable diagram
+
+fixed Bug
+                   both dot and addflow were refreshing the display when the
+                   user cancelled the selection of a new node or link template
+
+localised display templates for graphEdit (addflow and dot), pathEdit (Addflow and dot)
+
+persisted localised display templates to model.ini
+
+user is now prevented from editing the "Default" template name

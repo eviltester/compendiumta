@@ -1,0 +1,66 @@
+The Visual Studio Installer has been used to create the install package so let me know if anyone has any problems with it. I haven't really got to grips with the installer yet.
+
+Summary
+=======
+
+Cross referencing has been improved.
+
+The generic hierarchy has been improved.
+
+Supplementary documentation is contained in the new compdevexample database.
+
+Details
+=======
+
+	11/3/02
+		added the xref form
+		added properties to entityDefn (name, guid)
+	12/3/02
+		added add xref button functionality
+		added drag xref functionality
+		added remove xref button functionality
+		changed the node edit form to work more sensibly when docked, 
+			(fillFormFromMajorEntity)
+			i.e. 	cancel removes changes
+				OK on a new makes it an edit
+		did same for frmEditLink
+	13/3/02
+		added xrefs to entity instance
+		added xrefs to graphs
+		stopped the user xrefing self to self - includes parts of self 
+			(ie nodes/links/paths for graph)
+			added an isinGraph function to all graph child entities
+		added xrefs to paths
+		fixed defect with extra tabs being added on cancel
+		added icon to the hierarchy insertAsSibling/Child toggle button
+		added isDirty checks to Node, Link, instance
+		Path and Graph can't have isDirty checks because they do all changes immediately
+			- resolve this in the future
+
+	14/3/02
+		added autoexpand to display hierarchy root node
+		added oledragdrop to allow xrefing of entities as children in generic hierarchy
+
+	15/3/02
+		changed testMatrixWizard to allow greater flexibility of choice
+
+	18/3/02
+		xref matrix now shows the details correctly
+		xref matrix now saves the xrefs 
+			if thingA and thingB both appear in row and col then xref must be done twice
+			- no consistency checking of this done yet
+		removed access to deconstructed graph functionality	
+		added 'fake' subgraph functionality 
+			- drag graph on to node relationships and choose to make it a subgraph
+			- sg button on edit node
+			- right click popup menu on addflow for subgraph
+		added editing of 'entity' name on model tree browser
+		fixed bug on edit link not refreshing tree browser
+
+	19/3/02
+		added drag and drop to move hierarchy elements around inside the hierarchy
+		fixed defect where  graph xrefs on hierarchy were not being loaded
+		added editing of model hierarchy nodes updating form names if required
+		model browser can edit branch names by pressing space
+		fixed defect where hierarchy root nodes were not being saved
+		added delete function for generic hierarchy nodes

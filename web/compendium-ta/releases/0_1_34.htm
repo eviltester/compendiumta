@@ -1,0 +1,142 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.34</h1>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>17/10/2002 16:52:31</td>
+<td>graph edit list click changes insitu edit</td>
+<td>clicking on the lists in the graph edit now changes the insitu name editing field&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>17/10/2002 16:53:21</td>
+<td>graph edit list toggle changes button</td>
+<td>the lists in the graph edit can be toggled using the button or the menu entry.<br>
+<br>
+clicking on the menu entry now toggles the button correctly to reflect the status&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>321</td>
+<td>transmute a branch to entity does not update treebrowser</td>
+<td>03/07/2002 15:00:07</td>
+<td>15/10/2002 19:00:00</td>
+<td>the tree is not updated and neither is the list if the list is displayed&nbsp</td>
+<td>tree fixed, list still outstanding 
+list fixed &nbsp</td>
+</tr>
+<tr>
+<td>379</td>
+<td>list select does not reflect on tree select</td>
+<td>16/08/2002 22:26:29</td>
+<td>15/10/2002 19:50:40</td>
+<td>selecting an item in the list pane should really select the<br>
+same item in the tree pane as selecting an item in the tree selects the item in the list &nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>383</td>
+<td>hierarchy insert on the root should default to child</td>
+<td>16/08/2002 10:15:56</td>
+<td>17/10/2002 19:45:40</td>
+<td>hierarchy insert on the root can only create children so should default to that (eldest child)<br>
+<br>
+this refers to use of the insert key&nbsp</td>
+<td>it does this now&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>381</td>
+<td>filter text is editable</td>
+<td>16/08/2002 09:46:20</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>user can edit the text in the filter, this has no functional effect, but the user may expect that the filter can be controlled this way when it can't&nbsp</td>
+</tr>
+<tr>
+<td>378</td>
+<td>delete on treebrowser does not maintain expansion</td>
+<td>16/08/2002 09:30:03</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>delete in the treebrowser should try to maintain expansion at the moment it just contracts. It should just remove the deleted item from the tree, rather than updating the whole tree.<br>
+<br>
+This is a problem with both treeviews as the updating algorithms are simple and tend to redraw most of the tree, they certainly don't maintain expansion.&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

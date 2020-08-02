@@ -1,0 +1,3 @@
+<p>Compendium-<i>TA</i> can interface with <a herf="http://www.graphviz.org" target = "_blank">GraphViz</a> for automatic graph layout.</p>
+<p>This makes it quick and easy to create a graph, have it nicely arranged and export to another application.</p>
+<p>Compendium-<i>TA</i> can optionally interface with <a href="http://home.so-net.net.tw/oodtsen/wingraphviz/" target="_blank">WinGraphviz</a> to make layout a little faster and so that an external application does not have to be called to draw the graph.</a>

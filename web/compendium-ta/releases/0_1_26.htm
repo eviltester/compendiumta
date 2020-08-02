@@ -1,0 +1,213 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.26</h1>
+Beta bug fixing<br>
+FAQ report tweaking<br>
+User Defined Templates<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>25/06/2002 08:05:03</td>
+<td>design templates</td>
+<td>It would be useful to provide the user with a simpler mechanism for user defined reports than having to write the whole script.<br>
+<br>
+Add templates<br>
+&lt;!CTA ... !&gt; to sandwich the info<br>
+For Each x in collection<br>
+Next<br>
+<br>
+should be adequate<br>
+<br>
+also provide a way to use templates in scripts&nbsp</td>
+<td>3&nbsp</td>
+</tr>
+<tr>
+<td>27/06/2002 09:08:48</td>
+<td>Document Templates</td>
+<td>Add the templates to the documentation<br>
+<br>
+also add the new weightingInstances property on node, links and instance which is very handy when templating<br>
+<br>
+and fulfilTemplate and fulfilThisTemplate functions on cdiface for using templates with scripts.&nbsp</td>
+<td>4&nbsp</td>
+</tr>
+<tr>
+<td>26/06/2002 08:06:59</td>
+<td>Code Templates</td>
+<td>build a simple tokeniser and interpreter for the templates.<br>
+<br>
+nested for implemented using a stack (only one var to track per loop block)&nbsp</td>
+<td>4&nbsp</td>
+</tr>
+<tr>
+<td>26/06/2002 13:08:07</td>
+<td>test templates</td>
+<td>build some test template reports&nbsp</td>
+<td>3&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>298</td>
+<td>Default Entity Names should include the id so that they are unique</td>
+<td>28/06/2002 10:20:21</td>
+<td>01/07/2002 11:30:21</td>
+<td>Default Entity Names should include the id so that they are unique&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>295</td>
+<td>treebrowser changed/save changes loop</td>
+<td>27/06/2002 11:30:14</td>
+<td>27/06/2002 14:11:14</td>
+<td>when an item in the edit pane of the treebrowser changes, and the tree is clicked on then the system correctly prompts for &quot;dirty - save?&quot; if yes is clicked then the item is saved, but the system prompts again.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>299</td>
+<td>New Entity does not update the entity list</td>
+<td>28/06/2002 10:30:58</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>in the tree browser when an entity is selected and the user creates a new entity then the entity is shown in the tree but not in the list&nbsp</td>
+</tr>
+<tr>
+<td>208</td>
+<td>entity create needs saved twice</td>
+<td>30/05/2002 16:24:02</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>when creating an entity, and saving it. <br>
+<br>
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save<br>
+<br>
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?&nbsp</td>
+</tr>
+<tr>
+<td>288</td>
+<td>Updating a hierarchy branch name does not reflect in tree browser</td>
+<td>21/06/2002 12:56:16</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>Updating the name of an entity when it is a hierarchy branch (from the hierarchy browser) does not update the model browser tree pane.&nbsp</td>
+</tr>
+<tr>
+<td>275</td>
+<td>time not always shown on date weighting</td>
+<td>19/06/2002 11:45:59</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>date is not always shown when a date weighting is selected<br>
+<br>
+- workaround -<br>
+click the other tabs a few times&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>302</td>
+<td>node style font change does not apply on its own</td>
+<td>28/07/2002 10:30:21</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>in order to effect a font change, the colour has to be changed as well, just changing the node style does not affect a change&nbsp</td>
+</tr>
+<tr>
+<td>300</td>
+<td>node style caption does not reflect selected item</td>
+<td>28/06/2002 10:30:00</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>node style caption does not reflect selected item<br>
+<br>
+the caption on the dialog should say link style if selected a link and node/link style if on both&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>49</td>
+<td>popup menus use mouse co-ords</td>
+<td>19/04/2002 14:31:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this isn't particularly good when we are using the insert keys<br>
+&nbsp</td>
+</tr>
+<tr>
+<td>303</td>
+<td>create new node should use style on the node style dialog</td>
+<td>01/07/2002 10:30:02</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>create new node should use style on the node style dialog&nbsp</td>
+</tr>
+<tr>
+<td>301</td>
+<td>node style dialog buttons should have tooltips</td>
+<td>28/06/2002 10:30:46</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

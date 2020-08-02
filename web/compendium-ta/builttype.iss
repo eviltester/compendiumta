@@ -1,0 +1,1 @@
+#define builtType "appPatch"

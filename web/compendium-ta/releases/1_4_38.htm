@@ -1,0 +1,140 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.4.38</h1>
+Added relationship matrix as a menu item to entity instances in hierarchies - this makes it easy to xref to items in the hierarchy. Added a few API commands to control the GUI (open edit windows) with a anew API object theGUI.<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>18/08/2004 23:50:29</td>
+<td>added Relationship Matrix menu item</td>
+<td>added Relationship Matrix menu item to entityInstances in the hierarchy&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>22/08/2004 16:54:46</td>
+<td>added new API commands</td>
+<td>The API has a new item<br>
+<br>
+theGUI<br>
+<br>
+e.g. cdiface.theGUI<br>
+<br>
+which has the following functions:<br>
+<br>
+EditObject <br>
+EditObjectProperties<br>
+EditAsHierarchy<br>
+toggleAppBar<br>
+<br>
+all of the will take any valid Compendium-TA object but will only open a window if it is valid for the function.<br>
+<br>
+<br>
+<br>
+editObject will mainly open a properties window but for a graph or a path will open the editGraph and editPath dialogs.<br>
+<br>
+EditObjectProperties will open a properties window to edit the object<br>
+<br>
+EditAsHierarchy will display the object in a new hierarchy window if it can be displayed in such i.e. a hierarchy branch, a hierarchy, a graph<br>
+<br>
+usage would be:<br>
+<br>
+cdiface.theGUI.editObject  anObject<br>
+cdiface.theGUI.EditObjectProperties anObject<br>
+cdiface.theGUI.EditAsHierarchy anObject<br>
+<br>
+<br>
+<br>
+toggleAppBar will toggle the application control panel on or off. With no arguments it is a toggle, with a value of true it will show the application control panel and with a value of false it will hide the application control panel<br>
+<br>
+e.g.<br>
+<br>
+cdiface.theGUI.toggleAppBar<br>
+cdiface.theGUI.toggleAppBar true<br>
+cdiface.theGUI.toggleAppBar false<br>
+<br>
+ <br>
+&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>673</td>
+<td>drag instance to hierarchy single child</td>
+<td>22/08/2004 16:51:44</td>
+<td></td>
+<td>Dragging an instance on to a hierarchy branch which was also an entity instance which had existing children (where none of them were instances) and parent was not expanded, caused the system to add the first child to the tree so that when the branch was expanded, the parent looked like it had only one child and had to be closed then reexpanded.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>619</td>
+<td>entity date drop down does not have calender btn</td>
+<td>26/05/2004 19:05:26</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The date, date_time and time fields on an entity attribute have the [v] drop down instead of the calendar button or clock button.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

@@ -1,0 +1,213 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.32</h1>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>22/08/2002 14:08:10</td>
+<td>changed install routine</td>
+<td>the install program had XP specific files in it and this overwrote system files on the client system.<br>
+<br>
+The install routine has been completely changed so that all the files are clean, MDAC and JET are not installed, the system checks for them and if not installed prompts the user to go off and download them.<br>
+<br>
+This has been tested using virtual PC on win98, win98SE, winNT4SP3, winNT4SP4&nbsp</td>
+<td>5 days&nbsp</td>
+</tr>
+<tr>
+<td>19/08/2002 17:05:35</td>
+<td>added frequently used file list</td>
+<td>added a frequently used file list to the file menu&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>16/08/2002 14:20:33</td>
+<td>made the read scripts functionaity more robust</td>
+<td>it looked like it would fail if the system had no files or folders set up.<br>
+<br>
+so fixed it so it wouldn't&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>385</td>
+<td>Resize Graph dialog can obscure the horizontal splitter bar</td>
+<td>19/08/2002 14:02:37</td>
+<td>19/08/2002 14:30:37</td>
+<td>Resize Graph dialog can obscure the horizontal splitter bar&nbsp</td>
+<td>Added constraint code to the dialog
+
+this also occured on pathe edit, tree browser, xref so these all had constriant code added tool.&nbsp</td>
+</tr>
+<tr>
+<td>208</td>
+<td>entity create needs saved twice</td>
+<td>30/05/2002 16:24:02</td>
+<td>16/08/2002 09:47:02</td>
+<td>when creating an entity, and saving it. <br>
+<br>
+the save is made but the form brings up the save button once again. the second save commits and does not ask for another save<br>
+<br>
+this is a sporadic problem and may be due to an oversensitive keyboard setting on the laptop?&nbsp</td>
+<td>this has not been repeatable&nbsp</td>
+</tr>
+<tr>
+<td>379</td>
+<td>list select does not reflect on tree select</td>
+<td>16/08/2002 22:26:29</td>
+<td>29/08/2002 09:45:40</td>
+<td>selecting an item in the list pane should really select the<br>
+same item in the tree pane as selecting an item in the tree selects the item in the list &nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>383</td>
+<td>hierarchy insert on the root should default to child</td>
+<td>16/08/2002 10:15:56</td>
+<td>29/08/2002 09:45:40</td>
+<td>hierarchy insert on the root can only create children so should default to that (eldest child)<br>
+<br>
+this refers to use of the insert key&nbsp</td>
+<td>it does this now&nbsp</td>
+</tr>
+<tr>
+<td>380</td>
+<td>clicking on closed date tab on a defect makes it dirty</td>
+<td>16/08/2002 09:45:40</td>
+<td>29/08/2002 09:45:40</td>
+<td>clicking on closed date on a defect when it has not been set, causes the  instance to be marked as dirty. This is obviously a problem with the way that dates are handled in the weightings tab.<br>
+<br>
+This also happens when moving from a field to the raised date so is not related to the 'leave as blank' checkbox.&nbsp</td>
+<td>Was all to do with the  'leave as blank' checkbox, added the 'updating form' flag to this section of the code&nbsp</td>
+</tr>
+<tr>
+<td>376</td>
+<td>should be able to get reports for represented entity</td>
+<td>16/08/2002 16:36:20</td>
+<td>16/08/2002 16:45:00</td>
+<td>on a hierarchy branch, if the branch represents something else then it would be useful to get the reports for that entity in the reports popup.&nbsp</td>
+<td>It does this if the script has been set up to respond to HierarchyNode.thing as the report will be sent a hierarchynode and the script would would to pull out the represents object&nbsp</td>
+</tr>
+<tr>
+<td>360</td>
+<td>graph edit popup needs more items</td>
+<td>12/08/2002 14:55:29</td>
+<td>16/08/2002 16:30:29</td>
+<td>there should be functionality from the right click menu to:<br>
+<br>
+show the node/link styles dialog<br>
+export client side image map<br>
+show nodes/links<br>
+<br>
+i.e. the toolbar functions&nbsp</td>
+<td>added a reports... item as well, also removed all the edit graph options form the path popup menu and restructured the code to make it easier to add conditional elements to the popup menu.&nbsp</td>
+</tr>
+<tr>
+<td>359</td>
+<td>node/link styles dialog title</td>
+<td>12/08/2002 14:45:13</td>
+<td>16/08/2002 16:30:29</td>
+<td>the title should have the M1:G1 code of the relevant graph to make it easier to identify&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+<tr>
+<td>382</td>
+<td>close button should be a graphic (when not in situ)</td>
+<td>16/08/2002 09:47:02</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>close button should be a graphic (when not in situ) on the edit pane, same goes for the transmute button.&nbsp</td>
+</tr>
+<tr>
+<td>381</td>
+<td>filter text is editable</td>
+<td>16/08/2002 09:46:20</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>user can edit the text in the filter, this has no functional effect, but the user may expect that the filter can be controlled this way when it can't&nbsp</td>
+</tr>
+<tr>
+<td>378</td>
+<td>delete on treebrowser does not maintain expansion</td>
+<td>16/08/2002 09:30:03</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>delete in the treebrowser should try to maintain expansion at the moment it just contracts. It should just remove the deleted item from the tree, rather than updating the whole tree.<br>
+<br>
+This is a problem with both treeviews as the updating algorithms are simple and tend to redraw most of the tree, they certainly don't maintain expansion.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

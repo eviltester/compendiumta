@@ -1,0 +1,52 @@
+There are 2 new dlls in the system folder now
+
+dbdefn.txt should reside in the same directory as the program exe if you want to create any new databases.
+
+
+added a "File" type weighting which can point to a file and open the file
+		for referencing specs, test data etc.
+		added this to nodes, links, entities
+
+added a node word processor and a link word processor on graph edit - this allows the user to edit
+	        all the links and/or all the nodes at the same time. This is a more comfortable way of editing
+		when "auto prompt for edit" is off and the graph is filling the edit dialog - at least for me 
+		it is!
+
+
+added dataaccess objects - I think this has resulted in a new DLL DAO36
+
+fixed problem with loading models with fields defined (didn't account for old models not having the field type)
+
+fixed template combo failing when no template found as default
+
+added save to database code on normal saveToFile
+
+added load to memory from database
+
+added create database from text file functionality
+
+added createDatabase, connect to database, close database, load from database as separate menu options
+
+added save model to database option separate from normal file save
+
+compared save and load from file to save and load from database - seems ok
+
+save model dialog retitled
+
+node name not allowed to be edited to blank
+
+path properties dialog accessible from path dialog
+the graph toolbar expand in tab only mode is above, and not on, the tab
+
+open database file dialog no longer a "save as" dialog
+
+added default draw style to the addflow graphs
+- same mechanism will chang the style of the selected links
+
+added import entity from database function - from other models
+
+added toolbar to the model browser with *some* functions
+
+added the "fake docking" functionality to the model browser - this will bring the details of the 
+	selected item to the right of the model browser when the node is selected. They can be 
+	"undocked" by using the normal editing functionality.

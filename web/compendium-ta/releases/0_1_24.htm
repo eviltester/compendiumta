@@ -1,0 +1,263 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</head><body>
+<h1>Version Tracking Report 0.1.24</h1>
+Bug Fixes<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>13/06/2002 10:06:41</td>
+<td>save uses entire status bar</td>
+<td>the model save now uses the entire status bar for the progress bar&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>12/06/2002 10:58:00</td>
+<td>added icons to trees</td>
+<td>&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>10/06/2002 13:30:03</td>
+<td>changed purge during save</td>
+<td>a save to the db was purging all entities.<br>
+<br>
+Have changed this now to only purge the deleted items - all others are updated - this should reduce database fragmentation and sets up for last updated functionality in the future.&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+<tr>
+<td>07/06/2002 09:00:05</td>
+<td>added graph list on tree browser</td>
+<td>on the tree browser I had coded it so that the graph list did not appear when a graph was selected - I thought that this looked a bit bad on reflection so changed it so that the list of graphs appears when a graph is selected&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>14/06/2002 14:00:31</td>
+<td>change display code of hierarchy browser to refresh less</td>
+<td>the tree was refreshing too much. Limited the refreshing&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>13/06/2002 14:01:52</td>
+<td>added error handling code</td>
+<td>Added error handling code to the rest of the application&nbsp</td>
+<td>6&nbsp</td>
+</tr>
+<tr>
+<td>10/06/2002 11:10:38</td>
+<td>urls can now be opened by double clicking</td>
+<td>added the open? prompt when double clicking on a url field&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>12/06/2002 12:00:02</td>
+<td>added caption to tree browser</td>
+<td>changed the caption on the tree browser dialog to reflect the model number and name&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>07/06/2002 10:00:35</td>
+<td>changed properties icon on generic edit</td>
+<td>changed the properties icon on the generic edit buttons to be the open for editing icon if it is a graph etc. and the graphical styles icon if it is a node or a link<br>
+<br>
+also added the properties button to model, entity and hierarchy to open all of them for external edit&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+<tr>
+<td>11/06/2002 16:30:48</td>
+<td>observer code changed</td>
+<td>there were numerous events not picked up by the observer, deletes not represented, updates not occurring etc.<br>
+<br>
+rewrote the observer from a central observer and used the center to trigger local observations&nbsp</td>
+<td>3&nbsp</td>
+</tr>
+<tr>
+<td>06/06/2002 23:00:50</td>
+<td>updated help file for hierarchyNode.EntityName</td>
+<td>I had forgotten to document that hierarchyNode can have a . extension to specify the type of represents that the hierarchyNode must have to be valid<br>
+<br>
+this is used in the version tracking report and in the version tracking macro to create the structure of the report branches&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>241</td>
+<td>description not avail in script template macros</td>
+<td>07/06/2002 13:34:33</td>
+<td>14/06/2002</td>
+<td>the list of items for a script template does not include the description field, but it should&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>252</td>
+<td>double clicking on items caused duplicate generic lists</td>
+<td>11/06/2002 18:25:06</td>
+<td>11/06/2002 19:25:06</td>
+<td>double clicking on nodes, graphs, links, entites, instances causes duplicate lists to be displayed&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>235</td>
+<td>paths with duplicate links have problems</td>
+<td>07/06/2002 09:30:29</td>
+<td>07/06/2002 12:00:29</td>
+<td>if a path has a link in it twice, i.e. 85, 87, 89, 87, 90<br>
+<br>
+then 87 is only saved once and when the path is loaded in then the path is seen as invalid as it has the missing link&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>237</td>
+<td>click and drag on dot can cause a stack overflow</td>
+<td>07/06/2002 13:03:16</td>
+<td>14/06/2002</td>
+<td>the dot code needs error trapping, and I'm not sure if the click and drag is a good idea, it seems to flicker too much and is too fast on a small diagram - stick to the scrollbars and remove this code&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>246</td>
+<td>save on model exit does not display progress bar</td>
+<td>10/06/2002 12:00:34</td>
+<td>10/06/2002 12:30:34</td>
+<td>a progress bar is displayed when saving the model normally, but when exiting the model and it is not saved and responding yes to the prompt to save, the progress bar is not saved during the save&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>242</td>
+<td>Generic Grid is not updated when an entity is updated</td>
+<td>10/06/2002 10:00:31</td>
+<td>10/06/2002 10:35:31</td>
+<td>when an entity is updated, the generic grid is not updated&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>244</td>
+<td>boolean weightings do not set consistently</td>
+<td>10/06/2002 11:10:41</td>
+<td>10/06/2002 11:20:41</td>
+<td>when clicking and unclicking the boolean values, the state is not always retained.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>236</td>
+<td>node and link display templates do not work on editable graph</td>
+<td>07/06/2002 12:29:59</td>
+<td>07/06/2002 13:40:00</td>
+<td>all other graph displays, dot and path show the node templates, but the editable graph display seems to ignore these, either remove the option to select them or fix it so that they work&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>250</td>
+<td>addflow style dialog not filled with style</td>
+<td>11/06/2002 16:30:11</td>
+<td>14/06/2002 17:20:41</td>
+<td>when called from a node or link is not filled with the details of the node or link&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>255</td>
+<td>hierarchy report goes into an infinite loop</td>
+<td>13/06/2002 13:00:42</td>
+<td>13/06/2002 13:30:42</td>
+<td>when a last child is selected to report on the hierarchy report then the hierarchy report goes into an infinite loop&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>245</td>
+<td>new database cannot save entityDefnWeightingsDefns</td>
+<td>10/06/2002 11:20:36</td>
+<td>10/06/2002 11:30:36</td>
+<td>there is an error on saving entityDefnWeightingsDefns&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>251</td>
+<td>create path dialog is too small on create</td>
+<td>11/06/2002 16:58:37</td>
+<td>14/06/2002 17:20:41</td>
+<td>the panes on the create path dialog are not sized for the size of the dialog when it first opens&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>239</td>
+<td>node and link should have no default weightings</td>
+<td>07/06/2002 13:05:50</td>
+<td>14/06/2002</td>
+<td>at the moment the node has default weightings of weight and step<br>
+the link has defaults of weight, step and desc <br>
+<br>
+there should be no default weightings on the nodes and links and the default script template should use the description field rather than a default weighting&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>231</td>
+<td>key control of hierarchy - alt + ctrl does not work</td>
+<td>06/06/2002 22:15:41</td>
+<td>06/06/2002 22:30:41</td>
+<td>using the keyboard controls of the hierarchy amendment, ctrl and alt, and shift and ctrl and alt should enter an entity instance as a child, but they are only entered as siblings&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>240</td>
+<td>when on a node for a link, nodes list should be shown</td>
+<td>07/06/2002 13:07:15</td>
+<td>14/06/2002</td>
+<td>we should see the list of nodes for the link when clicked on a node on a link&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>243</td>
+<td>open a file weighting changes name in grid</td>
+<td>10/06/2002 10:30:13</td>
+<td>14/06/2002 17:00:00</td>
+<td>when a file weighting with a file path in it is edited, the list grid which has the attributes lists the file as &quot;Opened File&quot; rather than the path&nbsp</td>
+<td>&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>238</td>
+<td>short name on link and node</td>
+<td>07/06/2002 13:04:56</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the short name on the nodes and links is only used for deconstructed graphs and this has not been enabled in the beta therefore this should not be displayed on the generic list, or mentioned in the help file&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

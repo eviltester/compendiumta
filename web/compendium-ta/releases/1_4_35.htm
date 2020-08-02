@@ -1,0 +1,164 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.4.35</h1>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>15/08/2004 16:28:46</td>
+<td>Added form position persistence</td>
+<td>Added form position persistence for Main form and tree browser form - eases startup of application.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>15/08/2004 18:14:44</td>
+<td>Added size popup menu to export as image map</td>
+<td>When exporting a graph to a client side image map, a popup menu is displayed to allow the user to choose between the size that is currently displayed in the window, or the size of the graph as drawn by the user.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>661</td>
+<td>Graph has no pop up menu</td>
+<td>07/08/2004 10:18:32</td>
+<td>07/08/2004 15:00:00</td>
+<td>Right click on a graph in the tree and there is no popup menu&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>663</td>
+<td>EntityDefn popup menu displays reports for *Nodes</td>
+<td>07/08/2004 16:16:28</td>
+<td>07/08/2004 17:00:00</td>
+<td>EntityDefn popup menu displays reports for *Nodes&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>664</td>
+<td>model already loaded message displayed in error</td>
+<td>04/08/2004 16:17:33</td>
+<td>04/08/2004 17:00:00</td>
+<td>When a model is opened, and then closed. Attempts to open the model again result in the &quot;model already opened&quot; message.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>665</td>
+<td>Tools list is off by one</td>
+<td>07/08/2004 12:19:28</td>
+<td>07/08/2004 14:00:00</td>
+<td>Clicking on an item in the tools list, gets the wrong tool executed.&nbsp</td>
+<td>An off by one coding error.&nbsp</td>
+</tr>
+<tr>
+<td>666</td>
+<td>Xref buttons not displayed on hierarchy root</td>
+<td>07/08/2004 12:20:49</td>
+<td>07/08/2004 14:00:00</td>
+<td>Xref buttons not displayed on hierarchy root, results in not being able to xref a hierarchy root to an entity instance&nbsp</td>
+<td>amended xref code&nbsp</td>
+</tr>
+<tr>
+<td>667</td>
+<td>Deletes in non incremental mode not persisted</td>
+<td>12/08/2004 16:25:03</td>
+<td>15/08/2004 13:00:00</td>
+<td>Deletes for Hierarchy Branches, Entities, Instances are not persisted in non-incremental mode.&nbsp</td>
+<td>This was a result of changing the incremental persistence code and not fully checking for impact. Fixed.&nbsp</td>
+</tr>
+<tr>
+<td>668</td>
+<td>Relationships not deleted for instances</td>
+<td>12/08/2004 16:27:05</td>
+<td>15/08/2004 11:00:00</td>
+<td>Relationships not deleted for instances when the instance is deleted.&nbsp</td>
+<td>fixed. small coding error in entity instance purge.&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>658</td>
+<td>popup menu displayed in wrong place</td>
+<td>17/06/2004 17:40:16</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>popup menu for tree items e.g. ctrl+insert is over the application control panel instead of the tree.&nbsp</td>
+</tr>
+<tr>
+<td>649</td>
+<td>Client Side Image Maps templates</td>
+<td>09/06/2004 14:31:35</td>
+<td>OPEN</td>
+<td>HIGH</td>
+<td>The client side image map export uses a template with the ids, it should use the template associated with the graph at the time the export is displayed.&nbsp</td>
+</tr>
+<tr>
+<td>619</td>
+<td>entity date drop down does not have calender btn</td>
+<td>26/05/2004 19:05:26</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The date, date_time and time fields on an entity attribute have the [v] drop down instead of the calendar button or clock button.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+</table>
+</body></html>

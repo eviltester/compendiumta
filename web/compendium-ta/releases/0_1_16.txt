@@ -1,0 +1,70 @@
+Please note that dbdefn.txt does not install itself and must be manually copied into the same path as the program is installed to.
+
+
+version 0.1.16
+==============
+		resize tree browser defects fixed
+
+		initial size of treebrowser changed
+
+		node click on tree browser when maximised caused error - fixed
+
+		added a check on adding duplicately named node weightings, link weightings and display templates
+
+		added graphical attribute editing for the nodes and links 
+
+		expanded to have styles defined - e.g. green start node etc.
+
+		expand and contract attributes on nodes & links
+
+		added a menu button on graph edit and tree browser
+
+		graph edit will automatically dock 1 node and 1 link under the graph edit screen
+
+		reduced minimum size of link edit form
+
+		added timers to have docked forms move with parent forms (after 0.5 sec)
+
+		save/load styles to file 
+		save/load styles to DB
+			added new table modelGraphicalStyle
+
+		closing a ModelTreeBrowser will now close all its child windows
+
+		added icons to the main window to do the menu functions
+
+		moved [ok] [cancel] on link and node edit to toolbar, removed their status bars
+
+		hacked a floating toolbar for multiple diagram styles
+
+		added the generic hierarchy functionality
+			this is to allow user defined categorisation and derivation hieararchies
+		has resulted in database changes 2 new tables
+
+
+Current DLLS and files in use
+
+08/03/2002  17:54                  641 TestingTool.DDF
+08/03/2002  17:39            2,031,616 testingtool5.exe
+21/08/2000  01:00            1,388,544 MSVBVM60.DLL
+21/07/2000  12:05              614,672 oleaut32.dll
+21/07/2000  12:05              164,112 OLEPRO32.DLL
+21/07/2000  12:05              143,632 asycfilt.dll
+21/07/2000  12:05               16,896 stdole2.tlb
+31/05/1998  00:00               22,288 COMCAT.DLL
+16/05/2001  14:26              557,328 dao360.dll
+10/10/2000  18:01              198,656 Comdlg32.ocx
+22/05/2000  16:58              608,448 comctl32.ocx
+05/01/1999  17:30              225,280 VSFLEX3.OCX
+07/12/1999  12:00              995,383 Mfc42.dll
+07/12/1999  13:00              295,000 msvcrt.dll
+15/05/1998  14:04              142,848 AddFlow2.ocx
+16/05/2001  14:24              244,232 MSFLXGRD.OCX
+18/04/2001  16:45              260,096 Richtx32.ocx
+30/03/2001  18:26              703,488 Mscomct2.ocx
+20/06/1998  00:00              286,720 SETUP1.EXE
+26/03/1999  00:00              101,888 VB6STKIT.DLL
+18/06/1998  00:00               73,216 ST6UNST.EXE
+08/03/2002  17:54                4,591 Setup.Lst
+18/06/1998  00:00              140,800 SETUP.EXE
+08/03/2002  17:54                  194 testingtool5.BAT

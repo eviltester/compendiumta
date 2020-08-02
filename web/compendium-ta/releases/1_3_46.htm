@@ -1,0 +1,280 @@
+<html><head></head><body>
+<h1>Version Tracking Report 1.3.46</h1>
+This started off as a cosmetic release, but it has some useful functional enhancements for dragging and dropping.<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>30/05/2004 18:09:14</td>
+<td>Enabled drag of entity instance between models</td>
+<td>If 2 models share the same entity definitions then we can drag an entity instance from one model to another and it will be copied.<br>
+<br>
+Dragging is only enabled on to hierarchies.&nbsp</td>
+<td>1&nbsp</td>
+</tr>
+<tr>
+<td>31/05/2004 10:34:11</td>
+<td>drag and drop between models</td>
+<td>The Test Analyst Edition can now drag and drop between models.<br>
+<br>
+Entity Instances can be dragged from one model to another if an entity of the same name exists in both models. The entity instance is copied as well as can be so the name, url, description are copied; any weightings which are the same are copied; any attachments are copied.<br>
+<br>
+Hierarchical structures can be dragged.<br>
+<br>
+If an entity instance is embedded in a hierarchy then it is copied across based on the rules above. Note: The system first tries to identify the entity instance in the existing model first so if an intance with the same name, url, desc and weightings already exists then this will be used as a branch reference rather than the copied in reference (because they are so similar as to be almost the same)<br>
+&nbsp</td>
+<td>2&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>625</td>
+<td>Dialog not centered</td>
+<td>26/05/2004 22:58:59</td>
+<td>30/05/2004 16:46:27</td>
+<td>The App Properties Dialog is centered, the Edit Tools List is not and neither is the Edit Text Box Templates&nbsp</td>
+<td>Edit tools list dialog and Edit Text Box templates dialog are now centered.&nbsp</td>
+</tr>
+<tr>
+<td>626</td>
+<td>Tip of the day dialog not centered</td>
+<td>26/05/2004 23:09:02</td>
+<td>30/05/2004 16:47:57</td>
+<td>Tip of the day dialog is not centered&nbsp</td>
+<td>change display code&nbsp</td>
+</tr>
+<tr>
+<td>627</td>
+<td>Display Tips at startup !app prop</td>
+<td>26/05/2004 23:12:14</td>
+<td>30/05/2004 16:48:54</td>
+<td>The option to display tips at start up is only selected on the tip of the day dialog.<br>
+<br>
+Should it perhaps be an app property as well?&nbsp</td>
+<td>added property to appProperties&nbsp</td>
+</tr>
+<tr>
+<td>628</td>
+<td>next tip closes and opens form</td>
+<td>26/05/2004 23:12:27</td>
+<td>30/05/2004 17:08:49</td>
+<td>The [Next] Tip button, closes and reopens the form, it should really just refresh the form with the next tip.&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>629</td>
+<td>Tip of the day dialog icon</td>
+<td>26/05/2004 23:14:28</td>
+<td>30/05/2004 16:52:38</td>
+<td>&nbsp</td>
+<td>changed icon&nbsp</td>
+</tr>
+<tr>
+<td>630</td>
+<td>resize lost on [Next]</td>
+<td>26/05/2004 23:15:10</td>
+<td>30/05/2004 16:53:43</td>
+<td>If the dialog is resized and the next button is pressed then the size [and position] of the dialog are forgotten, and the dialog appears in the same place and the same size as the default position.&nbsp</td>
+<td>no longer occurs due to fix to 'next tip closes and opens form'&nbsp</td>
+</tr>
+<tr>
+<td>631</td>
+<td>What is this [?] button</td>
+<td>26/05/2004 23:18:32</td>
+<td>30/05/2004 17:08:57</td>
+<td>There is no need for the [?] button on the tip of the day dialog&nbsp</td>
+<td>removed button&nbsp</td>
+</tr>
+<tr>
+<td>632</td>
+<td>OK Cancel Buttons on app update</td>
+<td>26/05/2004 23:18:59</td>
+<td>30/05/2004 16:57:34</td>
+<td>When the version is up to date and the &quot;You are using the most up to date version&quot; dialog appears.<br>
+<br>
+What is the point of the [OK] and [Cancel] buttons? &nbsp</td>
+<td>now OK only&nbsp</td>
+</tr>
+<tr>
+<td>633</td>
+<td>About dialog is not centered</td>
+<td>26/05/2004 23:33:49</td>
+<td>30/05/2004 17:09:10</td>
+<td>About dialog is not centered on the MDI form&nbsp</td>
+<td>centered now&nbsp</td>
+</tr>
+<tr>
+<td>634</td>
+<td>Tip of the day does not close with [x]</td>
+<td>30/05/2004 13:58:56</td>
+<td>30/05/2004 16:59:45</td>
+<td>When pressing the [x] button, the tip of the day does not close and this acts as a [next tip]&nbsp</td>
+<td>fixed&nbsp</td>
+</tr>
+<tr>
+<td>635</td>
+<td>Both URLs go to same place</td>
+<td>26/05/2004 23:34:16</td>
+<td>30/05/2004 17:01:30</td>
+<td>Both of the displayed url items on About dialog<br>
+<br>
+[visit compendiumdev]<br>
+[compendium-ta website]<br>
+<br>
+go to the same url<br>
+<br>
+http:\\www.compendiumdev.co.uk&nbsp</td>
+<td>changed second to go to \compendium-ta&nbsp</td>
+</tr>
+<tr>
+<td>636</td>
+<td>[Acks] button title</td>
+<td>26/05/2004 23:35:29</td>
+<td>30/05/2004 17:03:12</td>
+<td>The [Acks] button title could be changed to [Acknowledgements]?<br>
+<br>
+The font for showing the acknowledgements is a little rough - is there another.<br>
+<br>
+Since they are all urls, perhaps they should be shown with url controls like the 'visit compendiumdev' links?&nbsp</td>
+<td>added all ack links as url labels. Always displayed. Changed [Acks] to [Buy Now] for unregistered demo users.&nbsp</td>
+</tr>
+<tr>
+<td>637</td>
+<td>About Title</td>
+<td>26/05/2004 23:37:02</td>
+<td>30/05/2004 17:04:56</td>
+<td>The title of the dialog is [About] could it be more expressive?<br>
+<br>
+[About Compendium-TA] or [Compendium-TA version 1.X.X]<br>
+<br>
+Possibly show registration details?&nbsp</td>
+<td>added version number and registered details to the title&nbsp</td>
+</tr>
+<tr>
+<td>638</td>
+<td>Reg User Dialog Icon is default</td>
+<td>26/05/2004 23:41:10</td>
+<td>30/05/2004 17:06:10</td>
+<td>The Registered User Dialog Icon is default rather than the CTA icon&nbsp</td>
+<td>changed icon&nbsp</td>
+</tr>
+<tr>
+<td>639</td>
+<td>Reg User Dialog is not centered</td>
+<td>26/05/2004 23:42:22</td>
+<td>30/05/2004 17:06:56</td>
+<td>Registered User Dialog is not centered in the MDI form&nbsp</td>
+<td>Centered Code&nbsp</td>
+</tr>
+<tr>
+<td>640</td>
+<td>About Dialog show user details</td>
+<td>26/05/2004 23:43:01</td>
+<td>30/05/2004 17:08:17</td>
+<td>The about dialog should show some user details, and what version is being used - Test Analyst, Thought Assistant&nbsp</td>
+<td>Added logo for specific version&nbsp</td>
+</tr>
+<tr>
+<td>641</td>
+<td>Search results does not display branches</td>
+<td>30/05/2004 12:09:24</td>
+<td>30/05/2004 17:10:18</td>
+<td>If a generic hierarchy branch is matched in the search results then it is shown as 'Nothing'&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>642</td>
+<td>Search results buttons not displayed</td>
+<td>30/05/2004 12:10:34</td>
+<td>30/05/2004 17:11:36</td>
+<td>Buttons for the search result list window are not displayed properly - they are off the screen.&nbsp</td>
+<td>Result of screen locking code - fixed
+&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>619</td>
+<td>entity date drop down does not have calender btn</td>
+<td>26/05/2004 19:05:26</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The date, date_time and time fields on an entity attribute have the [v] drop down instead of the calendar button or clock button.&nbsp</td>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>522</td>
+<td>tips dialog graphic</td>
+<td>21/12/2003 15:58:43</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>On some setups, the tips dialog CTA logo is too big and the dialog doesn't display as nicely as it could.&nbsp</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Import entity defn once only</td>
+<td>29/06/2003 14:17:05</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>The system allows the user to import an entity definition twice, or more, the system should really not allow this or should rename the imported entity or should merge the two definiitions or replace the current entity defn with the imported one.<br>
+<br>
+The system should probably prompt the user with these options when they try to import a duplicate definition.&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>578</td>
+<td>in hierarchy copy on move</td>
+<td>28/04/2004 21:48:00</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>When dragging items between hierarchies, the popup menu appers for copy and move.<br>
+<br>
+When dragging items within the same hierarchy, the same options should be available, either through a key press (cntrl?) or through dragging with the right mouse button instead of the left.<br>
+<br>
+**********************************************<br>
+30/05/2004 18:11:35<br>
+<br>
+Implemented by pressing shift key when dropping item&nbsp</td>
+</tr>
+</table>
+</body></html>

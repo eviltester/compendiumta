@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2712.300" name=GENERATOR>
+<link rel="stylesheet" type="text/css" href="../default.htm">
+</HEAD>
+<BODY>
+<H1>Version Tracking Report 0.1.30</H1>This was intended to be a simple help 
+file bug fix, but I saw an error with loading and saving on the day before I was 
+due to do a demo and then I spotted a defect with the hierarchies as I was 
+updating the version tracking hierarchy.<BR><BR>So this has become a bug fix 
+release as well.<BR>
+<H2>Tasks</H2>
+<TABLE borderColor=#000000 cellSpacing=0 cellPadding=0 width="100%" border=1>
+  <TBODY>
+  <TR>
+    <TH width="15%" bgColor=#008080>Date</TH>
+    <TH width="25%" bgColor=#008080>Name</TH>
+    <TH width="50%" bgColor=#008080>Description</TH>
+    <TH width="10%" bgColor=#008080>Duration</TH></TR>
+  <TR>
+    <TD>26/07/2002 13:22:31</TD>
+    <TD>changed icon</TD>
+    <TD>changed the icon to have a transparent border - makes it rounder on 
+      the desktop&nbsp;</TD>
+    <TD>0.1&nbsp;</TD></TR></TBODY></TABLE>
+<H2>Defects Fixed</H2>
+<TABLE borderColor=#000000 cellSpacing=0 cellPadding=0 width="100%" border=1>
+  <TBODY>
+  <TR>
+    <TH width="5%" bgColor=#008080>ID</TH>
+    <TH width="15%" bgColor=#008080>Name</TH>
+    <TH width="10%" bgColor=#008080>Raised Date</TH>
+    <TH width="10%" bgColor=#008080>Closed Date</TH>
+    <TH width="30%" bgColor=#008080>Description</TH>
+    <TH width="30%" bgColor=#008080>Resolution</TH></TR>
+  <TR>
+    <TD>354</TD>
+    <TD>drag hierarchy adoption wipes existing children</TD>
+    <TD>27/07/2002 12:00:45</TD>
+    <TD></TD>
+    <TD>dragging a hierarchy item to become a child of another item wipes out 
+      all existing children<BR><BR>i.e the only child is the new child&nbsp;</TD>
+    <TD>This was caused by the ordering code added to the get all children in 
+      this level which didn't handle levels which were not consistent i.e. two 
+      first siblings (which is the case during part of the drag 
+    algorithm)&nbsp;</TD></TR>
+  <TR>
+    <TD>351</TD>
+    <TD>help file has broken links</TD>
+    <TD>24/07/2002 09:54:05</TD>
+    <TD>24/07/2002 22:54:05</TD>
+    <TD>a number of broken links were in the help file&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>350</TD>
+    <TD>node desc and link desc are not loaded</TD>
+    <TD>25/07/2002 23:40:28</TD>
+    <TD>25/07/2002 23:40:28</TD>
+    <TD>the load model function does not load node and link 
+    descriptions.&nbsp;</TD>
+    <TD>the code simple wasn't in the load module, added it&nbsp;</TD></TR>
+  <TR>
+    <TD>352</TD>
+    <TD>Graph display properties for All</TD>
+    <TD>26/07/2002 13:21:51</TD>
+    <TD>27/07/2002 12:00:00</TD>
+    <TD>when all are selected (possibly just node and link) and the display 
+      properties dialog is shown from the graph edit, then the dialog contents 
+      are not laid our correctly and the colours are not set to the first 
+    node&nbsp;</TD>
+    <TD>&nbsp;</TD></TR></TBODY></TABLE>
+<H2>Open Defects</H2>
+<TABLE borderColor=#000000 cellSpacing=0 cellPadding=0 width="100%" border=1>
+  <TBODY>
+  <TR>
+    <TH width="5%" bgColor=#008080>ID</TH>
+    <TH width="15%" bgColor=#008080>Name</TH>
+    <TH width="10%" bgColor=#008080>Raised Date</TH>
+    <TH width="10%" bgColor=#008080>Status</TH>
+    <TH width="10%" bgColor=#008080>Criticality</TH>
+    <TH width="50%" bgColor=#008080>Description</TH></TR>
+  <TR>
+    <TD>62</TD>
+    <TD>icons on buttons are not transparent</TD>
+    <TD>17/04/2002</TD>
+    <TD>OPEN</TD>
+    <TD>LOW</TD>
+    <TD>need to turn the .ico into .bmp and setup the mask 
+property&nbsp;</TD></TR>
+  <TR>
+    <TD>321</TD>
+    <TD>transmute a branch to entity does not update treebrowser</TD>
+    <TD>03/07/2002 15:00:07</TD>
+    <TD>OPEN</TD>
+    <TD>LOW</TD>
+    <TD>the tree is not updated and neither is the list if the list is 
+      displayed&nbsp;</TD></TR>
+  <TR>
+    <TD>208</TD>
+    <TD>entity create needs saved twice</TD>
+    <TD>30/05/2002 16:24:02</TD>
+    <TD>OPEN</TD>
+    <TD>MEDIUM</TD>
+    <TD>when creating an entity, and saving it. <BR><BR>the save is made but 
+      the form brings up the save button once again. the second save commits and 
+      does not ask for another save<BR><BR>this is a sporadic problem and may be 
+      due to an oversensitive keyboard setting on the laptop?&nbsp;</TD></TR>
+  <TR>
+    <TD>134</TD>
+    <TD>the hierarchy browser hierarchy should maintain expansion</TD>
+    <TD>25/04/2002 17:55:54</TD>
+    <TD>OPEN</TD>
+    <TD>LOW</TD>
+    <TD>during restructuring, the hierarchy should leave expanded the items 
+      which are expanded&nbsp;</TD></TR>
+  <TR>
+    <TD>133</TD>
+    <TD>The hierarchy browser tree refreshes too much on drag</TD>
+    <TD>25/04/2002 17:54:37</TD>
+    <TD>OPEN</TD>
+    <TD>LOW</TD>
+    <TD>this can be disconcerting when dragging,<BR><BR>perhaps the timer is 
+      not long enough?&nbsp;</TD></TR></TBODY></TABLE>
+<H2>Requirements Implemented</H2>
+<TABLE borderColor=#000000 cellSpacing=0 cellPadding=0 width="100%" border=1>
+  <TBODY>
+  <TR>
+    <TH width="5%" bgColor=#008080>ID</TH>
+    <TH width="15%" bgColor=#008080>Name</TH>
+    <TH width="10%" bgColor=#008080>Raised Date</TH>
+    <TH width="10%" bgColor=#008080>Status</TH>
+    <TH width="10%" bgColor=#008080>Raised By</TH>
+    <TH width="50%" 
+bgColor=#008080>Description</TH></TR></TBODY></TABLE></BODY></HTML>

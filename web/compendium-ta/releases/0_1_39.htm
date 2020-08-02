@@ -1,0 +1,367 @@
+<html><head></head><body>
+<h1>Version Tracking Report 0.1.39</h1>
+<br>
+<h2>Tasks</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='15%'>Date</th>
+<th bgcolor='#008080' width='25%'>Name</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+<th bgcolor='#008080' width='10%'>Duration</th>
+</tr>
+<tr>
+<td>26/06/2003 12:15:49</td>
+<td>sped up drawing of hierarchy</td>
+<td>all refreshing of the hierarchy was done at the root level - changed to work at the node level of the changes.<br>
+<br>
+There is still slowdown when the changes occur at the root level as the updating is recursive.&nbsp</td>
+<td>0.5&nbsp</td>
+</tr>
+</table>
+<h2>Defects Fixed</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Closed Date</th>
+<th bgcolor='#008080' width='30%'>Description</th>
+<th bgcolor='#008080' width='30%'>Resolution</th>
+</tr>
+<tr>
+<td>455</td>
+<td>Thought Assistant mode errors on model display</td>
+<td>01/07/2003 12:30:58</td>
+<td>01/07/2003 15:00:58</td>
+<td>When the program is in thought assistant mode, rather than Test Analyst mode then the model display does not work properly. <br>
+<br>
+An error &quot;missing element&quot; occurs and the hierarchy is not populated.&nbsp</td>
+<td>Mode checking code was a little too severe in the model population. Changed the checks to be correct.&nbsp</td>
+</tr>
+<tr>
+<td>451</td>
+<td>editing a new script template and cancelling will delete it</td>
+<td>26/06/2003 16:25:27</td>
+<td>26/06/2003 16:30:27</td>
+<td>editing a new script template and cancelling will delete it&nbsp</td>
+<td>added a delete function and chaaged the edit code&nbsp</td>
+</tr>
+<tr>
+<td>450</td>
+<td>double click on model.linkweightings list causes dirty event</td>
+<td>26/06/2003 16:00:51</td>
+<td>26/06/2003 16:15:51</td>
+<td>double clicking on the model.linkweightings list, or the nodes or script templates for that matter, when no items are there causes a dirty event to be fired for the model&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>449</td>
+<td>model not set as dirty after hierarchy edit</td>
+<td>26/06/2003 12:25:20</td>
+<td>26/06/2003 12:50:20</td>
+<td>editing the hierarhcy by moving nodes around, does not set the model to dirty so quiting does not prompt for save.&nbsp</td>
+<td>added code to change the model in the hierarchy edit functionality&nbsp</td>
+</tr>
+<tr>
+<td>436</td>
+<td>dot save as bmp crashed program when run in ide</td>
+<td>24/06/2003 13:33:30</td>
+<td>26/06/2003 14:05:00</td>
+<td>running app in ide the dot save as bmp crashed program this could not be replicated in the compiled version and was when the dot path was not set to point to a valid instance of the dot.exe<br>
+<br>
+this may be symptomatic of something wrong with the dot integration code when the dot path has not been setup and should be investigated further.<br>
+<br>
+If there is no dot path then the code should not proceed with any dot based actions&nbsp</td>
+<td>changed export code to check for dotpath existence&nbsp</td>
+</tr>
+<tr>
+<td>412</td>
+<td>hierarchy sibling created with elder sibling name</td>
+<td>15/04/2003 18:49:20</td>
+<td>26/06/2003 11:00:00</td>
+<td>In the hierarchy I created a sibling for an entity and in the tree it was named <br>
+the same as the sibling but in the edit pane it was named Default9. This was the <br>
+last branch in the tree. It was created by using the &quot;New Sibling Under&quot; button.<br>
+This doesn't always happen so there is some complexity in the scenario that I am <br>
+unaware of.<br>
+- t<br>
+  -  b<br>
+     d<br>
+     f<br>
+     g<br>
+  -  dfdd<br>
+     sibling<br>
+     newone (named sibling)<br>
+<br>
+<br>
+**********<br>
+24/06/2003 13:36:05<br>
+<br>
+Repeatable scenario is:<br>
+ create new<br>
+ edit (not same)<br>
+ insert new<br>
+ new is displayed with name of old<br>
+<br>
+this doesn not happen if the entity is saved before inserting new&nbsp</td>
+<td>rewrote code and added a check for isdirty in the add code&nbsp</td>
+</tr>
+<tr>
+<td>444</td>
+<td>truncated filename display on attachments is blank</td>
+<td>24/06/2003 18:13:17</td>
+<td>24/06/2003 18:15:00</td>
+<td>when the filename was less than the caption length then the returned truncated filename was blank instead of the filename&nbsp</td>
+<td>function didn't return the argument under these special circumstances&nbsp</td>
+</tr>
+<tr>
+<td>434</td>
+<td>node graphic properties dialog</td>
+<td>21/06/2003 15:30:43</td>
+<td>24/06/2003 16:00:00</td>
+<td>the draw style does not appear to have any effect<br>
+<br>
+forcolour should really say text or label colour<br>
+<br>
+stop the style not found msgbox when [x] deleting or [v] restoring<br>
+<br>
+&nbsp</td>
+<td>drawstyle works fine in the debugger (remember it only works when the line width is 1)
+
+forecolour changed to textcolour
+
+stopped msgboxes&nbsp</td>
+</tr>
+<tr>
+<td>439</td>
+<td>edit a link in situ changing nodes does not mark as dirty</td>
+<td>24/06/2003 13:40:26</td>
+<td>24/06/2003 15:25:00</td>
+<td>when editing a link in situ in the model browser, changing the from node or to node does not mark the link as dirty so the changes can not be saved.&nbsp</td>
+<td>the change event was not fired. Now responds to the click and key events and compares contents&nbsp</td>
+</tr>
+<tr>
+<td>440</td>
+<td>delete a hierarchy in the list does not refresh display</td>
+<td>24/06/2003 13:42:22</td>
+<td>24/06/2003 17:55:00</td>
+<td>from model browser, deleting a hierarhcy in the list deletes the hierarchy from memory but does not refresh the list or hierarchy, meaning that it can then be deleted again by the user (to no effect - although it will generate an error message in the tree pane (when deletion is initiated there)&nbsp</td>
+<td>the delete all nodes method on the hierarchy was also removing the parent model reference&nbsp</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Quick pick list wouldn't open model</td>
+<td>13/06/2003 14:09:15</td>
+<td>14/06/2003 12:09:15</td>
+<td>there was a strange problem with the string bag when saving the quick pick lists to the config file, with a long string the guid would not be loaded properly.&nbsp</td>
+<td>swapped the order of the name and the guid in the string bag&nbsp</td>
+</tr>
+<tr>
+<td>408</td>
+<td>mdi form close button does not shut down the system</td>
+<td>15/04/2003 12:20:42</td>
+<td>22/06/2003 12:00:00</td>
+<td>The menu exit command works, but sometimes clicking on the x button has no effect&nbsp</td>
+<td>this happened after a new model.create was cancelled - there needed to be an is nothing check on the terebrowser query unload as the tree browser thought that the model had been created fully.&nbsp</td>
+</tr>
+<tr>
+<td>419</td>
+<td>new Model does not appear in quick open list</td>
+<td>21/06/2003 13:00:43</td>
+<td>23/06/2003 22:00:43</td>
+<td>when a new model is created, it does not appear in the quick open list - it is only when the system is closed and restarted that it is added to the quick open list &nbsp</td>
+<td>changed the create event&nbsp</td>
+</tr>
+<tr>
+<td>420</td>
+<td>Name can appear twice in quick pick list</td>
+<td>24/06/2003 13:03:13</td>
+<td></td>
+<td>Name can appear twice in quick pick list&nbsp</td>
+<td>rewrote the quickpick code to use a consistent key &nbsp</td>
+</tr>
+<tr>
+<td>429</td>
+<td>rename model doesn't change quick open list</td>
+<td>24/06/2003 13:24:19</td>
+<td>24/06/2003 15:25:00</td>
+<td>afterrenaming a model, the quick open list entry should be renamed but it isn't&nbsp</td>
+<td>and it shouldn't - it hasn't been saved at that point yet - what if they don't save?&nbsp</td>
+</tr>
+<tr>
+<td>427</td>
+<td>attachment paths not calculated properly</td>
+<td>24/06/2003 13:19:35</td>
+<td>24/06/2003 17:20:00</td>
+<td>when an attachment is on a drive different to the model database e.g attachment is on c:\...something and the database is on e:\...something else<br>
+<br>
+make relative correctly leaves the file name alone.<br>
+make absolute puts e:\...somethingelsec:\something as the filename<br>
+<br>
+doing it again causes an error&nbsp</td>
+<td>added error trapping to prevent system shutdown&nbsp</td>
+</tr>
+<tr>
+<td>423</td>
+<td>Model browser report button does not work</td>
+<td>13/06/2003 10:13:16</td>
+<td>24/06/2003 10:13:16</td>
+<td>the main model browser report button does not work for the model for user created reports.<br>
+<br>
+This problem only occurs on the model and not on any other entity&nbsp</td>
+<td>special case not covered in button code&nbsp</td>
+</tr>
+<tr>
+<td>425</td>
+<td>attachment drag shortcut not allowed yet</td>
+<td>24/06/2003 13:16:13</td>
+<td>24/06/2003 17:10:00</td>
+<td>when dragging a short cut on to the attachments list I got the message &quot;Cannot add shortcuts yet&quot;, but they work fine&nbsp</td>
+<td>changed check and removed message - we don't expand the shortcut to get its underlying pointer, but we do handle short cuts - the message was talking about getting the file that the shortcut points to&nbsp</td>
+</tr>
+<tr>
+<td>454</td>
+<td>Nag Screen expansion</td>
+<td>01/07/2003 12:00:14</td>
+<td>01/07/2003 14:40:00</td>
+<td>The nag/tips screen does not resize when the user resizes it, it should either be fixed in size or expand properly.&nbsp</td>
+<td>added resize code&nbsp</td>
+</tr>
+</table>
+<h2>Open Defects</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Criticality</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>446</td>
+<td>save as to same db acts as a save</td>
+<td>26/06/2003 11:38:04</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the save as function, when saving to the same db actually does a save, rather than saving the model as a new model in the same database&nbsp</td>
+</tr>
+<tr>
+<td>445</td>
+<td>rename model and db interaction</td>
+<td>24/06/2003 18:15:00</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>rename model, not saveed to db<br>
+quick pick list click on model - should say that model is loaded, but reloads from database (Becuase it has a different name)<br>
+should be working off the GUID&nbsp</td>
+</tr>
+<tr>
+<td>432</td>
+<td>path list title not changed on graph rename</td>
+<td>24/06/2003 13:28:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>the graph was in free edit mode, tree was in list mode for paths and the title on the list of paths did not change when the graph name was edited and the change committed&nbsp</td>
+</tr>
+<tr>
+<td>426</td>
+<td>entity instance not renamed after creation in hierarchy</td>
+<td>24/06/2003 13:17:35</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>sometimes, when creating an entity instance directly in the hierarchy and then saving it, it is not renamed in the hierarchy but it has been renamed in memory.<br>
+<br>
+noticed when creating entity directly alt+insert&nbsp</td>
+</tr>
+<tr>
+<td>421</td>
+<td>Sometimes turning a branch into a defect is not reflected</td>
+<td>24/06/2003 13:07:25</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>Sometimes turning a branch into a defect is not reflected on the tree or edit screen<br>
+<br>
+have not worked out a consistent repeatable situation for this yet&nbsp</td>
+</tr>
+<tr>
+<td>62</td>
+<td>icons on buttons are not transparent</td>
+<td>17/04/2002</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>need to turn the .ico into .bmp and setup the mask property&nbsp</td>
+</tr>
+<tr>
+<td>381</td>
+<td>filter text is editable</td>
+<td>16/08/2002 09:46:20</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>user can edit the text in the filter, this has no functional effect, but the user may expect that the filter can be controlled this way when it can't&nbsp</td>
+</tr>
+<tr>
+<td>378</td>
+<td>delete on treebrowser does not maintain expansion</td>
+<td>16/08/2002 09:30:03</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>delete in the treebrowser should try to maintain expansion at the moment it just contracts. It should just remove the deleted item from the tree, rather than updating the whole tree.<br>
+<br>
+This is a problem with both treeviews as the updating algorithms are simple and tend to redraw most of the tree, they certainly don't maintain expansion.&nbsp</td>
+</tr>
+<tr>
+<td>358</td>
+<td>revert only reverts first node, not all</td>
+<td>12/08/2002 11:55:48</td>
+<td>OPEN</td>
+<td>MEDIUM</td>
+<td>if a number of items are changed and revert is pressed, only one of the nodes will be reverted&nbsp</td>
+</tr>
+<tr>
+<td>134</td>
+<td>the hierarchy browser hierarchy should maintain expansion</td>
+<td>25/04/2002 17:55:54</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>during restructuring, the hierarchy should leave expanded the items which are expanded&nbsp</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The hierarchy browser tree refreshes too much on drag</td>
+<td>25/04/2002 17:54:37</td>
+<td>OPEN</td>
+<td>LOW</td>
+<td>this can be disconcerting when dragging,<br>
+<br>
+perhaps the timer is not long enough?&nbsp</td>
+</tr>
+</table>
+<h2>Requirements Implemented</h2>
+<table border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' width='100%'>
+<tr>
+<th bgcolor='#008080' width='5%'>ID</th>
+<th bgcolor='#008080' width='15%'>Name</th>
+<th bgcolor='#008080' width='10%'>Raised Date</th>
+<th bgcolor='#008080' width='10%'>Status</th>
+<th bgcolor='#008080' width='10%'>Raised By</th>
+<th bgcolor='#008080' width='50%'>Description</th>
+</tr>
+<tr>
+<td>428</td>
+<td>right click on node/link weighting and script template</td>
+<td>24/06/2003 13:22:49</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>when on the node weighting or link weighting or script template list, we should be able to right click to edit/delete/addnew etc.&nbsp</td>
+</tr>
+<tr>
+<td>443</td>
+<td>Right click on attachment when nothing should give sub menu</td>
+<td>24/06/2003 18:11:22</td>
+<td>IMPLEMENTED</td>
+<td>Alan Richardson</td>
+<td>when nothing is selected in the attachment list we should be able to right click and be offered to add an attachment rather than no options at all&nbsp</td>
+</tr>
+</table>
+</body></html>

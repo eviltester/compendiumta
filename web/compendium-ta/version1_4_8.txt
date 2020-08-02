@@ -1,0 +1,10 @@
+#VERSION
+000100040008
+#RELEASED
+08 June 2004
+#DETAILSSTART
+Fixed: Incremental Saving Database Backups
+Added: Application Control Panel, an MDI level treeview of the model open windows, shortcuts to windows, and a ScratchPad to temporarily hold model objects. A Very useful GUI enhancement.
+A patch is available in the upgrade section for existing users on the download page.
+#DETAILSEND
+
